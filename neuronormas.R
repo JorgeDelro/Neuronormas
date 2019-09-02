@@ -92,6 +92,14 @@ neuronorma <- function(score, age, education_years, tests){
         res <- TOL_PT(score = db$score,
                       age = db$age,
                       education_years = db$education_years)
+      } else if(test == "Rey-Osterrieth complex figure copy raw") {
+        res <- TOL_PT(score = db$score,
+                      age = db$age,
+                      education_years = db$education_years)
+      } else if(test == "Rey-Osterrieth complex figure copy time") {
+        res <- TOL_PT(score = db$score,
+                      age = db$age,
+                      education_years = db$education_years)
       }
       
       res_new <- cbind(res_new, res)

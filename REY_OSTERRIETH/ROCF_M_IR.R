@@ -1,27 +1,24 @@
 # Rey-Osterrieth complex figure (ROCF) Memory Immediate Recall
+#
+# Reference:
+# Peña-Casanova, J., Gramunt-Fombuena, N., Quiñones-Ubeda, M., et al., 2009. Neuronorma
+# study team. Spanish Multicenter Normative Studies (NEURONORMA Project): Norms for the Rey–Osterrieth Complex 
+# Figure (Copy and Memory), and Free and Cued Selective Reminding Test
+# Arch. Clin. Neuropsychol. 24 (4), 371–393.
+# 
+# 
 
-# install.packages("readxl")
-library(readxl)
-
-db <- read_xls("COG_BRUTO.xls")
-
-
-
-ROCF_M_IR <- ROCF_M_IR_function(score = db$Q_COG_COWAT_ROCF_M_IR_PRE,
-                            age = db$AGE_PRE,
-                            education_years = db$EDUCATIONAL_LEVEL)
-
-# Function GORDA
-ROCF_M_IR_function <- function(score, age, education_years){
+# 
+ROCF_M_IR <- function(score, age, education_years){
   
-  ROCF_M_IR <- data.frame(score = score, age = age, education_years = education_years)
+  ROCF_M_IR_db <- data.frame(score = score, age = age, education_years = education_years)
   ROCF_M_IR_new <- data.frame()
   
   # NSSa
-  for (i in 1:nrow(ROCF_M_IR)) {
-    res <- ROCF_M_IR_scale_score(score = ROCF_M_IR[i, "score"], 
-                              age = ROCF_M_IR[i, "age"],
-                              education_years = ROCF_M_IR[i, "education_years"])
+  for (i in 1:nrow(ROCF_M_IR_db)) {
+    res <- ROCF_M_IR_scale_score(score = ROCF_M_IR_db[i, "score"], 
+                              age = ROCF_M_IR_db[i, "age"],
+                              education_years = ROCF_M_IR_db[i, "education_years"])
     ROCF_M_IR_new <- rbind(ROCF_M_IR_new, res)
   }
   
