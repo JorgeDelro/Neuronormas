@@ -1,34 +1,27 @@
 # semantic animal
 
-# install.packages("readxl")
-library(readxl)
+# Casals-Coll M., Sánchez-Benavides G., Quintana M., Manerob R.M., Rognonia T., 
+# Calvo L., Palomo R., Aranciva F., Tamayo F. & Peña-Casanova J. (2013) Estudios normativos españoles en población adulta joven
+# (proyecto NEURONORMA jóvenes): normas para los test de fluencia verbal. Neurología, 28 (1):33-40.
 
-db <- read_xls("COG_BRUTO.xls")
-
-
-
-ANIMAL <- animal_function(score = db$Q_COG_COWAT_ANIMAL_PRE,
-                            age = db$AGE_PRE,
-                            education_years = db$EDUCATIONAL_LEVEL)
-
-# Function GORDA
-animal_function <- function(score, age, education_years){
+# 
+animal <- function(score, age, education_years){
   
-  animal <- data.frame(score = score, age = age, education_years = education_years)
+  animal_db <- data.frame(score = score, age = age, education_years = education_years)
   animal_new <- data.frame()
   
   # NSSa
-  for (i in 1:nrow(animal)) {
-    res <- animalscale_score(score = animal[i, "score"], 
-                              age = animal[i, "age"],
-                              education_years = animal[i, "education_years"])
+  for (i in 1:nrow(animal_db)) {
+    res <- animal_scale_score(score = animal_db[i, "score"], 
+                              age = animal_db[i, "age"],
+                              education_years = animal_db[i, "education_years"])
     animal_new <- rbind(animal_new, res)
   }
   
   return(animal_new)
 }
 
-animalscale_score <- function(score, age, education_years) {
+animal_scale_score <- function(score, age, education_years) {
   
   db <- data.frame(score = score, age = age, education_years = education_years)
   
@@ -38,7 +31,7 @@ animalscale_score <- function(score, age, education_years) {
   if(db$age >= 50  & db$age < 57) {
     ## 50-56
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >=  34, 18, ifelse (
         db$score >= 33, 17, ifelse (
           
@@ -59,7 +52,7 @@ animalscale_score <- function(score, age, education_years) {
 
 # percentile score
 
-db$animalpercentil_range <- with (db, ifelse (
+db$animal_percentil_range <- with (db, ifelse (
   db$score >=  34, "> 99" , ifelse (
     db$score >= 33, "99" , ifelse (
       
@@ -89,7 +82,7 @@ db$animalpercentil_range <- with (db, ifelse (
   if(db$age >= 57  & db$age < 60) {
     ## 57-59
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >=  35, 18, ifelse (
         db$score >= 34, 17, ifelse (
           db$score >= 33, 16, ifelse (
@@ -110,7 +103,7 @@ db$animalpercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$animalpercentil_range <- with (db, ifelse (
+db$animal_percentil_range <- with (db, ifelse (
   db$score >=  35, "> 99" , ifelse (
     db$score >= 34, "99" , ifelse (
       db$score >= 33, "98" , ifelse (
@@ -140,7 +133,7 @@ db$animalpercentil_range <- with (db, ifelse (
   if(db$age >= 60  & db$age < 63) {
     ## 60-62
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >= 35, 18, ifelse (
         db$score >= 34, 17, ifelse (
           db$score >= 33, 16, ifelse (
@@ -161,7 +154,7 @@ db$animalpercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$animalpercentil_range <- with (db, ifelse (
+db$animal_percentil_range <- with (db, ifelse (
   db$score >= 35, "> 99" , ifelse (
     db$score >= 34, "99" , ifelse (
       db$score >= 33, "98" , ifelse (
@@ -189,7 +182,7 @@ db$animalpercentil_range <- with (db, ifelse (
   if(db$age >= 63  & db$age < 66) {
     ## 63-65
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >=  35, 18, ifelse (
         db$score >= 34, 17, ifelse (
           db$score >= 31 , 16, ifelse (
@@ -210,7 +203,7 @@ db$animalpercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$animalpercentil_range <- with (db, ifelse (
+db$animal_percentil_range <- with (db, ifelse (
   db$score >=  35, "> 99" , ifelse (
     db$score >= 34, "99" , ifelse (
       db$score >= 31 , "98" , ifelse (
@@ -237,7 +230,7 @@ db$animalpercentil_range <- with (db, ifelse (
   if(db$age >= 66  & db$age < 69) {
     ## 66-68
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >=  34, 18, ifelse (
         db$score >= 30 , 17, ifelse (
           
@@ -258,7 +251,7 @@ db$animalpercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$animalpercentil_range <- with (db, ifelse (
+db$animal_percentil_range <- with (db, ifelse (
   db$score >=  34, "> 99" , ifelse (
     db$score >= 30 , "99" , ifelse (
       
@@ -284,7 +277,7 @@ db$animalpercentil_range <- with (db, ifelse (
   if(db$age >= 69  & db$age < 72) {
     ## 69-71
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >=  34, 18, ifelse (
         db$score >= 31 , 17, ifelse (
           db$score >= 30, 16, ifelse (
@@ -305,7 +298,7 @@ db$animalpercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$animalpercentil_range <- with (db, ifelse (
+db$animal_percentil_range <- with (db, ifelse (
   db$score >=  34, "> 99" , ifelse (
     db$score >= 31 , "99" , ifelse (
       db$score >= 30, "98" , ifelse (
@@ -332,7 +325,7 @@ db$animalpercentil_range <- with (db, ifelse (
   if(db$age >= 72  & db$age < 75) {
     ## 72-74
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >= 31, 18, ifelse (
         db$score >= 30, 17, ifelse (
           db$score >= 29, 16, ifelse (
@@ -353,7 +346,7 @@ db$animalpercentil_range <- with (db, ifelse (
     
     # percentile score
     
-    db$animalpercentil_range <- with (db, ifelse (
+    db$animal_percentil_range <- with (db, ifelse (
       db$score >= 31, "> 99" , ifelse (
         db$score >= 30, "99" , ifelse (
           db$score >= 29, "98" , ifelse (
@@ -381,7 +374,7 @@ db$animalpercentil_range <- with (db, ifelse (
   if(db$age >= 75  & db$age < 78) {
     ## 75-77
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >=  30, 18, ifelse (
         db$score >= 29, 17, ifelse (
           db$score >= 28, 16, ifelse (
@@ -402,7 +395,7 @@ db$animalpercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$animalpercentil_range <- with (db, ifelse (
+db$animal_percentil_range <- with (db, ifelse (
   db$score >=  30, "> 99" , ifelse (
     db$score >= 29, "99" , ifelse (
       db$score >= 28, "98" , ifelse (
@@ -430,7 +423,7 @@ db$animalpercentil_range <- with (db, ifelse (
   if(db$age >= 78  & db$age < 81) {
     ## 78-80
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >=  28, 18, ifelse (
         
         
@@ -451,7 +444,7 @@ db$animalpercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$animalpercentil_range <- with (db, ifelse (
+db$animal_percentil_range <- with (db, ifelse (
   db$score >=  28, "> 99" , ifelse (
     
     
@@ -478,7 +471,7 @@ db$animalpercentil_range <- with (db, ifelse (
   if(db$age >= 81  & db$age < 91) {
     ## 81-90
     # Scale_Score
-    db$animalscale_score <- with ( db, ifelse (
+    db$animal_scale_score <- with ( db, ifelse (
       db$score >= 23, 18, ifelse (
         
         db$score >= 21 , 16, ifelse (
@@ -499,7 +492,7 @@ db$animalpercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$animalpercentil_range <- with (db, ifelse (
+db$animal_percentil_range <- with (db, ifelse (
   db$score >= 23, "> 99" , ifelse (
     
     db$score >= 21 , "98" , ifelse (
@@ -524,17 +517,17 @@ db$animalpercentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$education_years_adj <- with(db, ifelse(
-    db$education_years >= 0  & db$education_years <= 2, db$animalscale_score + 2, ifelse(
-    db$education_years >= 3  & db$education_years <= 7, db$animalscale_score + 1, ifelse(
-      db$education_years >= 8  & db$education_years <= 12, db$animalscale_score, ifelse(
-        db$education_years >= 13  & db$education_years <= 16, db$animalscale_score - 1, ifelse(
-          db$education_years >= 17  & db$education_years <= 20, db$animalscale_score - 2, ifelse(
+    db$education_years >= 0  & db$education_years <= 2, db$animal_scale_score + 2, ifelse(
+    db$education_years >= 3  & db$education_years <= 7, db$animal_scale_score + 1, ifelse(
+      db$education_years >= 8  & db$education_years <= 12, db$animal_scale_score, ifelse(
+        db$education_years >= 13  & db$education_years <= 16, db$animal_scale_score - 1, ifelse(
+          db$education_years >= 17  & db$education_years <= 20, db$animal_scale_score - 2, ifelse(
             
             )))))))
   
   
   # NSSae
-  db$NSSae_animal <- db$animalscale_score - (0.20588*(db$education_years_adj-12)) 
+  db$NSSae_animal <- db$animal_scale_score - (0.20588*(db$education_years_adj-12)) 
   
   return(db)
 }

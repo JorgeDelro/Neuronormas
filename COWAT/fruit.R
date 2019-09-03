@@ -1,15 +1,6 @@
-#fruit
-
-# install.packages("readxl")
-library(readxl)
-
-db <- read_xls("COG_BRUTO.xls")
+# fruit
 
 
-
-FRUIT <- fruit_function(score = db$Q_COG_COWAT_COUNTRY_PRE,
-                            age = db$AGE_PRE,
-                            education_years = db$EDUCATIONAL_LEVEL)
 
 # Function GORDA
 fruit_function <- function(score, age, education_years){

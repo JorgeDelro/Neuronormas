@@ -1,27 +1,25 @@
 # Free and Cued Selective Reminding Test (FCSRT) Total Delayed Recall / Trial 3 Total Recall (TDR/T3TR)
 
-# install.packages("readxl")
-library(readxl)
+# Reference:
+# Peña-Casanova, J., Gramunt-Fombuena, N., Quiñones-Ubeda, M., et al., 2009. Neuronorma
+# study team. Spanish Multicenter Normative Studies (NEURONORMA Project): Norms for the Rey–Osterrieth Complex 
+# Figure (Copy and Memory), and Free and Cued Selective Reminding Test
+# Arch. Clin. Neuropsychol. 24 (4), 371–393.
+# 
+# 
 
-db <- read_xls("COG_BRUTO.xls")
 
-
-
-FCSRT_TDRT3TR <- FCSRT_TDRT3TR_function(score = db$Q_COG_COWAT_FCSRT_TDRT3TR_PRE,
-                            age = db$AGE_PRE,
-                            education_years = db$EDUCATIONAL_LEVEL)
-
-# Function GORDA
-FCSRT_TDRT3TR_function <- function(score, age, education_years){
+# 
+FCSRT_TDRT3TR <- function(score, age, education_years){
   
-  FCSRT_TDRT3TR <- data.frame(score = score, age = age, education_years = education_years)
+  FCSRT_TDRT3TR_db <- data.frame(score = score, age = age, education_years = education_years)
   FCSRT_TDRT3TR_new <- data.frame()
   
   # NSSa
-  for (i in 1:nrow(FCSRT_TDRT3TR)) {
-    res <- FCSRT_TDRT3TR_scale_score(score = FCSRT_TDRT3TR[i, "score"], 
-                              age = FCSRT_TDRT3TR[i, "age"],
-                              education_years = FCSRT_TDRT3TR[i, "education_years"])
+  for (i in 1:nrow(FCSRT_TDRT3TR_db)) {
+    res <- FCSRT_TDRT3TR_scale_score(score = FCSRT_TDRT3TR_db[i, "score"], 
+                              age = FCSRT_TDRT3TR_db[i, "age"],
+                              education_years = FCSRT_TDRT3TR_db[i, "education_years"])
     FCSRT_TDRT3TR_new <- rbind(FCSRT_TDRT3TR_new, res)
   }
   

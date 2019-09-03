@@ -93,13 +93,45 @@ neuronorma <- function(score, age, education_years, tests){
                       age = db$age,
                       education_years = db$education_years)
       } else if(test == "Rey-Osterrieth complex figure copy raw") {
-        res <- TOL_PT(score = db$score,
+        res <- ROCF_C_RAW(score = db$score,
                       age = db$age,
                       education_years = db$education_years)
       } else if(test == "Rey-Osterrieth complex figure copy time") {
-        res <- TOL_PT(score = db$score,
+        res <- ROCF_C_TIME(score = db$score,
                       age = db$age,
                       education_years = db$education_years)
+      } else if(test == "Rey-Osterrieth complex figure memory delayed recall") {
+        res <- ROCF_M_DR(score = db$score,
+                      age = db$age,
+                      education_years = db$education_years)
+      } else if(test == "Rey-Osterrieth complex figure memory immediate recall") {
+        res <- ROCF_M_IR(score = db$score,
+                      age = db$age,
+                      education_years = db$education_years)
+      } else if(test == "Free and cued selective reminding test delayed total recall") {
+        res <- FCSRT_DTR(score = db$score,
+                         age = db$age,
+                         education_years = db$education_years)
+      } else if(test == "Free and cued selective reminding test delayed free recall") {
+        res <- FCSRT_DFR(score = db$score,
+                         age = db$age,
+                         education_years = db$education_years)
+      } else if(test == "Free and cued selective reminding test trial 1") {
+        res <- FCSRT_TRIAL1(score = db$score,
+                         age = db$age,
+                         education_years = db$education_years)
+      } else if(test == "Free and cued selective reminding test total recall") {
+        res <- FCSRT_TR(score = db$score,
+                         age = db$age,
+                         education_years = db$education_years)
+      } else if(test == "Free and cued selective reminding test total free recall") {
+        res <- FCSRT_TFR(score = db$score,
+                         age = db$age,
+                         education_years = db$education_years)
+      } else if(test == "Free and cued selective reminding test total delayed recall / trial 3 total recall") {
+        res <- FCSRT_TDRT3TR(score = db$score,
+                         age = db$age,
+                         education_years = db$education_years)
       }
       
       res_new <- cbind(res_new, res)
@@ -107,7 +139,6 @@ neuronorma <- function(score, age, education_years, tests){
     
   }
   
-  
-  
+
   return(res)
 }

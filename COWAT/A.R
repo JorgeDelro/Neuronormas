@@ -1,33 +1,27 @@
-#A
-# install.packages("readxl")
-library(readxl)
+# A
 
-db <- read_xls("COG_BRUTO.xls")
+# Casals-Coll M., Sánchez-Benavides G., Quintana M., Manerob R.M., Rognonia T., 
+# Calvo L., Palomo R., Aranciva F., Tamayo F. & Peña-Casanova J. (2013) Estudios normativos españoles en población adulta joven
+# (proyecto NEURONORMA jóvenes): normas para los test de fluencia verbal. Neurología, 28 (1):33-40.
 
-
-
-a <- a_function(score = db$Q_COG_COWAT_a_PRE,
-                            age = db$AGE_PRE,
-                            education_years = db$EDUCATIONAL_LEVEL)
-
-# Function GORDA
-a_function <- function(score, age, education_years){
+# 
+a <- function(score, age, education_years){
   
-  a <- data.frame(score = score, age = age, education_years = education_years)
+  a_db <- data.frame(score = score, age = age, education_years = education_years)
   a_new <- data.frame()
   
   # NSSa
-  for (i in 1:nrow(a)) {
-    res <- ascale_score(score = a[i, "score"], 
-                              age = a[i, "age"],
-                              education_years = a[i, "education_years"])
+  for (i in 1:nrow(a_db)) {
+    res <- a_scale_score(score = a_db[i, "score"], 
+                              age = a_db[i, "age"],
+                              education_years = a_db[i, "education_years"])
     a_new <- rbind(a_new, res)
   }
   
   return(a_new)
 }
 
-ascale_score <- function(score, age, education_years) {
+a_scale_score <- function(score, age, education_years) {
   
   db <- data.frame(score = score, age = age, education_years = education_years)
   
@@ -37,7 +31,7 @@ ascale_score <- function(score, age, education_years) {
   if(db$age >= 50  & db$age < 57) {
     ## 50-56
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  21, 18, ifelse (
         db$score >= 20, 17, ifelse (
           db$score >= 18 , 16, ifelse (
@@ -58,7 +52,7 @@ ascale_score <- function(score, age, education_years) {
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  21, "> 99" , ifelse (
     db$score >= 20, "99" , ifelse (
       db$score >= 18 , "98" , ifelse (
@@ -88,7 +82,7 @@ db$apercentil_range <- with (db, ifelse (
   if(db$age >= 57  & db$age < 60) {
     ## 57-59
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  21, 18, ifelse (
         db$score >= 20, 17, ifelse (
           
@@ -109,7 +103,7 @@ db$apercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  21, "> 99" , ifelse (
     db$score >= 20, "99" , ifelse (
       
@@ -139,7 +133,7 @@ db$apercentil_range <- with (db, ifelse (
   if(db$age >= 60  & db$age < 63) {
     ## 60-62
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  21, 18, ifelse (
         db$score >= 20, 17, ifelse (
           db$score >= 19, 16, ifelse (
@@ -160,7 +154,7 @@ db$apercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  21, "> 99" , ifelse (
     db$score >= 20, "99" , ifelse (
       db$score >= 19, "98" , ifelse (
@@ -188,7 +182,7 @@ db$apercentil_range <- with (db, ifelse (
   if(db$age >= 63  & db$age < 66) {
     ## 63-65
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  20, 18, ifelse (
         db$score >= 18 , 17, ifelse (
           db$score >= 17, 16, ifelse (
@@ -209,7 +203,7 @@ db$apercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  20, "> 99" , ifelse (
     db$score >= 18 , "99" , ifelse (
       db$score >= 17, "98" , ifelse (
@@ -236,7 +230,7 @@ db$apercentil_range <- with (db, ifelse (
   if(db$age >= 66  & db$age < 69) {
     ## 66-68
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 15, 16, ifelse (
@@ -257,7 +251,7 @@ db$apercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 15, "98" , ifelse (
@@ -283,7 +277,7 @@ db$apercentil_range <- with (db, ifelse (
   if(db$age >= 69  & db$age < 72) {
     ## 69-71
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 15, 16, ifelse (
@@ -304,7 +298,7 @@ db$apercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 15, "98" , ifelse (
@@ -331,7 +325,7 @@ db$apercentil_range <- with (db, ifelse (
   if(db$age >= 72  & db$age < 75) {
     ## 72-74
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 15, 16, ifelse (
@@ -352,7 +346,7 @@ db$apercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 15, "98" , ifelse (
@@ -380,7 +374,7 @@ db$apercentil_range <- with (db, ifelse (
   if(db$age >= 75  & db$age < 78) {
     ## 75-77
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 13 , 16, ifelse (
@@ -401,7 +395,7 @@ db$apercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 13 , "98" , ifelse (
@@ -429,7 +423,7 @@ db$apercentil_range <- with (db, ifelse (
   if(db$age >= 78  & db$age < 81) {
     ## 78-80
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  14, 18, ifelse (
         
         db$score >= 13, 16, ifelse (
@@ -450,7 +444,7 @@ db$apercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  14, "> 99" , ifelse (
     
     db$score >= 13, "98" , ifelse (
@@ -477,7 +471,7 @@ db$apercentil_range <- with (db, ifelse (
   if(db$age >= 81  & db$age < 91) {
     ## 81-90
     # Scale_Score
-    db$ascale_score <- with ( db, ifelse (
+    db$a_scale_score <- with ( db, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 13 , 16, ifelse (
@@ -498,7 +492,7 @@ db$apercentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$apercentil_range <- with (db, ifelse (
+db$a_percentil_range <- with (db, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 13 , "98" , ifelse (
@@ -523,18 +517,18 @@ db$apercentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$education_years_adj <- with(db, ifelse(
-    db$education_years >= 0  & db$education_years < 1, db$ascale_score + 3, ifelse(
-    db$education_years >= 1  & db$education_years <= 4, db$ascale_score + 2, ifelse(
-    db$education_years >= 5  & db$education_years <= 8, db$ascale_score + 1, ifelse(
-      db$education_years >= 9  & db$education_years <= 12, db$ascale_score, ifelse(
-        db$education_years >= 13  & db$education_years <= 15, db$ascale_score - 1, ifelse(
-          db$education_years >= 16  & db$education_years <= 19, db$ascale_score - 2, ifelse(
-            db$education_years > 19  & db$education_years <= 20, db$ascale_score- 3, ifelse(
+    db$education_years >= 0  & db$education_years < 1, db$a_scale_score + 3, ifelse(
+    db$education_years >= 1  & db$education_years <= 4, db$a_scale_score + 2, ifelse(
+    db$education_years >= 5  & db$education_years <= 8, db$a_scale_score + 1, ifelse(
+      db$education_years >= 9  & db$education_years <= 12, db$a_scale_score, ifelse(
+        db$education_years >= 13  & db$education_years <= 15, db$a_scale_score - 1, ifelse(
+          db$education_years >= 16  & db$education_years <= 19, db$a_scale_score - 2, ifelse(
+            db$education_years > 19  & db$education_years <= 20, db$a_scale_score- 3, ifelse(
             )))))))))
   
   
   # NSSae
-  db$NSSae_a <- db$ascale_score - (0.25483*(db$education_years_adj-12)) 
+  db$NSSae_a <- db$a_scale_score - (0.25483*(db$education_years_adj-12)) 
   
   return(db)
 }

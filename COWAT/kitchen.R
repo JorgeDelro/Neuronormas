@@ -1,15 +1,7 @@
-
 # Semantic Fluency kitchen
 
 
-# install.packages("readxl")
-library(readxl)
 
-db <- read_xls("COG_BRUTO.xls")
-
-KITCHEN <- kitchen_function(score = db$Q_COG_COWAT_KITCHEN_PRE,
-                           age = db$AGE_PRE,
-                           education_years = db$EDUCATIONAL_LEVEL)
 
 # Function GORDA
 kitchen_function <- function(score, age, education_years){
