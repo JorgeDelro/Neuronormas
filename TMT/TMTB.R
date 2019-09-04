@@ -20,7 +20,7 @@ tmtb <- function(score, age, education_years){
     tmtb_new <- rbind(tmtb_new, res)
   }
   
-  return(tmtb_new)
+  return(tmtb_new[,c("tmtb_scale_score", "tmtb_percentil_range", "tmtb_NSSae")])
 }
 
 tmtb_scale_score <- function(score, age, education_years) {
@@ -518,7 +518,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$tmtb_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years < 1, db$tmtb_scale_score + 2, ifelse(
     db$education_years >= 1  & db$education_years <= 4, db$tmtb_scale_score + 1, ifelse(
       db$education_years >= 5  & db$education_years <= 8, db$tmtb_scale_score, ifelse(
@@ -530,7 +530,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_tmtb <- db$tmtb_scale_score - (-0.27320*(db$education_years_adj-12)) 
+  db$tmtb_NSSae <- db$tmtb_scale_score - (-0.27320*(db$tmtb_education_years_adj-12)) 
   
   return(db)
 }

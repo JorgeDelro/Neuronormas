@@ -20,15 +20,15 @@ tmta <- function(score, age, education_years){
     tmta_new <- rbind(tmta_new, res)
   }
   
-  return(tmta_new)
+  
+  return(tmta_new[,c("tmta_scale_score", "tmta_percentil_range", "tmta_NSSae")])
 }
 
 tmta_scale_score <- function(score, age, education_years) {
   
   db <- data.frame(score = score, age = age, education_years = education_years)
   
-  
-  
+
   ##################################  TABLE 3  ##############################
   if(db$age >= 50  & db$age < 57) {
     ## 50-56
@@ -518,7 +518,7 @@ db$tmta_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$tmta_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 3, db$tmta_scale_score + 1, ifelse(
       db$education_years >= 4  & db$education_years <= 8, db$tmta_scale_score, ifelse(
         db$education_years >= 9  & db$education_years <= 12, db$tmta_scale_score - 1, ifelse(
@@ -528,7 +528,7 @@ db$tmta_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_tmta <- db$tmta_scale_score - (-0.21832*(db$education_years_adj-12)) 
+  db$tmta_NSSae <- db$tmta_scale_score - (-0.21832*(db$tmta_education_years_adj-12)) 
   
   return(db)
 }
