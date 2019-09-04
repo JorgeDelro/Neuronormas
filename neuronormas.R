@@ -6,6 +6,11 @@ neuronorma <- function(score, age, education_years, tests){
   db <- data.frame(score = score, age = age, education_years = education_years)
   
   # Sanity Check
+  if(db$age > 20){
+    db$age <- 20
+  }
+  
+  
   if(is.na(tests)) {
     print("Please select a test of the following lists: \n
           - trail_making_test_a  \n
@@ -132,6 +137,42 @@ neuronorma <- function(score, age, education_years, tests){
         res <- FCSRT_TDRT3TR(score = db$score,
                          age = db$age,
                          education_years = db$education_years)
+      } else if(test == "a") {
+        res <- a(score = db$score,
+                             age = db$age,
+                             education_years = db$education_years)
+      } else if(test == "semantic animal") {
+        res <- animal(score = db$score,
+                 age = db$age,
+                 education_years = db$education_years)
+      } else if(test == "e") {
+        res <- e(score = db$score,
+                      age = db$age,
+                      education_years = db$education_years)
+      } else if(test == "fruit") {
+        res <- fruit(score = db$score,
+                 age = db$age,
+                 education_years = db$education_years)
+      } else if(test == "kitchen") {
+        res <- kitchen(score = db$score,
+                     age = db$age,
+                     education_years = db$education_years)
+      } else if(test == "m") {
+        res <- m(score = db$score,
+                       age = db$age,
+                       education_years = db$education_years)
+      } else if(test == "p") {
+        res <- p(score = db$score,
+                 age = db$age,
+                 education_years = db$education_years)
+      } else if(test == "r") {
+        res <- r(score = db$score,
+                 age = db$age,
+                 education_years = db$education_years)
+      } else if(test == "s") {
+        res <- s(score = db$score,
+                 age = db$age,
+                 education_years = db$education_years)
       }
       
       res_new <- cbind(res_new, res)
