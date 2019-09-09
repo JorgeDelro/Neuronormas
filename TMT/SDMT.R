@@ -21,7 +21,7 @@ SDMT <- function(score, age, education_years){
     SDMT_new <- rbind(SDMT_new, res)
   }
   
-  return(SDMT_new)
+  return(SDMT_new[,c("SDMT_scale_score", "SDMT_percentil_range", "SDMT_NSSae")])
 }
 
 SDMT_scale_score <- function(score, age, education_years) {
@@ -519,7 +519,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$SDMT_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 2, db$SDMT_scale_score + 3, ifelse(
       db$education_years >= 3  & db$education_years <= 5, db$SDMT_scale_score + 2, ifelse(
     db$education_years >= 6  & db$education_years <= 8, db$SDMT_scale_score + 1, ifelse(
@@ -531,7 +531,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_SDMT <- db$SDMT_scale_score - (0.32136*(db$education_years_adj-12)) 
+  db$SDMT_NSSae <- db$SDMT_scale_score - (0.32136*(db$SDMT_education_years_adj-12)) 
   
   return(db)
 }

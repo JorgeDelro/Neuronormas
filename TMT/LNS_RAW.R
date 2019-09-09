@@ -21,7 +21,7 @@ LNS_RAW <- function(score, age, education_years){
     LNS_RAW_new <- rbind(LNS_RAW_new, res)
   }
   
-  return(LNS_RAW_new)
+  return(LNS_RAW_new[,c("LNS_RAW_scale_score", "LNS_RAW_percentil_range", "LNS_RAW_NSSae")])
 }
 
 LNS_RAW_scale_score <- function(score, age, education_years) {
@@ -520,7 +520,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$LNS_RAW_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 1, db$LNS_RAW_scale_score + 3, ifelse(
       db$education_years >= 2  & db$education_years <= 5, db$LNS_RAW_scale_score + 2, ifelse(
     db$education_years >= 6  & db$education_years <= 8, db$LNS_RAW_scale_score + 1, ifelse(
@@ -532,7 +532,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_LNS_RAW <- db$LNS_RAW_scale_score - (0.28804*(db$education_years_adj-12)) 
+  db$LNS_RAW_NSSae <- db$LNS_RAW_scale_score - (0.28804*(db$LNS_RAW_education_years_adj-12)) 
   
   return(db)
 }
