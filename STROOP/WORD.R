@@ -20,7 +20,7 @@ word <- function(score, age, education_years){
     word_new <- rbind(word_new, res)
   }
   
-  return(word_new)
+  return(word_new[,c("word_scale_score", "word_percentil_range", "word_NSSae")])
 }
 
 word_scale_score <- function(score, age, education_years) {
@@ -518,7 +518,7 @@ db$word_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$word_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years < 1, db$word_scale_score + 3, ifelse(
       db$education_years >= 1  & db$education_years <= 4, db$word_scale_score + 2, ifelse(
         db$education_years >= 5  & db$education_years <= 8, db$word_scale_score + 1, ifelse(
@@ -530,7 +530,7 @@ db$word_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_word <- db$word_scale_score - (0.25663*(db$education_years_adj-12)) 
+  db$word_NSSae <- db$word_scale_score - (0.25663*(db$word_education_years_adj-12)) 
   
   return(db)
 }

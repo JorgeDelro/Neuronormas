@@ -23,7 +23,7 @@ FCSRT_TFR <- function(score, age, education_years){
     FCSRT_TFR_new <- rbind(FCSRT_TFR_new, res)
   }
   
-  return(FCSRT_TFR_new)
+  return(FCSRT_TFR_new[,c("FCSRT_TFR_scale_score", "FCSRT_TFR_percentil_range", "FCSRT_TFR_NSSae")])
 }
 
 FCSRT_TFR_scale_score <- function(score, age, education_years) {
@@ -520,7 +520,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$FCSRT_TFR_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years < 1, db$FCSRT_TFR_scale_score + 2, ifelse( 
     db$education_years >= 1  & db$education_years <= 6, db$FCSRT_TFR_scale_score + 1, ifelse(
       db$education_years >= 7  & db$education_years <= 12, db$FCSRT_TFR_scale_score, ifelse(
@@ -531,7 +531,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_FCSRT_TFR <- db$FCSRT_TFR_scale_score - (0.17127*(db$education_years_adj-12)) 
+  db$FCSRT_TFR_NSSae <- db$FCSRT_TFR_scale_score - (0.17127*(db$FCSRT_TFR_education_years_adj-12)) 
   
   return(db)
 }

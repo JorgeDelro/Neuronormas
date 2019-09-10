@@ -20,7 +20,7 @@ color <- function(score, age, education_years){
     color_new <- rbind(color_new, res)
   }
   
-  return(color_new)
+  return(color_new[,c("color_scale_score", "color_percentil_range", "color_NSSae")])
 }
 
 color_scale_score <- function(score, age, education_years) {
@@ -518,7 +518,7 @@ db$color_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$color_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 2, db$color_scale_score + 2, ifelse(
       db$education_years >= 3  & db$education_years <= 7, db$color_scale_score + 1, ifelse(
         db$education_years >= 8  & db$education_years <= 12, db$color_scale_score, ifelse(
@@ -528,7 +528,7 @@ db$color_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_color <- db$color_scale_score - (0.2099*(db$education_years_adj-12)) 
+  db$color_NSSae <- db$color_scale_score - (0.2099*(db$color_education_years_adj-12)) 
   
   return(db)
 }

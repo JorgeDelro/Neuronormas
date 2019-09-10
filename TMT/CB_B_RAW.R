@@ -20,7 +20,7 @@ CB_B_RAW <- function(score, age, education_years){
     CB_B_RAW_new <- rbind(CB_B_RAW_new, res)
   }
   
-  return(CB_B_RAW_new)
+  return(CB_B_RAW_new[,c("CB_B_RAW_scale_score", "CB_B_RAW_percentil_range", "CB_B_RAW_NSSae")])
 }
 
 CB_B_RAW_scale_score <- function(score, age, education_years) {
@@ -554,7 +554,7 @@ db$score >= 11, "> 99" , ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$CB_B_RAW_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 2, db$CB_B_RAW_scale_score + 2, ifelse(
     db$education_years >= 3  & db$education_years <= 7, db$CB_B_RAW_scale_score + 1, ifelse(
       db$education_years >= 8  & db$education_years <= 12, db$CB_B_RAW_scale_score, ifelse(
@@ -565,7 +565,7 @@ db$score >= 11, "> 99" , ifelse (
   
   
   # NSSae
-  db$NSSae_CB_B_RAW <- db$CB_B_RAW_scale_score - (0.20213*(db$education_years_adj-12)) 
+  db$CB_B_RAW_NSSae <- db$CB_B_RAW_scale_score - (0.20213*(db$CB_B_RAW_education_years_adj-12)) 
   
   return(db)
 }

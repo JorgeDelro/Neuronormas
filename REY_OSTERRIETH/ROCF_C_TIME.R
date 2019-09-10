@@ -21,7 +21,7 @@ ROCF_C_TIME <- function(score, age, education_years){
     ROCF_C_TIME_new <- rbind(ROCF_C_TIME_new, res)
   }
   
-  return(ROCF_C_TIME_new)
+  return(ROCF_C_TIME_new[,c("ROCF_C_TIME_scale_score", "ROCF_C_TIME_percentil_range", "ROCF_C_TIME_NSSae")])
 }
 
 ROCF_C_TIME_scale_score <- function(score, age, education_years) {
@@ -522,7 +522,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$ROCF_C_TIME_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 1, db$ROCF_C_TIME_scale_score + 2, ifelse(
     db$education_years >= 2  & db$education_years <= 6, db$ROCF_C_TIME_scale_score + 1, ifelse(
       db$education_years >= 7  & db$education_years <= 12, db$ROCF_C_TIME_scale_score, ifelse(
@@ -533,7 +533,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_ROCF_C_TIME <- db$ROCF_C_TIME_scale_score - (0.19735*(db$education_years_adj-12)) 
+  db$ROCF_C_TIME_NSSae <- db$ROCF_C_TIME_scale_score - (0.19735*(db$ROCF_C_TIME_education_years_adj-12)) 
   
   return(db)
 }

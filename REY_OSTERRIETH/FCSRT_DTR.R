@@ -22,7 +22,7 @@ FCSRT_DTR <- function(score, age, education_years){
     FCSRT_DTR_new <- rbind(FCSRT_DTR_new, res)
   }
   
-  return(FCSRT_DTR_new)
+  return(FCSRT_DTR_new[,c("FCSRT_DTR_scale_score", "FCSRT_DTR_percentil_range", "FCSRT_DTR_NSSae")])
 }
 
 FCSRT_DTR_scale_score <- function(score, age, education_years) {
@@ -521,7 +521,7 @@ db$FCSRT_DTR_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$FCSRT_DTR_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years < 1, db$FCSRT_DTR_scale_score + 3, ifelse(
       db$education_years >= 1  & db$education_years <= 4, db$FCSRT_DTR_scale_score + 2, ifelse(
     db$education_years >= 5  & db$education_years <= 8, db$FCSRT_DTR_scale_score + 1, ifelse(
@@ -533,7 +533,7 @@ db$FCSRT_DTR_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_FCSRT_DTR <- db$FCSRT_DTR_scale_score - (0.26748*(db$education_years_adj-12)) 
+  db$FCSRT_DTR_NSSae <- db$FCSRT_DTR_scale_score - (0.26748*(db$FCSRT_DTR_education_years_adj-12)) 
   
   return(db)
 }

@@ -21,7 +21,7 @@ TOL_IT <- function(score, age, education_years){
     TOL_IT_new <- rbind(TOL_IT_new, res)
   }
   
-  return(TOL_IT_new)
+  return(TOL_IT_new[,c("TOL_IT_scale_score", "TOL_IT_percentil_range", "TOL_IT_NSSae")])
 }
 
 TOL_IT_scale_score <- function(score, age, education_years) {
@@ -519,7 +519,7 @@ db$TOL_IT_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$TOL_IT_education_years_adj <- with(db, ifelse(
       db$education_years >= 0  & db$education_years <= 8, db$TOL_IT_scale_score, ifelse(
         db$education_years >= 9  & db$education_years <= 20, db$TOL_IT_scale_score - 1, ifelse(
           
@@ -527,7 +527,7 @@ db$TOL_IT_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_TOL_IT <- db$TOL_IT_scale_score - (-0.06256*(db$education_years_adj-12)) 
+  db$TOL_IT_NSSae <- db$TOL_IT_scale_score - (-0.06256*(db$TOL_IT_education_years_adj-12)) 
   
   return(db)
 }

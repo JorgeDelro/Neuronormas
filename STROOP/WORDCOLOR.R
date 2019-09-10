@@ -20,7 +20,7 @@ wordcolor <- function(score, age, education_years){
     wordcolor_new <- rbind(wordcolor_new, res)
   }
   
-  return(wordcolor_new)
+  return(wordcolor_new[,c("wordcolor_scale_score", "wordcolor_percentil_range", "wordcolor_NSSae")])
 }
 
 wordcolor_scale_score <- function(score, age, education_years) {
@@ -520,7 +520,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   
-  db$education_years_adj <- with(db, ifelse(
+  db$wordcolor_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years < 1, db$wordcolor_scale_score + 2, ifelse(
       db$education_years >= 1  & db$education_years <= 6, db$wordcolor_scale_score + 1, ifelse(
         db$education_years >= 7  & db$education_years <= 12, db$wordcolor_scale_score, ifelse(
@@ -531,7 +531,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_wordcolor <- db$wordcolor_scale_score - (0.17826*(db$education_years_adj-12)) 
+  db$wordcolor_NSSae <- db$wordcolor_scale_score - (0.17826*(db$wordcolor_education_years_adj-12)) 
   
   return(db)
 }

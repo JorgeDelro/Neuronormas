@@ -5,29 +5,29 @@
 # (proyecto NEURONORMA jóvenes): normas para los test de fluencia verbal. Neurología, 28 (1):33-40.
 
 # 
-kitchen <- function(score, age, education_years){
+COWAT_kitchen <- function(score, age, education_years){
   
-  kitchen_db <- data.frame(score = score, age = age, education_years = education_years)
-  kitchen_new <- data.frame()
+  COWAT_kitchen_db <- data.frame(score = score, age = age, education_years = education_years)
+  COWAT_kitchen_new <- data.frame()
   
   # NSSa
-  for (i in 1:nrow(kitchen_db)) {
-    res <- kitchen_scale_score(score = kitchen_db[i, "score"], 
-                       age = kitchen_db[i, "age"],
-                       education_years = kitchen_db[i, "education_years"])
-    kitchen_new <- rbind(kitchen_new, res)
+  for (i in 1:nrow(COWAT_kitchen_db)) {
+    res <- COWAT_kitchen_scale_score(score = COWAT_kitchen_db[i, "score"], 
+                       age = COWAT_kitchen_db[i, "age"],
+                       education_years = COWAT_kitchen_db[i, "education_years"])
+    COWAT_kitchen_new <- rbind(COWAT_kitchen_new, res)
   }
   
-  return(kitchen_new)
+  return(COWAT_kitchen_new[,c("COWAT_kitchen_scale_score", "COWAT_kitchen_percentil_range", "COWAT_kitchen_NSSae")])
 }
 
-kitchen_scale_score <- function(score, age, education_years) {
+COWAT_kitchen_scale_score <- function(score, age, education_years) {
   
   db <- data.frame(score = score, age = age, education_years = education_years)
 
   ##################################  TABLE 3  ##############################
   if(db$age >= 50  & db$age < 57) {
-    db$kitchen_scale_score <- with ( db, ifelse (
+    db$COWAT_kitchen_scale_score <- with ( db, ifelse (
       db$score >=  25, 18, ifelse (
         db$score >= 22 , 16, ifelse (
           db$score >= 20 , 15, ifelse (
@@ -43,7 +43,7 @@ kitchen_scale_score <- function(score, age, education_years) {
 
 # percentile score
 
-db$kitchen_percentil_range <- with (db, ifelse (
+db$COWAT_kitchen_percentil_range <- with (db, ifelse (
   db$score >=  25, "> 99" , ifelse (
     db$score >= 22 , "98" , ifelse (
       db$score >= 20 , "95-97" , ifelse (
@@ -62,7 +62,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
 if(db$age >= 57  & db$age < 60) {
     ## 57-59
     # Scale_Score
-    db$kitchen_scale_score <- with(db, ifelse (
+    db$COWAT_kitchen_scale_score <- with(db, ifelse (
       db$score >=  25, 18, ifelse (
         db$score >= 23 , 17, ifelse (
           db$score >= 22, 16, ifelse (
@@ -105,7 +105,7 @@ if(db$age >= 57  & db$age < 60) {
   if(db$age >= 60  & db$age < 63) {
     ## 60-62
     # Scale_Score
-    db$kitchen_scale_score <- with ( db, ifelse (
+    db$COWAT_kitchen_scale_score <- with ( db, ifelse (
       db$score >=  23, 18, ifelse (
         db$score >= 21 , 17, ifelse (
           db$score >= 20, 16, ifelse (
@@ -124,7 +124,7 @@ if(db$age >= 57  & db$age < 60) {
                                     db$score <= 6, 2, NA )))))))))))))))))
 
 # percentile score
-db$kitchen_percentil_range <- with(db, ifelse (
+db$COWAT_kitchen_percentil_range <- with(db, ifelse (
   db$score >=  23, "> 99" , ifelse (
     db$score >= 21 , "99" , ifelse (
       db$score >= 20, "98" , ifelse (
@@ -149,7 +149,7 @@ db$kitchen_percentil_range <- with(db, ifelse (
     ## 63-65
     # Scale_Score
     
-    db$kitchen_scale_score <- with ( db, ifelse (
+    db$COWAT_kitchen_scale_score <- with ( db, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 21, 17, ifelse (
           db$score >= 20, 16, ifelse (
@@ -167,7 +167,7 @@ db$kitchen_percentil_range <- with(db, ifelse (
 
 # percentile score
 
-db$kitchen_percentil_range <- with (db, ifelse (
+db$COWAT_kitchen_percentil_range <- with (db, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 20, "98" , ifelse (
@@ -187,7 +187,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
 if(db$age >= 66  & db$age < 69) {
   ## 66-68
   # Scale_Score
-  db$kitchen_scale_score <- with ( db, ifelse (
+  db$COWAT_kitchen_scale_score <- with ( db, ifelse (
     db$score >=  22, 18, ifelse (
       db$score >= 21, 17, ifelse (
         db$score >= 19 , 15, ifelse (
@@ -205,7 +205,7 @@ if(db$age >= 66  & db$age < 69) {
 
 # percentile score
 
-db$kitchen_percentil_range <- with (db, ifelse (
+db$COWAT_kitchen_percentil_range <- with (db, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 19 , "95-97" , ifelse (
@@ -226,7 +226,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
   if(db$age >= 69  & db$age < 72) {
     ## 69-71
     # Scale_Score
-    db$kitchen_scale_score <- with ( db, ifelse (
+    db$COWAT_kitchen_scale_score <- with ( db, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 21, 17, ifelse (
           db$score >= 19 , 15, ifelse (
@@ -244,7 +244,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$kitchen_percentil_range <- with(db, ifelse (
+db$COWAT_kitchen_percentil_range <- with(db, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 19 , "95-97" , ifelse (
@@ -266,7 +266,7 @@ db$kitchen_percentil_range <- with(db, ifelse (
     ## 72-74
     # Scale_Score
     
-    db$kitchen_scale_score <- with ( db, ifelse (
+    db$COWAT_kitchen_scale_score <- with ( db, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 21, 17, ifelse (
           db$score >= 19 , 15, ifelse (
@@ -283,7 +283,7 @@ db$kitchen_percentil_range <- with(db, ifelse (
 
 # percentile score
 
-db$kitchen_percentil_range <- with (db, ifelse (
+db$COWAT_kitchen_percentil_range <- with (db, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 19 , "95-97" , ifelse (
@@ -303,7 +303,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
   if(db$age >= 75  & db$age < 78) {
     ## 75-77
     # Scale_Score
-    db$kitchen_scale_score <- with ( db, ifelse (
+    db$COWAT_kitchen_scale_score <- with ( db, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 21, 17, ifelse (
           db$score >= 20, 16, ifelse (
@@ -322,7 +322,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$kitchen_percentil_range <- with (db, ifelse (
+db$COWAT_kitchen_percentil_range <- with (db, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 20, "98" , ifelse (
@@ -345,7 +345,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
   if(db$age >= 78  & db$age < 81) {
     ## 78-80
     # Scale_Score
-    db$kitchen_scale_score <- with ( db, ifelse (
+    db$COWAT_kitchen_scale_score <- with ( db, ifelse (
       db$score >=  19, 18, ifelse (
         db$score >= 17 , 16, ifelse (
           db$score >= 16, 15, ifelse (
@@ -362,7 +362,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$kitchen_percentil_range <- with (db, ifelse (
+db$COWAT_kitchen_percentil_range <- with (db, ifelse (
   db$score >=  19, "> 99" , ifelse (
     db$score >= 17 , "98" , ifelse (
       db$score >= 16, "95-97" , ifelse (
@@ -382,7 +382,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
   if(db$age >= 81  & db$age < 91) {
     ## 81-90
     # Scale_Score
-    db$kitchen_scale_score <- with ( db, ifelse (
+    db$COWAT_kitchen_scale_score <- with ( db, ifelse (
       db$score >=  15, 18, ifelse (
         db$score >= 14, 16, ifelse (
           db$score >= 13, 15, ifelse (
@@ -398,7 +398,7 @@ db$kitchen_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$kitchen_percentil_range <- with (db, ifelse (
+db$COWAT_kitchen_percentil_range <- with (db, ifelse (
   db$score >=  15, "> 99" , ifelse (
     db$score >= 14, "98" , ifelse (
       db$score >= 13, "95-97" , ifelse (
@@ -414,17 +414,17 @@ db$kitchen_percentil_range <- with (db, ifelse (
   }
   
   # Educational level adjust ##C NO SE PUEDE AJUSTAR PORQUE NO ESTÁ EN ARTÍCULO NEURONORMAS
-  #db$education_years_adj <- with(db, ifelse(
-    #db$education_years >= 0  & db$education_years <= 3, db$kitchen_scale_score + 1, ifelse(
-     # db$education_years >= 4  & db$education_years <= 8, db$kitchen_scale_score, ifelse(
-       # db$education_years >= 9  & db$education_years <= 12, db$kitchen_scale_score - 1, ifelse(
-          #db$education_years >= 13  & db$education_years <= 17, db$kitchen_scale_score - 2, ifelse(
-           # db$education_years >= 18  & db$education_years <= 20, db$kitchen_scale_score- 3, ifelse(
+  #db$COWAT_kitchen_education_years_adj <- with(db, ifelse(
+    #db$education_years >= 0  & db$education_years <= 3, db$COWAT_kitchen_scale_score + 1, ifelse(
+     # db$education_years >= 4  & db$education_years <= 8, db$COWAT_kitchen_scale_score, ifelse(
+       # db$education_years >= 9  & db$education_years <= 12, db$COWAT_kitchen_scale_score - 1, ifelse(
+          #db$education_years >= 13  & db$education_years <= 17, db$COWAT_kitchen_scale_score - 2, ifelse(
+           # db$education_years >= 18  & db$education_years <= 20, db$COWAT_kitchen_scale_score- 3, ifelse(
             #)))))))
 
   
   # NSSae
-  #db$NSSae_kitchen <- db$kitchen_scale_score - (-0.21832*(db$education_years_adj-12)) ####CAMBIAR
+  #db$NSSae_kitchen <- db$COWAT_kitchen_scale_score - (-0.21832*(db$COWAT_kitchen_education_years_adj-12)) ####CAMBIAR
   
   return(db)
 }

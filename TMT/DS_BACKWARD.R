@@ -21,7 +21,7 @@ ds_backward <- function(score, age, education_years){
     ds_backward_new <- rbind(ds_backward_new, res)
   }
   
-  return(ds_backward_new)
+  return(ds_backward_new[,c("ds_backward_scale_score", "ds_backward_percentil_range", "ds_backward_NSSae")])
 }
 
 ds_backward_scale_score <- function(score, age, education_years) {
@@ -520,7 +520,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$ds_backward_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 2, db$ds_backward_scale_score + 2, ifelse(
     db$education_years >= 3  & db$education_years <= 7, db$ds_backward_scale_score + 1, ifelse(
       db$education_years >= 8  & db$education_years <= 12, db$ds_backward_scale_score, ifelse(
@@ -531,7 +531,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_ds_backward <- db$ds_backward_scale_score - (0.21298*(db$education_years_adj-12)) 
+  db$ds_backward_NSSae <- db$ds_backward_scale_score - (0.21298*(db$ds_backward_education_years_adj-12)) 
   
   return(db)
 }

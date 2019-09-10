@@ -20,7 +20,7 @@ ds_forward <- function(score, age, education_years){
     ds_forward_new <- rbind(ds_forward_new, res)
   }
   
-  return(ds_forward_new)
+  return(ds_forward_new[,c("ds_forward_scale_score", "ds_forward_percentil_range", "ds_forward_NSSae")])
 }
 
 ds_foward_scale_score <- function(score, age, education_years) {
@@ -518,7 +518,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$ds_forward_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 2, db$ds_foward_scale_score + 2, ifelse(
     db$education_years >= 3  & db$education_years <= 7, db$ds_foward_scale_score + 1, ifelse(
       db$education_years >= 8  & db$education_years <= 12, db$ds_foward_scale_score, ifelse(
@@ -529,7 +529,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_ds_forward <- db$ds_foward_scale_score - (0.21327*(db$education_years_adj-12)) 
+  db$ds_forward_NSSae <- db$ds_foward_scale_score - (0.21327*(db$ds_forward_education_years_adj-12)) 
   
   return(db)
 }

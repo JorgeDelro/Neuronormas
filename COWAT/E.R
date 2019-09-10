@@ -5,23 +5,23 @@
 # (proyecto NEURONORMA jóvenes): normas para los test de fluencia verbal. Neurología, 28 (1):33-40.
 
 # 
-e <- function(score, age, education_years){
+COWAT_e <- function(score, age, education_years){
   
-  e_db <- data.frame(score = score, age = age, education_years = education_years)
-  e_new <- data.frame()
+  COWAT_e_db <- data.frame(score = score, age = age, education_years = education_years)
+  COWAT_e_new <- data.frame()
   
   # NSSa
-  for (i in 1:nrow(e_db)) {
-    res <- e_scale_score(score = e_db[i, "score"], 
-                              age = e_db[i, "age"],
-                              education_years = e_db[i, "education_years"])
-    e_new <- rbind(e_new, res)
+  for (i in 1:nrow(COWAT_e_db)) {
+    res <- COWAT_e_scale_score(score = COWAT_e_db[i, "score"], 
+                              age = COWAT_e_db[i, "age"],
+                              education_years = COWAT_e_db[i, "education_years"])
+    COWAT_e_new <- rbind(COWAT_e_new, res)
   }
   
-  return(e_new)
+  return(COWAT_e_new[,c("COWAT_e_scale_score", "COWAT_e_percentil_range", "COWAT_e_NSSae")])
 }
 
-e_scale_score <- function(score, age, education_years) {
+COWAT_e_scale_score <- function(score, age, education_years) {
   
   db <- data.frame(score = score, age = age, education_years = education_years)
   
@@ -31,7 +31,7 @@ e_scale_score <- function(score, age, education_years) {
   if(db$age >= 50  & db$age < 57) {
     ## 50-56
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  23, 18, ifelse (
         db$score >= 22, 17, ifelse (
           db$score >= 21, 16, ifelse (
@@ -52,7 +52,7 @@ e_scale_score <- function(score, age, education_years) {
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  23, "> 99" , ifelse (
     db$score >= 22, "99" , ifelse (
       db$score >= 21, "98" , ifelse (
@@ -82,7 +82,7 @@ db$e_percentil_range <- with (db, ifelse (
   if(db$age >= 57  & db$age < 60) {
     ## 57-59
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  23, 18, ifelse (
         
         db$score >= 22, 16, ifelse (
@@ -103,7 +103,7 @@ db$e_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  23, "> 99" , ifelse (
     
     db$score >= 22, "98" , ifelse (
@@ -133,7 +133,7 @@ db$e_percentil_range <- with (db, ifelse (
   if(db$age >= 60  & db$age < 63) {
     ## 60-62
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 19 , 17, ifelse (
           
@@ -154,7 +154,7 @@ db$e_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 19 , "99" , ifelse (
       
@@ -182,7 +182,7 @@ db$e_percentil_range <- with (db, ifelse (
   if(db$age >= 63  & db$age < 66) {
     ## 63-65
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 19 , 17, ifelse (
           
@@ -203,7 +203,7 @@ db$e_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 19 , "99" , ifelse (
       
@@ -230,7 +230,7 @@ db$e_percentil_range <- with (db, ifelse (
   if(db$age >= 66  & db$age < 69) {
     ## 66-68
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 21, 17, ifelse (
           db$score >= 19 , 16, ifelse (
@@ -251,7 +251,7 @@ db$e_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 19 , "98" , ifelse (
@@ -277,7 +277,7 @@ db$e_percentil_range <- with (db, ifelse (
   if(db$age >= 69  & db$age < 72) {
     ## 69-71
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  20, 18, ifelse (
         
         db$score >= 19, 16, ifelse (
@@ -298,7 +298,7 @@ db$e_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  20, "> 99" , ifelse (
     
     db$score >= 19, "98" , ifelse (
@@ -325,7 +325,7 @@ db$e_percentil_range <- with (db, ifelse (
   if(db$age >= 72  & db$age < 75) {
     ## 72-74
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  20, 18, ifelse (
         
         db$score >= 19, 16, ifelse (
@@ -346,7 +346,7 @@ db$e_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  20, "> 99" , ifelse (
     
     db$score >= 19, "98" , ifelse (
@@ -374,7 +374,7 @@ db$e_percentil_range <- with (db, ifelse (
   if(db$age >= 75  & db$age < 78) {
     ## 75-77
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  20, 18, ifelse (
         db$score >= 19, 17, ifelse (
           db$score >= 18, 16, ifelse (
@@ -395,7 +395,7 @@ db$e_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  20, "> 99" , ifelse (
     db$score >= 19, "99" , ifelse (
       db$score >= 18, "98" , ifelse (
@@ -423,7 +423,7 @@ db$e_percentil_range <- with (db, ifelse (
   if(db$age >= 78  & db$age < 81) {
     ## 78-80
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  18, 18, ifelse (
         
         db$score >= 17, 16, ifelse (
@@ -444,7 +444,7 @@ db$e_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  18, "> 99" , ifelse (
     
     db$score >= 17, "98" , ifelse (
@@ -471,7 +471,7 @@ db$e_percentil_range <- with (db, ifelse (
   if(db$age >= 81  & db$age < 91) {
     ## 81-90
     # Scale_Score
-    db$e_scale_score <- with ( db, ifelse (
+    db$COWAT_e_scale_score <- with ( db, ifelse (
       db$score >=  13, 18, ifelse (
         
         
@@ -492,7 +492,7 @@ db$e_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$e_percentil_range <- with (db, ifelse (
+db$COWAT_e_percentil_range <- with (db, ifelse (
   db$score >=  13, "> 99" , ifelse (
     
     
@@ -516,19 +516,19 @@ db$e_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
-    db$education_years >= 0  & db$education_years < 1, db$e_scale_score + 3, ifelse(
-    db$education_years >= 1  & db$education_years <= 4, db$e_scale_score + 2, ifelse(
-    db$education_years >= 5  & db$education_years <= 8, db$e_scale_score + 1, ifelse(
-      db$education_years >= 9  & db$education_years <= 12, db$e_scale_score, ifelse(
-        db$education_years >= 13  & db$education_years <= 15, db$e_scale_score - 1, ifelse(
-          db$education_years >= 16  & db$education_years <= 19, db$e_scale_score - 2, ifelse(
-            db$education_years > 19  & db$education_years <= 20, db$e_scale_score - 3, ifelse(
+  db$COWAT_e_education_years_adj <- with(db, ifelse(
+    db$education_years >= 0  & db$education_years < 1, db$COWAT_e_scale_score + 3, ifelse(
+    db$education_years >= 1  & db$education_years <= 4, db$COWAT_e_scale_score + 2, ifelse(
+    db$education_years >= 5  & db$education_years <= 8, db$COWAT_e_scale_score + 1, ifelse(
+      db$education_years >= 9  & db$education_years <= 12, db$COWAT_e_scale_score, ifelse(
+        db$education_years >= 13  & db$education_years <= 15, db$COWAT_e_scale_score - 1, ifelse(
+          db$education_years >= 16  & db$education_years <= 19, db$COWAT_e_scale_score - 2, ifelse(
+            db$education_years > 19  & db$education_years <= 20, db$COWAT_e_scale_score - 3, ifelse(
             )))))))))
   
   
   # NSSae
-  db$NSSae_e <- db$e_scale_score - (0.25448*(db$education_years_adj-12)) 
+  db$COWAT_e_NSSae <- db$COWAT_e_scale_score - (0.25448*(db$COWAT_e_education_years_adj-12)) 
   
   return(db)
 }

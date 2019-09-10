@@ -20,7 +20,7 @@ CB_F_LI <- function(score, age, education_years){
     CB_F_LI_new <- rbind(CB_F_LI_new, res)
   }
   
-  return(CB_F_LI_new)
+  return(CB_F_LI_new[,c("CB_F_LI_scale_score", "CB_F_LI_percentil_range", "CB_F_LI_NSSae")])
 }
 
 CB_F_LI_scale_score <- function(score, age, education_years) {
@@ -518,7 +518,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$CB_F_LI_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 3, db$CB_F_LI_scale_score + 1, ifelse(
       db$education_years >= 4  & db$education_years <= 12, db$CB_F_LI_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 20, db$CB_F_LI_scale_score - 1, ifelse(
@@ -527,7 +527,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_CB_F_LI <- db$CB_F_LI_scale_score - (0.11357*(db$education_years_adj-12)) 
+  db$CB_F_LI_NSSae <- db$CB_F_LI_scale_score - (0.11357*(db$CB_F_LI_education_years_adj-12)) 
   
   return(db)
 }

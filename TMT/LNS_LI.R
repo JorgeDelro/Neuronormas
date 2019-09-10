@@ -21,7 +21,7 @@ LNS_LI <- function(score, age, education_years){
     LNS_LI_new <- rbind(LNS_LI_new, res)
   }
   
-  return(LNS_LI_new)
+  return(LNS_LI_new[,c("LNS_LI_scale_score", "LNS_LI_percentil_range", "LNS_LI_NSSae")])
 }
 
 LNS_LI_scale_score <- function(score, age, education_years) {
@@ -519,7 +519,7 @@ db$LNS_LI_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$LNS_LI_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 3, db$LNS_LI_scale_score + 2, ifelse(
     db$education_years >= 4  & db$education_years <= 7, db$LNS_LI_scale_score + 1, ifelse(
       db$education_years >= 8  & db$education_years <= 12, db$LNS_LI_scale_score, ifelse(
@@ -530,7 +530,7 @@ db$LNS_LI_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_LNS_LI <- db$LNS_LI_scale_score - (0.24927*(db$education_years_adj-12)) 
+  db$LNS_LINSSae <- db$LNS_LI_scale_score - (0.24927*(db$LNS_LI_education_years_adj-12)) 
   
   return(db)
 }

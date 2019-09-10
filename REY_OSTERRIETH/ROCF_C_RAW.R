@@ -21,7 +21,7 @@ ROCF_C_RAW <- function(score, age, education_years){
     ROCF_C_RAW_new <- rbind(ROCF_C_RAW_new, res)
   }
   
-  return(ROCF_C_RAW_new)
+  return(ROCF_C_RAW_new[,c("ROCF_C_RAW_scale_score", "ROCF_C_RAW_percentil_range", "ROCF_C_RAW_NSSae")])
 }
 
 ROCF_C_RAW_scale_score <- function(score, age, education_years) {
@@ -520,7 +520,7 @@ db$ROCF_C_RAW_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$ROCF_C_RAW_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 2, db$ROCF_C_RAW_scale_score + 2, ifelse(
     db$education_years >= 3  & db$education_years <= 7, db$ROCF_C_RAW_scale_score + 1, ifelse(
       db$education_years >= 8  & db$education_years <= 12, db$ROCF_C_RAW_scale_score, ifelse(
@@ -531,7 +531,7 @@ db$ROCF_C_RAW_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_ROCF_C_RAW <- db$ROCF_C_RAW_scale_score - (0.21285*(db$education_years_adj-12)) 
+  db$ROCF_C_RAW_NSSae <- db$ROCF_C_RAW_scale_score - (0.21285*(db$ROCF_C_RAW_education_years_adj-12)) 
   
   return(db)
 }

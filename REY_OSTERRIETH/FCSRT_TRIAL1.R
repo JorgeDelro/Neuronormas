@@ -21,7 +21,7 @@ FCSRT_TRIAL1 <- function(score, age, education_years){
     FCSRT_TRIAL1_new <- rbind(FCSRT_TRIAL1_new, res)
   }
   
-  return(FCSRT_TRIAL1_new)
+  return(FCSRT_TRIAL1_new[,c("FCSRT_TRIAL1_scale_score", "FCSRT_TRIAL1_percentil_range", "FCSRT_TRIAL1_NSSae")])
 }
 
 FCSRT_TRIAL1_scale_score <- function(score, age, education_years) {
@@ -520,7 +520,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
   
   
   # Educational level adjust 
-  db$education_years_adj <- with(db, ifelse(
+  db$FCSRT_TRIAL1_education_years_adj <- with(db, ifelse(
     db$education_years >= 0  & db$education_years <= 5, db$FCSRT_TRIAL1_scale_score + 1, ifelse(
       db$education_years >= 6  & db$education_years <= 12, db$FCSRT_TRIAL1_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 18, db$FCSRT_TRIAL1_scale_score - 1, ifelse(
@@ -530,7 +530,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
   
   
   # NSSae
-  db$NSSae_FCSRT_TRIAL1 <- db$FCSRT_TRIAL1_scale_score - (0.15266*(db$education_years_adj-12)) 
+  db$FCSRT_TRIAL1_NSSae <- db$FCSRT_TRIAL1_scale_score - (0.15266*(db$FCSRT_TRIAL1_education_years_adj-12)) 
   
   return(db)
 }
