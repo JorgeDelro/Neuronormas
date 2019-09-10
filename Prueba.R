@@ -3,13 +3,88 @@
 library(readxl)
 
 
-bd <- read_xls("bd/COG_BRUTO.xls")
+bd <- read_xls("bd/cognitivo_EFICCOM.xls")
+
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/TMTA.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/TMTB.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/SDMT.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/LNS_RAW.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/LNS_LI.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/DS_FORWARD.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/DS_BACKWARD.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/CB_F_RAW.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/CB_F_LI.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/CB_B_RAW.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/TMT/CB_B_LI.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/STROOP/WORD.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/STROOP/COLOR.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/STROOP/WORDCOLOR.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/STROOP/TOL CS.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/STROOP/TOL ET.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/STROOP/TOL IT.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/STROOP/TOL MS.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/STROOP/TOL PT.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/ROCF_C_RAW.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/ROCF_C_TIME.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/ROCF_M_DR.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/ROCF_M_IR.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/FCSRT_DTR.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/FCSRT_DFR.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/FCSRT_TRIAL1.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/FCSRT_TR.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/FCSRT_TFR.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/REY_OSTERRIETH/FCSRT_TDR_T3TR.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/COWAT/A.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/COWAT/E.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/COWAT/fruit.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/COWAT/kitchen.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/COWAT/M.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/COWAT/P.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/COWAT/R.R")
+source("/Users/jorge/Documents/Curso_2020_2021/Proyectos/Neuronormas/COWAT/S.R")
 
 
 prueba <- neuronorma(score = bd$Q_COG_TMT_A_PRE,
            age = bd$AGE_PRE,
            education_years = bd$EDUCATIONAL_LEVEL,
-           tests = "Trail making test a")
+           tests = c("Trail making test a", 
+                     "Trail making test b",
+                     "Symbol digit modalities test",
+                     "Letter-number sequencing raw score",
+                     "Letter-number sequencing last item score",
+                     "Digit span forward",
+                     "Digit span backward",
+                     "Coris blocks forward raw score",
+                     "Coris blocks forward last item score",
+                     "Coris blocks backward raw score",
+                     "Coris blocks backward last item score",
+                     "Stroop color-word interference test (word)",
+                     "Stroop color-word interference test (color)",
+                     "Stroop color-word interference test (interference)",
+                     "Tower of London - total correct score",
+                     "Tower of London - total execution time",
+                     "Tower of London - total initation time",
+                     "Tower of London - total move score",
+                     "Tower of London - total problem-solving time score",
+                     "Rey-Osterrieth complex figure copy raw",
+                     "Rey-Osterrieth complex figure copy time",
+                     "Rey-Osterrieth complex figure memory delayed recall",
+                     "Rey-Osterrieth complex figure memory immediate recall",
+                     "Free and cued selective reminding test delayed total recall",
+                     "Free and cued selective reminding test delayed free recall",
+                     "Free and cued selective reminding test trial 1",
+                     "Free and cued selective reminding test total recall",
+                     "Free and cued selective reminding test total free recall",
+                     "Free and cued selective reminding test total delayed recall / trial 3 total recall",
+                     "COWAT_a",
+                     "COWAT_animal",
+                     "COWAT_e",
+                     "COWAT_fruit",
+                     "COWAT_kitchen",
+                     "COWAT_m",
+                     "COWAT_p",
+                     "COWAT_r",
+                     "COWAT_s"))
 
 
 tests = c("Trail making test a", "Trail making test b")
@@ -46,14 +121,14 @@ neuronorma <- function(score, age, education_years, tests){
       
       res_new <- cbind(res_new, res)
       
-    } else if(test == "Symbol digit modalities test") { # SMDT
+    } else if(test == "Symbol digit modalities test") { # SDMT
       res <- SDMT(score = db$score,
                   age = db$age,
                   education_years = db$education_years)
       
       res_new <- cbind(res_new, res)
       
-    } else if(test == "Letter-number sequencing raw score") { #LNS_RAW
+    } else if(test == "Letter-number sequencing raw score") { # LNS_RAW
       res <- LNS_RAW(score = db$score,
                      age = db$age,
                      education_years = db$education_years)
@@ -291,8 +366,8 @@ neuronorma <- function(score, age, education_years, tests){
       
       res_new <- cbind(res_new, res)
       
-    } else if(test == "s") { # COWAT_s
-      res <- s(score = db$score,
+    } else if(test == "COWAT_s") { # COWAT_s
+      res <- COWAT_s(score = db$score,
                age = db$age,
                education_years = db$education_years)
       
@@ -307,44 +382,8 @@ neuronorma <- function(score, age, education_years, tests){
   return(res_new)
 }
 
-neuronorma <- function(score, age, education_years, tests){
-  
-  # Dataframe with data
-  db <- data.frame(score = score, age = age, education_years = education_years)
-  
-  # Sanity Check
-  for (i in 1:nrow(db)) {
-    if(db[i, "education_years"] > 10) { 
-      db[i, "education_years"] <- 10 }
-  }
-  
-  if(is.na(tests)) {
-    print("Please select a test of the following lists: \n
-          - trail_making_test_a  \n
-          - trail_making_test_b")
-  } else {
-    
-    #  
-    res_new <- data.frame()
-    
-    for (i in tests) {
-      if(tests == "Trail making test a") {
-        res <- tmta(score = db$score,
-                    age = db$age,
-                    education_years = db$education_years)
-        
-        res_new <- cbind(res_new, res)
-        
-      } else if(tests == "Trail making test b") {
-        res <- tmtb(score = db$score,
-                    age = db$age,
-                    education_years = db$education_years)
-        
-        res_new <- cbind(res_new, res)
-        
-      }
-      
-    }}
-  
-  return(res)
-  }
+### Results
+
+
+
+
