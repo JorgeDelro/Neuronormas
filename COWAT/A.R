@@ -32,6 +32,7 @@ COWAT_a_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  21, 18, ifelse (
         db$score >= 20, 17, ifelse (
           db$score >= 18 , 16, ifelse (
@@ -48,11 +49,12 @@ COWAT_a_scale_score <- function(score, age, education_years) {
                                 db$score >= 1, 5, ifelse (
                                   
                                   
-                                  db$score <= 0, 2, NA ))))))))))))))))
+                                  db$score <= 0, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  21, "> 99" , ifelse (
     db$score >= 20, "99" , ifelse (
       db$score >= 18 , "98" , ifelse (
@@ -69,7 +71,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                             db$score >= 1, "3-5" , ifelse (
                               
                               
-                              db$score <= 0, "<1" , NA )))))))))))))))) 
+                              db$score <= 0, "<1" , NA ))))))))))))))))  )
     
     
     
@@ -83,6 +85,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
     ## 57-59
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  21, 18, ifelse (
         db$score >= 20, 17, ifelse (
           
@@ -99,11 +102,12 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                               
                               
                               
-                              db$score <= 0, 2, NA ))))))))))))))
+                              db$score <= 0, 2, NA )))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  21, "> 99" , ifelse (
     db$score >= 20, "99" , ifelse (
       
@@ -120,7 +124,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                           
                           
                           
-                          db$score <= 0, "<1" , NA ))))))))))))))
+                          db$score <= 0, "<1" , NA )))))))))))))) )
     
     
     
@@ -134,6 +138,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  21, 18, ifelse (
         db$score >= 20, 17, ifelse (
           db$score >= 19, 16, ifelse (
@@ -150,11 +155,12 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                                 
                                 
                                 
-                                db$score <= 0, 2, NA )))))))))))))))
+                                db$score <= 0, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  21, "> 99" , ifelse (
     db$score >= 20, "99" , ifelse (
       db$score >= 19, "98" , ifelse (
@@ -171,7 +177,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                             
                             
                             
-                            db$score <= 0, "<1" , NA ))))))))))))))) 
+                            db$score <= 0, "<1" , NA )))))))))))))))  )
     
     
     
@@ -183,6 +189,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  20, 18, ifelse (
         db$score >= 18 , 17, ifelse (
           db$score >= 17, 16, ifelse (
@@ -199,11 +206,12 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                                 
                                 
                                 
-                                db$score <= 0, 2, NA )))))))))))))))
+                                db$score <= 0, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  20, "> 99" , ifelse (
     db$score >= 18 , "99" , ifelse (
       db$score >= 17, "98" , ifelse (
@@ -220,7 +228,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                             
                             
                             
-                            db$score <= 0, "<1" , NA )))))))))))))))
+                            db$score <= 0, "<1" , NA ))))))))))))))) )
     
     
   }
@@ -231,6 +239,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 15, 16, ifelse (
@@ -247,11 +256,12 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                                 db$score >= 1, 5, ifelse (
                                   
                                   
-                                  db$score <= 0, 2, NA ))))))))))))))))
+                                  db$score <= 0, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 15, "98" , ifelse (
@@ -268,7 +278,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                             db$score >= 1, "3-5" , ifelse (
                               
                               
-                              db$score <= 0, "<1" , NA )))))))))))))))) 
+                              db$score <= 0, "<1" , NA ))))))))))))))))  )
     
   }
   
@@ -278,6 +288,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 15, 16, ifelse (
@@ -294,11 +305,12 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                                 
                                 
                                 
-                                db$score <= 0, 2, NA )))))))))))))))
+                                db$score <= 0, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 15, "98" , ifelse (
@@ -315,7 +327,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                             
                             
                             
-                            db$score <= 0, "<1" , NA ))))))))))))))) 
+                            db$score <= 0, "<1" , NA )))))))))))))))  )
     
     
   }
@@ -326,6 +338,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 15, 16, ifelse (
@@ -342,11 +355,12 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                                 
                                 
                                 
-                                db$score <= 0, 2, NA )))))))))))))))
+                                db$score <= 0, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 15, "98" , ifelse (
@@ -363,7 +377,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                             
                             
                             
-                            db$score <= 0, "<1" , NA ))))))))))))))) 
+                            db$score <= 0, "<1" , NA ))))))))))))))) )
     
     
   }
@@ -375,6 +389,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 13 , 16, ifelse (
@@ -391,11 +406,12 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                             
                             
                             
-                            db$score <= 0, 2, NA )))))))))))))
+                            db$score <= 0, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 13 , "98" , ifelse (
@@ -412,7 +428,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                         
                         
                         
-                        db$score <= 0, "<1" , NA ))))))))))))) 
+                        db$score <= 0, "<1" , NA )))))))))))))  )
     
     
     
@@ -424,6 +440,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  14, 18, ifelse (
         
         db$score >= 13, 16, ifelse (
@@ -440,11 +457,12 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                             
                             
                             
-                            db$score <= 0, 2, NA )))))))))))))
+                            db$score <= 0, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  14, "> 99" , ifelse (
     
     db$score >= 13, "98" , ifelse (
@@ -461,7 +479,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                         
                         
                         
-                        db$score <= 0, "<1" , NA )))))))))))))
+                        db$score <= 0, "<1" , NA ))))))))))))) )
     
     
   }
@@ -472,6 +490,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$COWAT_a_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  17, 18, ifelse (
         db$score >= 16, 17, ifelse (
           db$score >= 13 , 16, ifelse (
@@ -488,11 +507,12 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                             
                             
                             
-                            db$score <= 0, 2, NA )))))))))))))
+                            db$score <= 0, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$COWAT_a_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  17, "> 99" , ifelse (
     db$score >= 16, "99" , ifelse (
       db$score >= 13 , "98" , ifelse (
@@ -509,7 +529,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
                         
                         
                         
-                        db$score <= 0, "<1" , NA ))))))))))))) 
+                        db$score <= 0, "<1" , NA )))))))))))))  )
     
     
   }
@@ -517,6 +537,7 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$COWAT_a_education_years_adj <- with(db, ifelse(
+    is.na(db$COWAT_a_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years < 1, db$COWAT_a_scale_score + 3, ifelse(
     db$education_years >= 1  & db$education_years <= 4, db$COWAT_a_scale_score + 2, ifelse(
     db$education_years >= 5  & db$education_years <= 8, db$COWAT_a_scale_score + 1, ifelse(
@@ -524,11 +545,14 @@ db$COWAT_a_percentil_range <- with (db, ifelse (
         db$education_years >= 13  & db$education_years <= 15, db$COWAT_a_scale_score - 1, ifelse(
           db$education_years >= 16  & db$education_years <= 19, db$COWAT_a_scale_score - 2, ifelse(
             db$education_years > 19  & db$education_years <= 20, db$COWAT_a_scale_score- 3, ifelse(
-            )))))))))
+            ))))))))) )
   
   
   # NSSae
-  db$COWAT_a_NSSae <- db$COWAT_a_scale_score - (0.25483*(db$COWAT_a_education_years_adj-12)) 
+  db$COWAT_a_NSSae <- with(db, ifelse(
+    is.na(db$COWAT_a_education_years_adj), NA, ifelse (
+      !is.na(db$COWAT_a_education_years_adj), db$COWAT_a_scale_score - (0.25483*(db$COWAT_a_education_years_adj-12)) )))
+
   
   return(db)
 }
