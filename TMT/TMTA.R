@@ -20,7 +20,6 @@ tmta <- function(score, age, education_years){
     tmta_new <- rbind(tmta_new, res)
   }
   
-  
   return(tmta_new[,c("tmta_scale_score", "tmta_percentil_range", "tmta_NSSae")])
 }
 

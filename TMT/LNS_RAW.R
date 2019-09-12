@@ -35,6 +35,7 @@ LNS_RAW_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 16, 18, ifelse (
         db$score >= 15, 17, ifelse (
           db$score >= 14, 16, ifelse (
@@ -51,11 +52,12 @@ LNS_RAW_scale_score <- function(score, age, education_years) {
                             db$score >= 4, 5, ifelse (
                               
                               db$score >= 3, 3, ifelse (
-                                db$score <= 2, 2, NA )))))))))))))))
+                                db$score <= 2, 2, NA ))))))))))))))))
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 16, "> 99" , ifelse (
     db$score >= 15, "99" , ifelse (
       db$score >= 14, "98" , ifelse (
@@ -72,7 +74,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                         db$score >= 4, "3-5" , ifelse (
                           
                           db$score >= 3, "1" , ifelse (
-                            db$score <= 2, "<1" , NA )))))))))))))))
+                            db$score <= 2, "<1" , NA ))))))))))))))))
     
     
     
@@ -86,6 +88,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
     ## 57-59
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 15, 18, ifelse (
         db$score >= 14, 17, ifelse (
           
@@ -102,11 +105,12 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                             
                             db$score >= 3, 4, ifelse (
                               
-                              db$score <= 2, 2, NA ))))))))))))))
+                              db$score <= 2, 2, NA )))))))))))))))
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 15, "> 99" , ifelse (
     db$score >= 14, "99" , ifelse (
       
@@ -123,10 +127,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                         
                         db$score >= 3, "2" , ifelse (
                           
-                          db$score <= 2, "<1" , NA ))))))))))))))
-    
-    
-    
+                          db$score <= 2, "<1" , NA )))))))))))))))
     
     
   }
@@ -137,6 +138,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 15, 18, ifelse (
         db$score >= 14, 17, ifelse (
           db$score >= 13, 16, ifelse (
@@ -153,11 +155,12 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                             db$score >= 3, 5, ifelse (
                               
                               
-                              db$score <= 2, 2, NA ))))))))))))))
+                              db$score <= 2, 2, NA )))))))))))))))
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 15, "> 99" , ifelse (
     db$score >= 14, "99" , ifelse (
       db$score >= 13, "98" , ifelse (
@@ -174,7 +177,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                         db$score >= 3, "3-5" , ifelse (
                           
                           
-                          db$score <= 2, "<1" , NA ))))))))))))))
+                          db$score <= 2, "<1" , NA )))))))))))))) )
     
     
     
@@ -186,6 +189,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 14, 18, ifelse (
         db$score >= 13, 17, ifelse (
           
@@ -202,11 +206,12 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                         db$score >= 3, 5, ifelse (
                           
                           
-                          db$score <= 2, 2, NA ))))))))))))
+                          db$score <= 2, 2, NA )))))))))))))
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 14, "> 99" , ifelse (
     db$score >= 13, "99" , ifelse (
       
@@ -223,7 +228,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                     db$score >= 3, "3-5" , ifelse (
                       
                       
-                      db$score <= 2, "<1" , NA ))))))))))))
+                      db$score <= 2, "<1" , NA )))))))))))))
     
     
   }
@@ -234,6 +239,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 14, 18, ifelse (
         
         db$score >= 12, 16, ifelse (
@@ -250,11 +256,12 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                         db$score >= 3, 5, ifelse (
                           
                           
-                          db$score <= 2, 2, NA ))))))))))))
+                          db$score <= 2, 2, NA )))))))))))))
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 14, "> 99" , ifelse (
     
     db$score >= 12, "98" , ifelse (
@@ -271,7 +278,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                     db$score >= 3, "3-5" , ifelse (
                       
                       
-                      db$score <= 2, "<1" , NA ))))))))))))
+                      db$score <= 2, "<1" , NA )))))))))))))
     
   }
   
@@ -281,6 +288,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 14, 18, ifelse (
         db$score >= 13, 17, ifelse (
           
@@ -297,12 +305,13 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                         db$score >= 1, 5, ifelse (
                           
                           
-                          db$score <= 0, 2, NA ))))))))))))
+                          db$score <= 0, 2, NA )))))))))))) )
 
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 14, "> 99" , ifelse (
     db$score >= 13, "99" , ifelse (
       
@@ -319,7 +328,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                     db$score >= 1, "3-5" , ifelse (
                       
                       
-                      db$score <= 0, "<1" , NA ))))))))))))
+                      db$score <= 0, "<1" , NA )))))))))))) )
     
     
   }
@@ -330,6 +339,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 14, 18, ifelse (
         db$score >= 13, 17, ifelse (
           db$score >= 12, 16, ifelse (
@@ -346,11 +356,12 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                               db$score >= 1, 5, ifelse (
                                 
                                 
-                                db$score <= 0, 2, NA )))))))))))))))
+                                db$score <= 0, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 14, "> 99" , ifelse (
     db$score >= 13, "99" , ifelse (
       db$score >= 12, "98" , ifelse (
@@ -367,7 +378,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                           db$score >= 1, "3-5" , ifelse (
                             
                             
-                            db$score <= 0, "<1" , NA ))))))))))))))) 
+                            db$score <= 0, "<1" , NA ))))))))))))))) )
     
     
   }
@@ -379,6 +390,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 15, 18, ifelse (
         db$score >= 14, 17, ifelse (
           db$score >= 13, 16, ifelse (
@@ -395,11 +407,12 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                               
                               db$score >= 1, 4, ifelse (
                                 
-                                db$score <= 0, 2, NA )))))))))))))))
+                                db$score <= 0, 2, NA ))))))))))))))))
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 15, "> 99" , ifelse (
     db$score >= 14, "99" , ifelse (
       db$score >= 13, "98" , ifelse (
@@ -416,7 +429,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                           
                           db$score >= 1, "2" , ifelse (
                             
-                            db$score <= 0, "<1" , NA )))))))))))))))
+                            db$score <= 0, "<1" , NA ))))))))))))))) )
     
     
     
@@ -428,6 +441,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 13, 18, ifelse (
         
         db$score >= 12, 16, ifelse (
@@ -444,11 +458,12 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                           
                           
                           db$score >= 1, 3, ifelse (
-                            db$score <= 0, 2, NA )))))))))))))
+                            db$score <= 0, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 13, "> 99" , ifelse (
     
     db$score >= 12, "98" , ifelse (
@@ -465,7 +480,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                       
                       
                       db$score >= 1, "1" , ifelse (
-                        db$score <= 0, "<1" , NA )))))))))))))
+                        db$score <= 0, "<1" , NA ))))))))))))) )
     
     
   }
@@ -476,6 +491,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$LNS_RAW_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 13, 18, ifelse (
         
         
@@ -492,11 +508,12 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                           
                           db$score >= 1, 4, ifelse (
                             
-                            db$score <= 0, 2, NA )))))))))))))
+                            db$score <= 0, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$LNS_RAW_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 13, "> 99" , ifelse (
     
     
@@ -513,7 +530,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
                       
                       db$score >= 1, "2" , ifelse (
                         
-                        db$score <= 0, "<1" , NA ))))))))))))) 
+                        db$score <= 0, "<1" , NA ))))))))))))) )
     
     
   }
@@ -521,6 +538,7 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$LNS_RAW_education_years_adj <- with(db, ifelse(
+    is.na(db$LNS_RAW_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years <= 1, db$LNS_RAW_scale_score + 3, ifelse(
       db$education_years >= 2  & db$education_years <= 5, db$LNS_RAW_scale_score + 2, ifelse(
     db$education_years >= 6  & db$education_years <= 8, db$LNS_RAW_scale_score + 1, ifelse(
@@ -528,11 +546,14 @@ db$LNS_RAW_percentil_range <- with (db, ifelse (
         db$education_years >= 13  & db$education_years <= 15, db$LNS_RAW_scale_score - 1, ifelse(
           db$education_years >= 16  & db$education_years <= 18, db$LNS_RAW_scale_score - 2, ifelse(
             db$education_years >= 19  & db$education_years <= 20, db$LNS_RAW_scale_score - 3, ifelse(
-            )))))))))
+            ))))))))) )
   
   
   # NSSae
-  db$LNS_RAW_NSSae <- db$LNS_RAW_scale_score - (0.28804*(db$LNS_RAW_education_years_adj-12)) 
+  db$LNS_RAW_NSSae <- with(db, ifelse(
+    is.na(db$LNS_RAW_education_years_adj), NA, ifelse (
+      !is.na(db$LNS_RAW_education_years_adj), db$LNS_RAW_scale_score - (0.28804*(db$LNS_RAW_education_years_adj-12)) )))
+  
   
   return(db)
 }

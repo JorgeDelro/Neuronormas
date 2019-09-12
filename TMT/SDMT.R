@@ -35,6 +35,7 @@ SDMT_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 70, 18, ifelse (
         db$score >= 69, 17, ifelse (
           db$score >= 67, 16, ifelse (
@@ -51,11 +52,12 @@ SDMT_scale_score <- function(score, age, education_years) {
                                 db$score >= 17, 5, ifelse (
                                   db$score >= 12, 4, ifelse (
                                     db$score >= 6, 3, ifelse (
-                                      db$score <= 5, 2, NA ))))))))))))))))))
+                                      db$score <= 5, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$SDMT_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 70, "> 99" , ifelse (
         db$score >= 69, "99" , ifelse (
           db$score >= 67, "98" , ifelse (
@@ -72,7 +74,7 @@ SDMT_scale_score <- function(score, age, education_years) {
                                 db$score >= 17, "3-5" , ifelse (
                                   db$score >= 12, "2" , ifelse (
                                     db$score >= 6, "1" , ifelse (
-                                      db$score <= 5, "<1" , NA ))))))))))))))))))
+                                      db$score <= 5, "<1" , NA )))))))))))))))))))
     
     
     
@@ -86,6 +88,7 @@ SDMT_scale_score <- function(score, age, education_years) {
     ## 57-59
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 68, 18, ifelse (
         db$score >= 67, 17, ifelse (
           db$score >= 63, 16, ifelse (
@@ -102,11 +105,12 @@ SDMT_scale_score <- function(score, age, education_years) {
                                 db$score >= 16, 5, ifelse (
                                   db$score >= 11, 4, ifelse (
                                     db$score >= 6, 3, ifelse (
-                                      db$score <= 5, 2, NA ))))))))))))))))))
+                                      db$score <= 5, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$SDMT_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 68, "> 99" , ifelse (
         db$score >= 67, "99" , ifelse (
           db$score >= 63, "98" , ifelse (
@@ -123,7 +127,7 @@ SDMT_scale_score <- function(score, age, education_years) {
                                 db$score >= 16, "3-5" , ifelse (
                                   db$score >= 11, "2" , ifelse (
                                     db$score >= 6, "1" , ifelse (
-                                      db$score <= 5, "<1" , NA )))))))))))))))))) 
+                                      db$score <= 5, "<1" , NA ))))))))))))))))))) 
     
     
     
@@ -137,6 +141,7 @@ SDMT_scale_score <- function(score, age, education_years) {
     ## 60-62
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 64, 18, ifelse (
         db$score >= 63, 17, ifelse (
           db$score >= 59, 16, ifelse (
@@ -153,11 +158,12 @@ SDMT_scale_score <- function(score, age, education_years) {
                                 db$score >= 15, 5, ifelse (
                                   db$score >= 11, 4, ifelse (
                                     db$score >= 6, 3, ifelse (
-                                      db$score <= 5, 2, NA ))))))))))))))))))
+                                      db$score <= 5, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$SDMT_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 64, "> 99" , ifelse (
         db$score >= 63, "99" , ifelse (
           db$score >= 59, "98" , ifelse (
@@ -174,7 +180,7 @@ SDMT_scale_score <- function(score, age, education_years) {
                                 db$score >= 15, "3-5" , ifelse (
                                   db$score >= 11, "2" , ifelse (
                                     db$score >= 6, "1" , ifelse (
-                                      db$score <= 5, "<1" , NA ))))))))))))))))))
+                                      db$score <= 5, "<1" , NA )))))))))))))))))))
     
     
     
@@ -186,6 +192,7 @@ SDMT_scale_score <- function(score, age, education_years) {
     ## 63-65
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 58, 18, ifelse (
         db$score >= 57, 17, ifelse (
           db$score >= 56, 16, ifelse (
@@ -202,11 +209,12 @@ SDMT_scale_score <- function(score, age, education_years) {
                                 db$score >= 14, 5, ifelse (
                                   db$score >= 11, 4, ifelse (
                                     
-                                    db$score <= 6, 2, NA )))))))))))))))))
+                                    db$score <= 6, 2, NA ))))))))))))))))))
 
 # percentile score
 
 db$SDMT_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 58, "> 99" , ifelse (
     db$score >= 57, "99" , ifelse (
       db$score >= 56, "98" , ifelse (
@@ -223,7 +231,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
                             db$score >= 14, "3-5" , ifelse (
                               db$score >= 11, "2" , ifelse (
                                 
-                                db$score <= 6, "<1" , NA ))))))))))))))))) 
+                                db$score <= 6, "<1" , NA ))))))))))))))))) )
     
     
   }
@@ -234,6 +242,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 59, 18, ifelse (
         db$score >= 58, 17, ifelse (
           db$score >= 57, 16, ifelse (
@@ -250,11 +259,12 @@ db$SDMT_percentil_range <- with (db, ifelse (
                                 db$score >= 12, 5, ifelse (
                                   db$score >= 9, 4, ifelse (
                                     
-                                    db$score <= 8, 2, NA )))))))))))))))))
+                                    db$score <= 8, 2, NA ))))))))))))))))))
 
 # percentile score
 
 db$SDMT_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 59, "> 99" , ifelse (
     db$score >= 58, "99" , ifelse (
       db$score >= 57, "98" , ifelse (
@@ -271,7 +281,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
                             db$score >= 12, "3-5" , ifelse (
                               db$score >= 9, "2" , ifelse (
                                 
-                                db$score <= 8, "<1" , NA ))))))))))))))))) 
+                                db$score <= 8, "<1" , NA ))))))))))))))))) )
     
   }
   
@@ -281,6 +291,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 59, 18, ifelse (
         db$score >= 58, 17, ifelse (
           
@@ -297,11 +308,12 @@ db$SDMT_percentil_range <- with (db, ifelse (
                               db$score >= 11, 5, ifelse (
                                 
                                 
-                                db$score <= 8, 2, NA )))))))))))))))
+                                db$score <= 8, 2, NA ))))))))))))))))
 
 # percentile score
 
 db$SDMT_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 59, "> 99" , ifelse (
     db$score >= 58, "99" , ifelse (
       
@@ -318,7 +330,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
                           db$score >= 11, "3-5" , ifelse (
                             
                             
-                            db$score <= 8, "<1" , NA )))))))))))))))  
+                            db$score <= 8, "<1" , NA )))))))))))))))  )
     
     
   }
@@ -329,6 +341,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 59, 18, ifelse (
         db$score >= 58, 17, ifelse (
           
@@ -345,11 +358,12 @@ db$SDMT_percentil_range <- with (db, ifelse (
                               db$score >= 9, 5, ifelse (
                                 
                                 
-                                db$score <= 8, 2, NA )))))))))))))))
+                                db$score <= 8, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$SDMT_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 59, "> 99" , ifelse (
     db$score >= 58, "99" , ifelse (
       
@@ -366,7 +380,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
                           db$score >= 9, "3-5" , ifelse (
                             
                             
-                            db$score <= 8, "<1" , NA ))))))))))))))) 
+                            db$score <= 8, "<1" , NA ))))))))))))))) )
     
     
   }
@@ -378,6 +392,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 59, 18, ifelse (
         db$score >= 58, 17, ifelse (
           
@@ -394,11 +409,12 @@ db$SDMT_percentil_range <- with (db, ifelse (
                               db$score >= 10, 5, ifelse (
                                 
                                 
-                                db$score <= 8, 2, NA )))))))))))))))
+                                db$score <= 8, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$SDMT_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 59, "> 99" , ifelse (
     db$score >= 58, "99" , ifelse (
       
@@ -415,7 +431,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
                           db$score >= 10, "3-5" , ifelse (
                             
                             
-                            db$score <= 8, "<1" , NA )))))))))))))))
+                            db$score <= 8, "<1" , NA ))))))))))))))) )
     
     
     
@@ -427,6 +443,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 47, 18, ifelse (
         
         db$score >= 46, 16, ifelse (
@@ -443,11 +460,12 @@ db$SDMT_percentil_range <- with (db, ifelse (
                               db$score >= 10, 5, ifelse (
                                 
                                 db$score >= 8, 3, ifelse (
-                                  db$score <= 7, 2, NA ))))))))))))))))
+                                  db$score <= 7, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$SDMT_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 47, "> 99" , ifelse (
     
     db$score >= 46, "98" , ifelse (
@@ -464,7 +482,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
                           db$score >= 10, "3-5" , ifelse (
                             
                             db$score >= 8, "1" , ifelse (
-                              db$score <= 7, "<1" , NA ))))))))))))))))
+                              db$score <= 7, "<1" , NA )))))))))))))))) )
     
     
   }
@@ -475,6 +493,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$SDMT_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 43, 18, ifelse (
         
         
@@ -491,11 +510,12 @@ db$SDMT_percentil_range <- with (db, ifelse (
                             db$score >= 11, 5, ifelse (
                               db$score >= 10, 4, ifelse (
                                 
-                                db$score <= 9, 2, NA )))))))))))))))
+                                db$score <= 9, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$SDMT_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 43, "> 99" , ifelse (
     
     
@@ -512,7 +532,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
                         db$score >= 11, "3-5" , ifelse (
                           db$score >= 10, "2" , ifelse (
                             
-                            db$score <= 9, "<1" , NA )))))))))))))))
+                            db$score <= 9, "<1" , NA ))))))))))))))) )
     
     
   }
@@ -520,6 +540,7 @@ db$SDMT_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$SDMT_education_years_adj <- with(db, ifelse(
+    is.na(db$SDMT_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years <= 2, db$SDMT_scale_score + 3, ifelse(
       db$education_years >= 3  & db$education_years <= 5, db$SDMT_scale_score + 2, ifelse(
     db$education_years >= 6  & db$education_years <= 8, db$SDMT_scale_score + 1, ifelse(
@@ -527,11 +548,14 @@ db$SDMT_percentil_range <- with (db, ifelse (
         db$education_years >= 13  & db$education_years <= 15, db$SDMT_scale_score - 1, ifelse(
           db$education_years >= 16  & db$education_years <= 18, db$SDMT_scale_score - 2, ifelse(
             db$education_years >= 19  & db$education_years <= 20, db$SDMT_scale_score - 3, ifelse(
-            )))))))))
+            ))))))))) )
   
   
   # NSSae
-  db$SDMT_NSSae <- db$SDMT_scale_score - (0.32136*(db$SDMT_education_years_adj-12)) 
+  db$SDMT_NSSae <- with(db, ifelse(
+    is.na(db$SDMT_education_years_adj), NA, ifelse (
+      !is.na(db$SDMT_education_years_adj), db$SDMT_scale_score - (0.32136*(db$SDMT_education_years_adj-12)) )))
+  
   
   return(db)
 }

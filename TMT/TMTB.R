@@ -34,6 +34,7 @@ tmtb_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 41, 18, ifelse (
         db$score <= 42, 17, ifelse (
           db$score <= 44, 16, ifelse (
@@ -50,11 +51,12 @@ tmtb_scale_score <- function(score, age, education_years) {
                                 db$score <= 380, 5, ifelse (
                                   db$score <= 405, 4, ifelse (
                                     db$score <= 479, 3, ifelse (
-                                      db$score >= 480, 2, NA ))))))))))))))))))
+                                      db$score >= 480, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$tmtb_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 41, "> 99" , ifelse (
         db$score <= 42, "99" , ifelse (
           db$score <= 44, "98" , ifelse (
@@ -71,7 +73,7 @@ tmtb_scale_score <- function(score, age, education_years) {
                                 db$score <= 380, "3-5" , ifelse (
                                   db$score <= 405, "2" , ifelse (
                                     db$score <= 479, "1" , ifelse (
-                                      db$score >= 480, "<1" , NA ))))))))))))))))))
+                                      db$score >= 480, "<1" , NA )))))))))))))))))))
     
     
     
@@ -85,6 +87,7 @@ tmtb_scale_score <- function(score, age, education_years) {
     ## 57-59
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 41, 18, ifelse (
         db$score <= 44, 17, ifelse (
           
@@ -101,11 +104,12 @@ tmtb_scale_score <- function(score, age, education_years) {
                               db$score <= 380, 5, ifelse (
                                 db$score <= 382, 4, ifelse (
                                   db$score <= 405, 3, ifelse (
-                                    db$score >= 406, 2, NA )))))))))))))))))
+                                    db$score >= 406, 2, NA ))))))))))))))))))
 
 # percentile score
 
 db$tmtb_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 41, "> 99" , ifelse (
     db$score <= 44, "99" , ifelse (
       
@@ -122,7 +126,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
                           db$score <= 380, "3-5" , ifelse (
                             db$score <= 382, "2" , ifelse (
                               db$score <= 405, "1" , ifelse (
-                                db$score >= 406, "<1" , NA )))))))))))))))))
+                                db$score >= 406, "<1" , NA ))))))))))))))))))
     
     
     
@@ -136,6 +140,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 46, 18, ifelse (
         db$score <= 47, 17, ifelse (
           db$score <= 48, 16, ifelse (
@@ -152,11 +157,12 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 380, 5, ifelse (
                                   db$score <= 382, 4, ifelse (
                                     db$score <= 405, 3, ifelse (
-                                      db$score >= 406, 2, NA ))))))))))))))))))
+                                      db$score >= 406, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$tmtb_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 46, "> 99" , ifelse (
         db$score <= 47, "99" , ifelse (
           db$score <= 48, "98" , ifelse (
@@ -173,7 +179,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 380, "3-5" , ifelse (
                                   db$score <= 382, "2" , ifelse (
                                     db$score <= 405, "1" , ifelse (
-                                      db$score >= 406, "<1" , NA ))))))))))))))))))
+                                      db$score >= 406, "<1" , NA )))))))))))))))))))
     
     
     
@@ -185,6 +191,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 41, 18, ifelse (
         db$score <= 42, 17, ifelse (
           db$score <= 47, 16, ifelse (
@@ -201,11 +208,12 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 401, 5, ifelse (
                                   db$score <= 448, 4, ifelse (
                                     db$score <= 480, 3, ifelse (
-                                      db$score >= 481, 2, NA ))))))))))))))))))
+                                      db$score >= 481, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$tmtb_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 41, "> 99" , ifelse (
         db$score <= 42, "99" , ifelse (
           db$score <= 47, "98" , ifelse (
@@ -222,7 +230,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 401, "3-5" , ifelse (
                                   db$score <= 448, "2" , ifelse (
                                     db$score <= 480, "1" , ifelse (
-                                      db$score >= 481, "<1" , NA ))))))))))))))))))
+                                      db$score >= 481, "<1" , NA )))))))))))))))))))
     
     
   }
@@ -233,6 +241,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 42, 18, ifelse (
         db$score <= 47, 17, ifelse (
           db$score <= 59, 16, ifelse (
@@ -249,11 +258,12 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 317, 5, ifelse (
                                   db$score <= 382, 4, ifelse (
                                     db$score <= 401, 3, ifelse (
-                                      db$score >= 402, 2, NA ))))))))))))))))))
+                                      db$score >= 402, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$tmtb_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 42, "> 99" , ifelse (
         db$score <= 47, "99" , ifelse (
           db$score <= 59, "98" , ifelse (
@@ -270,7 +280,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 317, "3-5" , ifelse (
                                   db$score <= 382, "2" , ifelse (
                                     db$score <= 401, "1" , ifelse (
-                                      db$score >= 402, "<1" , NA ))))))))))))))))))
+                                      db$score >= 402, "<1" , NA )))))))))))))))))))
     
   }
   
@@ -280,6 +290,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 42, 18, ifelse (
         db$score <= 60, 17, ifelse (
           
@@ -296,11 +307,12 @@ db$tmtb_percentil_range <- with (db, ifelse (
                               db$score <= 420, 5, ifelse (
                                 db$score <= 448, 4, ifelse (
                                   db$score <= 500, 3, ifelse (
-                                    db$score >= 501, 2, NA )))))))))))))))))
+                                    db$score >= 501, 2, NA ))))))))))))))))))
 
 # percentile score
 
 db$tmtb_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 42, "> 99" , ifelse (
     db$score <= 60, "99" , ifelse (
       
@@ -317,7 +329,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
                           db$score <= 420, "3-5" , ifelse (
                             db$score <= 448, "2" , ifelse (
                               db$score <= 500, "1" , ifelse (
-                                db$score >= 501, "<1" , NA ))))))))))))))))) 
+                                db$score >= 501, "<1" , NA ))))))))))))))))))
     
     
   }
@@ -328,6 +340,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 60, 18, ifelse (
         
         db$score <= 63, 16, ifelse (
@@ -344,11 +357,12 @@ db$tmtb_percentil_range <- with (db, ifelse (
                               db$score <= 448, 5, ifelse (
                                 db$score <= 461, 4, ifelse (
                                   db$score <= 500, 3, ifelse (
-                                    db$score >= 501, 2, NA )))))))))))))))))
+                                    db$score >= 501, 2, NA ))))))))))))))))))
 
 # percentile score
 
 db$tmtb_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 60, "> 99" , ifelse (
     
     db$score <= 63, "98" , ifelse (
@@ -365,7 +379,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
                           db$score <= 448, "3-5" , ifelse (
                             db$score <= 461, "2" , ifelse (
                               db$score <= 500, "1" , ifelse (
-                                db$score >= 501, "<1" , NA ))))))))))))))))) 
+                                db$score >= 501, "<1" , NA )))))))))))))))))) 
     
     
   }
@@ -377,6 +391,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 59, 18, ifelse (
         db$score <= 60, 17, ifelse (
           db$score <= 63, 16, ifelse (
@@ -393,11 +408,12 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 461, 5, ifelse (
                                   db$score <= 500, 4, ifelse (
                                     db$score <= 539, 3, ifelse (
-                                      db$score >= 540, 2, NA ))))))))))))))))))
+                                      db$score >= 540, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$tmtb_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 59, "> 99" , ifelse (
         db$score <= 60, "99" , ifelse (
           db$score <= 63, "98" , ifelse (
@@ -414,7 +430,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 461, "3-5" , ifelse (
                                   db$score <= 500, "2" , ifelse (
                                     db$score <= 539, "1" , ifelse (
-                                      db$score >= 540, "<1" , NA )))))))))))))))))) 
+                                      db$score >= 540, "<1" , NA )))))))))))))))))) )
     
     
     
@@ -426,6 +442,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 62, 18, ifelse (
         db$score <= 63, 17, ifelse (
           db$score <= 79, 16, ifelse (
@@ -442,11 +459,12 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 428, 5, ifelse (
                                   db$score <= 461, 4, ifelse (
                                     db$score <= 538, 3, ifelse (
-                                      db$score >= 539, 2, NA ))))))))))))))))))
+                                      db$score >= 539, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$tmtb_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 62, "> 99" , ifelse (
         db$score <= 63, "99" , ifelse (
           db$score <= 79, "98" , ifelse (
@@ -463,7 +481,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
                                 db$score <= 428, "3-5" , ifelse (
                                   db$score <= 461, "2" , ifelse (
                                     db$score <= 538, "1" , ifelse (
-                                      db$score >= 539, "<1" , NA )))))))))))))))))) 
+                                      db$score >= 539, "<1" , NA )))))))))))))))))) )
     
     
   }
@@ -474,6 +492,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$tmtb_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 79, 18, ifelse (
         
         db$score <= 80, 16, ifelse (
@@ -490,11 +509,12 @@ db$tmtb_percentil_range <- with (db, ifelse (
                               db$score <= 428, 5, ifelse (
                                 db$score <= 460, 4, ifelse (
                                   
-                                  db$score >= 461, 2, NA ))))))))))))))))
+                                  db$score >= 461, 2, NA )))))))))))))))))
 
 # percentile score
 
 db$tmtb_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 79, "> 99" , ifelse (
     
     db$score <= 80, "98" , ifelse (
@@ -511,7 +531,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
                           db$score <= 428, "3-5" , ifelse (
                             db$score <= 460, "2" , ifelse (
                               
-                              db$score >= 461, "<1" , NA ))))))))))))))))
+                              db$score >= 461, "<1" , NA )))))))))))))))))
     
     
   }
@@ -519,6 +539,7 @@ db$tmtb_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$tmtb_education_years_adj <- with(db, ifelse(
+    is.na(db$tmtb_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years < 1, db$tmtb_scale_score + 2, ifelse(
     db$education_years >= 1  & db$education_years <= 4, db$tmtb_scale_score + 1, ifelse(
       db$education_years >= 5  & db$education_years <= 8, db$tmtb_scale_score, ifelse(
@@ -526,11 +547,14 @@ db$tmtb_percentil_range <- with (db, ifelse (
           db$education_years >= 12  & db$education_years <= 15, db$tmtb_scale_score - 2, ifelse(
             db$education_years >= 16  & db$education_years <= 18, db$tmtb_scale_score- 3, ifelse(
               db$education_years >= 19  & db$education_years <= 20, db$tmtb_scale_score- 4, ifelse(
-            )))))))))
+            ))))))))))
   
   
   # NSSae
-  db$tmtb_NSSae <- db$tmtb_scale_score - (-0.27320*(db$tmtb_education_years_adj-12)) 
+  db$tmtb_NSSae <- with(db, ifelse(
+    is.na(db$tmtb_education_years_adj), NA, ifelse (
+      !is.na(db$tmtb_education_years_adj), db$tmtb_scale_score - (-0.27320*(db$tmtb_education_years_adj-12)) )))
+   
   
   return(db)
 }
