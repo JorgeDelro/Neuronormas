@@ -56,7 +56,7 @@ ds_backward_scale_score <- function(score, age, education_years) {
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     
@@ -109,7 +109,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     
@@ -162,7 +162,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     
@@ -213,7 +213,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 6, "> 99" , ifelse (
     
@@ -263,7 +263,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 6, "> 99" , ifelse (
     
@@ -312,7 +312,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     db$score >= 6, "99" , ifelse (
@@ -362,7 +362,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     db$score >= 6, "99" , ifelse (
@@ -414,7 +414,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     db$score >= 6, "99" , ifelse (
@@ -465,7 +465,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     db$score >= 6, "99" , ifelse (
@@ -515,7 +515,7 @@ db$ds_backard_percentil_range <- with (db, ifelse (
 
 # percentile score
 
-db$ds_backard_percentil_range <- with (db, ifelse (
+db$ds_backward_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >= 6, "> 99" , ifelse (
     

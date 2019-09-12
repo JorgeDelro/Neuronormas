@@ -14,7 +14,7 @@ ds_forward <- function(score, age, education_years){
   
   # NSSa
   for (i in 1:nrow(ds_forward_db)) {
-    res <- ds_foward_scale_score(score = ds_forward_db[i, "score"], 
+    res <- ds_forward_scale_score(score = ds_forward_db[i, "score"], 
                               age = ds_forward_db[i, "age"],
                               education_years = ds_forward_db[i, "education_years"])
     ds_forward_new <- rbind(ds_forward_new, res)
@@ -23,7 +23,7 @@ ds_forward <- function(score, age, education_years){
   return(ds_forward_new[,c("ds_forward_scale_score", "ds_forward_percentil_range", "ds_forward_NSSae")])
 }
 
-ds_foward_scale_score <- function(score, age, education_years) {
+ds_forward_scale_score <- function(score, age, education_years) {
   
   db <- data.frame(score = score, age = age, education_years = education_years)
   
@@ -33,7 +33,7 @@ ds_foward_scale_score <- function(score, age, education_years) {
   if(db$age >= 50  & db$age < 57) {
     ## 50-56
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         
@@ -86,7 +86,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   if(db$age >= 57  & db$age < 60) {
     ## 57-59
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         
@@ -139,7 +139,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   if(db$age >= 60  & db$age < 63) {
     ## 60-62
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         
@@ -190,7 +190,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   if(db$age >= 63  & db$age < 66) {
     ## 63-65
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         
@@ -240,7 +240,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   if(db$age >= 66  & db$age < 69) {
     ## 66-68
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         db$score >= 8, 17, ifelse (
@@ -289,7 +289,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   if(db$age >= 69  & db$age < 72) {
     ## 69-71
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         db$score >= 8, 17, ifelse (
@@ -339,7 +339,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   if(db$age >= 72  & db$age < 75) {
     ## 72-74
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         db$score >= 8, 17, ifelse (
@@ -390,7 +390,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   if(db$age >= 75  & db$age < 78) {
     ## 75-77
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         db$score >= 8, 17, ifelse (
@@ -441,7 +441,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   if(db$age >= 78  & db$age < 81) {
     ## 78-80
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 8, 18, ifelse (
         db$score >= 7, 17, ifelse (
@@ -491,7 +491,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   if(db$age >= 81  & db$age < 91) {
     ## 81-90
     # Scale_Score
-    db$ds_foward_scale_score <- with ( db, ifelse (
+    db$ds_forward_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >= 7, 18, ifelse (
         
@@ -539,12 +539,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$ds_forward_education_years_adj <- with(db, ifelse(
-    is.na(db$ds_foward_scale_score), NA, ifelse (
-    db$education_years >= 0  & db$education_years <= 2, db$ds_foward_scale_score + 2, ifelse(
-    db$education_years >= 3  & db$education_years <= 7, db$ds_foward_scale_score + 1, ifelse(
-      db$education_years >= 8  & db$education_years <= 12, db$ds_foward_scale_score, ifelse(
-        db$education_years >= 13  & db$education_years <= 16, db$ds_foward_scale_score - 1, ifelse(
-          db$education_years >= 17  & db$education_years <= 20, db$ds_foward_scale_score - 2, ifelse(
+    is.na(db$ds_forward_scale_score), NA, ifelse (
+    db$education_years >= 0  & db$education_years <= 2, db$ds_forward_scale_score + 2, ifelse(
+    db$education_years >= 3  & db$education_years <= 7, db$ds_forward_scale_score + 1, ifelse(
+      db$education_years >= 8  & db$education_years <= 12, db$ds_forward_scale_score, ifelse(
+        db$education_years >= 13  & db$education_years <= 16, db$ds_forward_scale_score - 1, ifelse(
+          db$education_years >= 17  & db$education_years <= 20, db$ds_forward_scale_score - 2, ifelse(
             
             ))))))))
   
@@ -552,7 +552,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   # NSSae
   db$ds_forward_NSSae <- with(db, ifelse(
     is.na(db$ds_forward_education_years_adj), NA, ifelse (
-      !is.na(db$ds_forward_education_years_adj), db$ds_foward_scale_score - (0.21327*(db$ds_forward_education_years_adj-12))  )))
+      !is.na(db$ds_forward_education_years_adj), db$ds_forward_scale_score - (0.21327*(db$ds_forward_education_years_adj-12))  )))
   
   return(db)
 }

@@ -18,7 +18,7 @@ COWAT_fruit <- function(score, age, education_years){
     COWAT_fruit_new <- rbind(COWAT_fruit_new, res)
   }
   
-  return(COWAT_fruit_new[,c("COWAT_fruit_scale_score", "COWAT_fruit_percentil_range", "COWAT_fruit_NSSae")])
+  return(COWAT_fruit_new[,c("COWAT_fruit_scale_score", "COWAT_fruit_percentil_range")])
 }
 
 COWAT_fruit_scale_score <- function(score, age, education_years) {
@@ -53,7 +53,7 @@ COWAT_fruit_scale_score <- function(score, age, education_years) {
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  30, "> 99" , ifelse (
     
@@ -106,7 +106,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_COWAT_fruit_percentil_rangescale_score <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  31, "> 99" , ifelse (
     db$score >= 30, "99" , ifelse (
@@ -159,7 +159,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  31, "> 99" , ifelse (
     db$score >= 30, "99" , ifelse (
@@ -210,7 +210,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  31, "> 99" , ifelse (
     db$score >= 30, "99" , ifelse (
@@ -260,7 +260,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  28, "> 99" , ifelse (
     db$score >= 27, "99" , ifelse (
@@ -309,7 +309,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  28, "> 99" , ifelse (
     db$score >= 27, "99" , ifelse (
@@ -359,7 +359,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  27, "> 99" , ifelse (
     db$score >= 26, "99" , ifelse (
@@ -410,7 +410,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  26, "> 99" , ifelse (
     db$score >= 24 , "99" , ifelse (
@@ -461,7 +461,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  20, "> 99" , ifelse (
     
@@ -511,7 +511,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
 
 # percentile score
 
-db$COWAT_fruit_scale_score <- with (db, ifelse (
+db$COWAT_fruit_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  20, "> 99" , ifelse (
     

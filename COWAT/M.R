@@ -12,7 +12,7 @@ COWAT_m <- function(score, age, education_years){
   COWAT_m_new <- data.frame()
   
   # NSSa
-  for (i in 1:nrow(m_db)) {
+  for (i in 1:nrow(COWAT_m_db)) {
     res <- COWAT_m_scale_score(score = COWAT_m_db[i, "score"], 
                               age = COWAT_m_db[i, "age"],
                               education_years = COWAT_m_db[i, "education_years"])
@@ -35,7 +35,6 @@ COWAT_m_scale_score <- function(score, age, education_years) {
     db$COWAT_m_scale_score <- with ( db, ifelse (
       is.na(db$score), NA, ifelse (
       db$score >=  25, 18, ifelse (
-        
         db$score >= 23 , 16, ifelse (
           db$score >= 21 , 15, ifelse (
             db$score >= 18 , 14, ifelse (
@@ -49,7 +48,6 @@ COWAT_m_scale_score <- function(score, age, education_years) {
                             db$score >= 6, 6, ifelse (
                               db$score >= 5, 5, ifelse (
                                 db$score >= 2, 4, ifelse (
-                                  
                                   db$score <= 1, 2, NA )))))))))))))))) )
 
 # percentile score
@@ -57,7 +55,6 @@ COWAT_m_scale_score <- function(score, age, education_years) {
 db$COWAT_m_percentil_range <- with (db, ifelse (
   is.na(db$score), NA, ifelse (
   db$score >=  25, "> 99" , ifelse (
-    
     db$score >= 23 , "98" , ifelse (
       db$score >= 21 , "95-97" , ifelse (
         db$score >= 18 , "90-94" , ifelse (
@@ -71,7 +68,6 @@ db$COWAT_m_percentil_range <- with (db, ifelse (
                         db$score >= 6, "6-10" , ifelse (
                           db$score >= 5, "3-5" , ifelse (
                             db$score >= 2, "2" , ifelse (
-                              
                               db$score <= 1, "<1" , NA )))))))))))))))) )
     
     
@@ -102,7 +98,6 @@ db$COWAT_m_percentil_range <- with (db, ifelse (
                               db$score >= 5, 6, ifelse (
                                 db$score >= 4, 5, ifelse (
                                   db$score >= 2, 4, ifelse (
-                                    
                                     db$score <= 1, 2, NA ))))))))))))))))) )
 
 # percentile score

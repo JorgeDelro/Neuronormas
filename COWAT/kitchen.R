@@ -18,7 +18,7 @@ COWAT_kitchen <- function(score, age, education_years){
     COWAT_kitchen_new <- rbind(COWAT_kitchen_new, res)
   }
   
-  return(COWAT_kitchen_new[,c("COWAT_kitchen_scale_score", "COWAT_kitchen_percentil_range", "COWAT_kitchen_NSSae")])
+  return(COWAT_kitchen_new[,c("COWAT_kitchen_scale_score", "COWAT_kitchen_percentil_range")])
 }
 
 COWAT_kitchen_scale_score <- function(score, age, education_years) {
@@ -84,7 +84,7 @@ if(db$age >= 57  & db$age < 60) {
       
       
       # Percentil score
-      db$percentil_range <- with (db, ifelse (
+      db$COWAT_kitchen_percentil_range <- with (db, ifelse (
         is.na(db$score), NA, ifelse (
         db$score >=  25, "> 99" , ifelse (
           db$score >= 23 , "99" , ifelse (
