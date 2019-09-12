@@ -28,6 +28,7 @@ COWAT_kitchen_scale_score <- function(score, age, education_years) {
   ##################################  TABLE 3  ##############################
   if(db$age >= 50  & db$age < 57) {
     db$COWAT_kitchen_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  25, 18, ifelse (
         db$score >= 22 , 16, ifelse (
           db$score >= 20 , 15, ifelse (
@@ -39,11 +40,12 @@ COWAT_kitchen_scale_score <- function(score, age, education_years) {
                       db$score >= 11, 8, ifelse (
                         db$score >= 9, 7, ifelse (
                           db$score >= 8, 5, ifelse (
-                            db$score <= 7, 2, NA )))))))))))))
+                            db$score <= 7, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$COWAT_kitchen_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  25, "> 99" , ifelse (
     db$score >= 22 , "98" , ifelse (
       db$score >= 20 , "95-97" , ifelse (
@@ -55,7 +57,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                   db$score >= 11, "19-28" , ifelse (
                     db$score >= 9, "11-18" , ifelse (
                       db$score >= 8, "3-5" , ifelse (
-                        db$score <= 7, "<1" , NA )))))))))))))
+                        db$score <= 7, "<1" , NA ))))))))))))) )
 }
 
   ##################################TABLE 4##############################
@@ -63,6 +65,7 @@ if(db$age >= 57  & db$age < 60) {
     ## 57-59
     # Scale_Score
     db$COWAT_kitchen_scale_score <- with(db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  25, 18, ifelse (
         db$score >= 23 , 17, ifelse (
           db$score >= 22, 16, ifelse (
@@ -77,11 +80,12 @@ if(db$age >= 57  & db$age < 60) {
                             db$score >= 10, 7, ifelse (
                               db$score >= 9, 6, ifelse (
                                 db$score >= 7, 5, ifelse (
-                                  db$score <= 6, 2, NA )))))))))))))))) 
+                                  db$score <= 6, 2, NA )))))))))))))))) )
       
       
       # Percentil score
       db$percentil_range <- with (db, ifelse (
+        is.na(db$score), NA, ifelse (
         db$score >=  25, "> 99" , ifelse (
           db$score >= 23 , "99" , ifelse (
             db$score >= 22, "98" , ifelse (
@@ -96,7 +100,7 @@ if(db$age >= 57  & db$age < 60) {
                               db$score >= 10, "11-18" , ifelse (
                                 db$score >= 9, "6-10" , ifelse (
                                   db$score >= 7, "3-5" , ifelse (
-                                    db$score <= 6, "<1" , NA ))))))))))))))))   
+                                    db$score <= 6, "<1" , NA ))))))))))))))))  )  
 }
   
   
@@ -106,6 +110,7 @@ if(db$age >= 57  & db$age < 60) {
     ## 60-62
     # Scale_Score
     db$COWAT_kitchen_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  23, 18, ifelse (
         db$score >= 21 , 17, ifelse (
           db$score >= 20, 16, ifelse (
@@ -121,10 +126,11 @@ if(db$age >= 57  & db$age < 60) {
                               db$score >= 9, 6, ifelse (
                                 db$score >= 8, 5, ifelse (
                                   db$score >= 7, 3, ifelse (
-                                    db$score <= 6, 2, NA )))))))))))))))))
+                                    db$score <= 6, 2, NA ))))))))))))))))) )
 
 # percentile score
 db$COWAT_kitchen_percentil_range <- with(db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  23, "> 99" , ifelse (
     db$score >= 21 , "99" , ifelse (
       db$score >= 20, "98" , ifelse (
@@ -140,7 +146,7 @@ db$COWAT_kitchen_percentil_range <- with(db, ifelse (
                           db$score >= 9, "6-10" , ifelse (
                             db$score >= 8, "3-5" , ifelse (
                               db$score >= 7, "1" , ifelse (
-                                db$score <= 6, "<1" , NA ))))))))))))))))) 
+                                db$score <= 6, "<1" , NA ))))))))))))))))) )
   
   }
   
@@ -150,6 +156,7 @@ db$COWAT_kitchen_percentil_range <- with(db, ifelse (
     # Scale_Score
     
     db$COWAT_kitchen_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 21, 17, ifelse (
           db$score >= 20, 16, ifelse (
@@ -163,11 +170,12 @@ db$COWAT_kitchen_percentil_range <- with(db, ifelse (
                           db$score >= 9, 7, ifelse (
                             db$score >= 8, 5, ifelse (
                               db$score >= 7, 4, ifelse (
-                                db$score <= 6, 2, NA )))))))))))))))
+                                db$score <= 6, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$COWAT_kitchen_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 20, "98" , ifelse (
@@ -181,13 +189,14 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                       db$score >= 9, "11-18" , ifelse (
                         db$score >= 8, "3-5" , ifelse (
                           db$score >= 7, "2" , ifelse (
-                            db$score <= 6, "<1" , NA )))))))))))))))
+                            db$score <= 6, "<1" , NA ))))))))))))))) )
 }
 ############################TABLE 7####################################
 if(db$age >= 66  & db$age < 69) {
   ## 66-68
   # Scale_Score
   db$COWAT_kitchen_scale_score <- with ( db, ifelse (
+    is.na(db$score), NA, ifelse (
     db$score >=  22, 18, ifelse (
       db$score >= 21, 17, ifelse (
         db$score >= 19 , 15, ifelse (
@@ -201,11 +210,12 @@ if(db$age >= 66  & db$age < 69) {
                         db$score >= 9, 7, ifelse (
                           db$score >= 8, 6, ifelse (
                             db$score >= 7, 5, ifelse (
-                              db$score <= 6, 2, NA )))))))))))))))
+                              db$score <= 6, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$COWAT_kitchen_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 19 , "95-97" , ifelse (
@@ -219,7 +229,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                       db$score >= 9, "11-18" , ifelse (
                         db$score >= 8, "6-10" , ifelse (
                           db$score >= 7, "3-5" , ifelse (
-                            db$score <= 6, "<1" , NA )))))))))))))))
+                            db$score <= 6, "<1" , NA ))))))))))))))) )
 }
   
   ##############################TABLE 8##################################
@@ -227,6 +237,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$COWAT_kitchen_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 21, 17, ifelse (
           db$score >= 19 , 15, ifelse (
@@ -240,11 +251,12 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                           db$score >= 9, 7, ifelse (
                             db$score >= 8, 6, ifelse (
                               db$score >= 7, 5, ifelse (
-                                db$score <= 6, 2, NA )))))))))))))))
+                                db$score <= 6, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$COWAT_kitchen_percentil_range <- with(db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 19 , "95-97" , ifelse (
@@ -258,7 +270,7 @@ db$COWAT_kitchen_percentil_range <- with(db, ifelse (
                       db$score >= 9, "11-18" , ifelse (
                         db$score >= 8, "6-10" , ifelse (
                           db$score >= 7, "3-5" , ifelse (
-                            db$score <= 6, "<1" , NA )))))))))))))))
+                            db$score <= 6, "<1" , NA ))))))))))))))) )
   }
   
   ##############################TABLE 9##################################
@@ -267,6 +279,7 @@ db$COWAT_kitchen_percentil_range <- with(db, ifelse (
     # Scale_Score
     
     db$COWAT_kitchen_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 21, 17, ifelse (
           db$score >= 19 , 15, ifelse (
@@ -279,11 +292,12 @@ db$COWAT_kitchen_percentil_range <- with(db, ifelse (
                         db$score >= 9, 7, ifelse (
                           db$score >= 7, 6, ifelse (
                             db$score >= 6, 4, ifelse (
-                              db$score <= 5, 2, NA ))))))))))))))
+                              db$score <= 5, 2, NA )))))))))))))) )
 
 # percentile score
 
 db$COWAT_kitchen_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 19 , "95-97" , ifelse (
@@ -296,7 +310,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                     db$score >= 9, "11-18" , ifelse (
                       db$score >= 7, "6-10" , ifelse (
                         db$score >= 6, "2" , ifelse (
-                          db$score <= 5, "<1" , NA ))))))))))))))
+                          db$score <= 5, "<1" , NA )))))))))))))) )
   }
   
   ##############################TABLE 10##################################
@@ -304,6 +318,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$COWAT_kitchen_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  22, 18, ifelse (
         db$score >= 21, 17, ifelse (
           db$score >= 20, 16, ifelse (
@@ -318,11 +333,12 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                             db$score >= 8, 7, ifelse (
                               db$score >= 7, 6, ifelse (
                                 db$score >= 6, 5, ifelse (
-                                  db$score <= 5, 2, NA ))))))))))))))))
+                                  db$score <= 5, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_kitchen_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  22, "> 99" , ifelse (
     db$score >= 21, "99" , ifelse (
       db$score >= 20, "98" , ifelse (
@@ -337,7 +353,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                         db$score >= 8, "11-18" , ifelse (
                           db$score >= 7, "6-10" , ifelse (
                             db$score >= 6, "3-5" , ifelse (
-                              db$score <= 5, "<1" , NA ))))))))))))))))
+                              db$score <= 5, "<1" , NA )))))))))))))))) )
 
   }
   
@@ -346,6 +362,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$COWAT_kitchen_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  19, 18, ifelse (
         db$score >= 17 , 16, ifelse (
           db$score >= 16, 15, ifelse (
@@ -358,11 +375,12 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                         db$score >= 8, 7, ifelse (
                           db$score >= 7, 6, ifelse (
                             db$score >= 6, 5, ifelse (
-                              db$score <= 5, 2, NA ))))))))))))))
+                              db$score <= 5, 2, NA )))))))))))))) )
 
 # percentile score
 
 db$COWAT_kitchen_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  19, "> 99" , ifelse (
     db$score >= 17 , "98" , ifelse (
       db$score >= 16, "95-97" , ifelse (
@@ -375,7 +393,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                     db$score >= 8, "11-18" , ifelse (
                       db$score >= 7, "6-10" , ifelse (
                         db$score >= 6, "3-5" , ifelse (
-                          db$score <= 5, "<1" , NA ))))))))))))))
+                          db$score <= 5, "<1" , NA )))))))))))))) )
   }
   
   #############################TABLE 12###################################
@@ -383,6 +401,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$COWAT_kitchen_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  15, 18, ifelse (
         db$score >= 14, 16, ifelse (
           db$score >= 13, 15, ifelse (
@@ -394,11 +413,12 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                       db$score >= 7, 6, ifelse (
                         db$score >= 6, 5, ifelse (
                           db$score >= 5, 4, ifelse (
-                            db$score <= 4, 2, NA )))))))))))))
+                            db$score <= 4, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$COWAT_kitchen_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  15, "> 99" , ifelse (
     db$score >= 14, "98" , ifelse (
       db$score >= 13, "95-97" , ifelse (
@@ -410,7 +430,7 @@ db$COWAT_kitchen_percentil_range <- with (db, ifelse (
                   db$score >= 7, "6-10" , ifelse (
                     db$score >= 6, "3-5" , ifelse (
                       db$score >= 5, "2" , ifelse (
-                        db$score <= 4, "<1" , NA )))))))))))))
+                        db$score <= 4, "<1" , NA ))))))))))))) )
   }
   
   # Educational level adjust ##C NO SE PUEDE AJUSTAR PORQUE NO ESTÁ EN ARTÍCULO NEURONORMAS

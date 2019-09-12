@@ -35,6 +35,7 @@ ROCF_C_TIME_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 60, 18, ifelse (
         db$score <= 61, 17, ifelse (
           db$score <= 71, 16, ifelse (
@@ -51,12 +52,13 @@ ROCF_C_TIME_scale_score <- function(score, age, education_years) {
                                 db$score <= 409, 5, ifelse (
                                   db$score <= 419, 4, ifelse (
                                     
-                                    db$score >= 420, 2, NA )))))))))))))))))
+                                    db$score >= 420, 2, NA ))))))))))))))))) )
 
 
 # percentile score
 
 db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 60, "> 99" , ifelse (
     db$score <= 61, "99" , ifelse (
       db$score <= 71, "98" , ifelse (
@@ -73,7 +75,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                             db$score <= 409, "3-5" , ifelse (
                               db$score <= 419, "2" , ifelse (
                                 
-                                db$score >= 420, "<1" , NA )))))))))))))))))
+                                db$score >= 420, "<1" , NA ))))))))))))))))) )
     
     
     
@@ -87,6 +89,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
     ## 57-59
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 60, 18, ifelse (
         db$score <= 71, 17, ifelse (
           db$score <= 81, 16, ifelse (
@@ -103,11 +106,12 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 419, 5, ifelse (
                                   
                                   db$score <= 422, 3, ifelse (
-                                    db$score >= 423, 2, NA )))))))))))))))))
+                                    db$score >= 423, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 60, "> 99" , ifelse (
     db$score <= 71, "99" , ifelse (
       db$score <= 81, "98" , ifelse (
@@ -124,7 +128,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                             db$score <= 419, "3-5" , ifelse (
                               
                               db$score <= 422, "1" , ifelse (
-                                db$score >= 423, "<1" , NA )))))))))))))))))
+                                db$score >= 423, "<1" , NA ))))))))))))))))) )
     
     
     
@@ -137,6 +141,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 81, 18, ifelse (
         db$score <= 82, 17, ifelse (
           db$score <= 89, 16, ifelse (
@@ -153,11 +158,12 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 419, 5, ifelse (
                                   db$score <= 422, 4, ifelse (
                                     db$score <= 455, 3, ifelse (
-                                      db$score >= 456, 2, NA ))))))))))))))))))
+                                      db$score >= 456, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 81, "> 99" , ifelse (
         db$score <= 82, "99" , ifelse (
           db$score <= 89, "98" , ifelse (
@@ -174,7 +180,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 419, "3-5" , ifelse (
                                   db$score <= 422, "2" , ifelse (
                                     db$score <= 455, "1" , ifelse (
-                                      db$score >= 456, "<1" , NA )))))))))))))))))) 
+                                      db$score >= 456, "<1" , NA ))))))))))))))))))  )
     
     
     
@@ -186,6 +192,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 89, 18, ifelse (
         db$score <= 91, 17, ifelse (
           db$score <= 92, 16, ifelse (
@@ -202,11 +209,12 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 419, 5, ifelse (
                                   db$score <= 422, 4, ifelse (
                                     db$score <= 455, 3, ifelse (
-                                      db$score >= 456, 2, NA ))))))))))))))))))
+                                      db$score >= 456, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 89, "> 99" , ifelse (
         db$score <= 91, "99" , ifelse (
           db$score <= 92, "98" , ifelse (
@@ -223,7 +231,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 419, "3-5" , ifelse (
                                   db$score <= 422, "2" , ifelse (
                                     db$score <= 455, "1" , ifelse (
-                                      db$score >= 456, "<1" , NA ))))))))))))))))))
+                                      db$score >= 456, "<1" , NA )))))))))))))))))) )
     
     
   }
@@ -234,6 +242,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 75, 18, ifelse (
         db$score <= 89, 17, ifelse (
           db$score <= 91, 16, ifelse (
@@ -250,11 +259,12 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 468, 5, ifelse (
                                   db$score <= 534, 4, ifelse (
                                     db$score <= 544, 3, ifelse (
-                                      db$score >= 545, 2, NA ))))))))))))))))))
+                                      db$score >= 545, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 75, "> 99" , ifelse (
         db$score <= 89, "99" , ifelse (
           db$score <= 91, "98" , ifelse (
@@ -271,7 +281,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 468, "3-5" , ifelse (
                                   db$score <= 534, "2" , ifelse (
                                     db$score <= 544, "1" , ifelse (
-                                      db$score >= 545, "<1" , NA ))))))))))))))))))
+                                      db$score >= 545, "<1" , NA )))))))))))))))))) )
     
   }
   
@@ -281,6 +291,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 63, 18, ifelse (
         db$score <= 75, 17, ifelse (
           db$score <= 89, 16, ifelse (
@@ -297,11 +308,12 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 534, 5, ifelse (
                                   db$score <= 544, 4, ifelse (
                                     db$score <= 543, 3, ifelse (
-                                      db$score >= 564, 2, NA ))))))))))))))))))
+                                      db$score >= 564, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 63, "> 99" , ifelse (
         db$score <= 75, "99" , ifelse (
           db$score <= 89, "98" , ifelse (
@@ -318,7 +330,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 534, "3-5" , ifelse (
                                   db$score <= 544, "2" , ifelse (
                                     db$score <= 543, "1" , ifelse (
-                                      db$score >= 564, "<1" , NA ))))))))))))))))))
+                                      db$score >= 564, "<1" , NA )))))))))))))))))) )
         
     
     
@@ -331,6 +343,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 62, 18, ifelse (
         db$score <= 76, 17, ifelse (
           
@@ -347,11 +360,12 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                               db$score <= 544, 5, ifelse (
                                 db$score <= 563, 4, ifelse (
                                   db$score <= 635, 3, ifelse (
-                                    db$score >= 636, 2, NA )))))))))))))))))
+                                    db$score >= 636, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 62, "> 99" , ifelse (
     db$score <= 76, "99" , ifelse (
       
@@ -368,7 +382,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                           db$score <= 544, "3-5" , ifelse (
                             db$score <= 563, "2" , ifelse (
                               db$score <= 635, "1" , ifelse (
-                                db$score >= 636, "<1" , NA )))))))))))))))))
+                                db$score >= 636, "<1" , NA ))))))))))))))))) )
     
    
     
@@ -381,6 +395,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 61, 18, ifelse (
         db$score <= 75, 17, ifelse (
           db$score <= 89, 16, ifelse (
@@ -397,11 +412,12 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 563, 5, ifelse (
                                   db$score <= 635, 4, ifelse (
                                     db$score <= 636, 3, ifelse (
-                                      db$score >= 637, 2, NA ))))))))))))))))))
+                                      db$score >= 637, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 61, "> 99" , ifelse (
         db$score <= 75, "99" , ifelse (
           db$score <= 89, "98" , ifelse (
@@ -418,7 +434,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                                 db$score <= 563, "3-5" , ifelse (
                                   db$score <= 635, "2" , ifelse (
                                     db$score <= 636, "1" , ifelse (
-                                      db$score >= 637, "<1" , NA )))))))))))))))))) 
+                                      db$score >= 637, "<1" , NA ))))))))))))))))))  )
     
     
     
@@ -430,6 +446,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 89, 18, ifelse (
         db$score <= 99, 17, ifelse (
           
@@ -446,11 +463,12 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                               db$score <= 563, 5, ifelse (
                                 db$score <= 635, 4, ifelse (
                                   
-                                  db$score >= 636, 2, NA ))))))))))))))))
+                                  db$score >= 636, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 89, "> 99" , ifelse (
     db$score <= 99, "99" , ifelse (
       
@@ -467,7 +485,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                           db$score <= 563, "3-5" , ifelse (
                             db$score <= 635, "2" , ifelse (
                               
-                              db$score >= 636, "<1" , NA )))))))))))))))) 
+                              db$score >= 636, "<1" , NA ))))))))))))))))  )
     
     
   }
@@ -478,6 +496,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$ROCF_C_TIME_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 89, 18, ifelse (
         
         db$score <= 112, 16, ifelse (
@@ -494,11 +513,12 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                               db$score <= 564, 5, ifelse (
                                 db$score <= 635, 4, ifelse (
                                   
-                                  db$score >= 636, 2, NA ))))))))))))))))
+                                  db$score >= 636, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 89, "> 99" , ifelse (
     
     db$score <= 112, "98" , ifelse (
@@ -515,7 +535,7 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
                           db$score <= 564, "3-5" , ifelse (
                             db$score <= 635, "2" , ifelse (
                               
-                              db$score >= 636, "<1" , NA )))))))))))))))) 
+                              db$score >= 636, "<1" , NA ))))))))))))))))  )
     
     
   }
@@ -523,17 +543,20 @@ db$ROCF_C_TIME_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$ROCF_C_TIME_education_years_adj <- with(db, ifelse(
+    is.na(db$ROCF_C_TIME_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years <= 1, db$ROCF_C_TIME_scale_score + 2, ifelse(
     db$education_years >= 2  & db$education_years <= 6, db$ROCF_C_TIME_scale_score + 1, ifelse(
       db$education_years >= 7  & db$education_years <= 12, db$ROCF_C_TIME_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 17, db$ROCF_C_TIME_scale_score - 1, ifelse(
           db$education_years >= 18  & db$education_years <= 20, db$ROCF_C_TIME_scale_score - 2, ifelse(
             
-            )))))))
+            ))))))) )
   
   
   # NSSae
-  db$ROCF_C_TIME_NSSae <- db$ROCF_C_TIME_scale_score - (0.19735*(db$ROCF_C_TIME_education_years_adj-12)) 
+  db$ROCF_C_TIME_NSSae <- with(db, ifelse(
+    is.na(db$ROCF_C_TIME_education_years_adj), NA, ifelse (
+      !is.na(db$ROCF_C_TIME_education_years_adj), db$ROCF_C_TIME_scale_score - (0.19735*(db$ROCF_C_TIME_education_years_adj-12)) )))
   
   return(db)
 }

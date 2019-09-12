@@ -34,6 +34,7 @@ CB_F_LI_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 8, 18, ifelse (
         db$score >= 7, 17, ifelse (
           
@@ -50,11 +51,12 @@ CB_F_LI_scale_score <- function(score, age, education_years) {
                   db$score >= 2, 5, ifelse (
                     
                     
-                    db$score <= 1, 2, NA )))))))))
+                    db$score <= 1, 2, NA ))))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 8, "> 99" , ifelse (
     db$score >= 7, "99" , ifelse (
       
@@ -71,7 +73,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
               db$score >= 2, "3-5" , ifelse (
                 
                 
-                db$score <= 1, "<1" , NA )))))))))
+                db$score <= 1, "<1" , NA ))))))))) )
     
     
     
@@ -85,6 +87,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
     ## 57-59
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 8, 18, ifelse (
         db$score >= 7, 17, ifelse (
           
@@ -101,11 +104,12 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
                   db$score >= 2, 5, ifelse (
                     
                     
-                    db$score <= 1, 2, NA )))))))))
+                    db$score <= 1, 2, NA ))))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 8, "> 99" , ifelse (
     db$score >= 7, "99" , ifelse (
       
@@ -122,7 +126,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
               db$score >= 2, "3-5" , ifelse (
                 
                 
-                db$score <= 1, "<1" , NA )))))))))
+                db$score <= 1, "<1" , NA ))))))))) )
     
     
     
@@ -136,6 +140,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 8, 18, ifelse (
         db$score >= 7, 17, ifelse (
           
@@ -152,11 +157,12 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
                   db$score >= 2, 5, ifelse (
                     
                     
-                    db$score <= 1, 2, NA )))))))))
+                    db$score <= 1, 2, NA ))))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 8, "> 99" , ifelse (
     db$score >= 7, "99" , ifelse (
       
@@ -173,7 +179,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
               db$score >= 2, "3-5" , ifelse (
                 
                 
-                db$score <= 1, "<1" , NA ))))))))) 
+                db$score <= 1, "<1" , NA )))))))))  )
     
     
     
@@ -185,6 +191,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 7, 18, ifelse (
         db$score >= 6, 17, ifelse (
           
@@ -201,11 +208,12 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
                 db$score >= 2, 5, ifelse (
                   
                   
-                  db$score <= 1, 2, NA ))))))))
+                  db$score <= 1, 2, NA )))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     db$score >= 6, "99" , ifelse (
       
@@ -222,7 +230,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
             db$score >= 2, "3-5" , ifelse (
               
               
-              db$score <= 1, "<1" , NA ))))))))
+              db$score <= 1, "<1" , NA )))))))) )
     
     
   }
@@ -233,6 +241,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 7, 18, ifelse (
         db$score >= 6, 17, ifelse (
           
@@ -249,11 +258,12 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
                 db$score >= 2, 5, ifelse (
                   
                   
-                  db$score <= 1, 2, NA ))))))))
+                  db$score <= 1, 2, NA )))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     db$score >= 6, "99" , ifelse (
       
@@ -270,7 +280,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
             db$score >= 2, "3-5" , ifelse (
               
               
-              db$score <= 1, "<1" , NA )))))))) 
+              db$score <= 1, "<1" , NA ))))))))  )
     
   }
   
@@ -280,6 +290,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 6, 18, ifelse (
         
         
@@ -296,11 +307,12 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
               
               db$score >= 2, 4, ifelse (
                 
-                db$score <= 1, 2, NA )))))))
+                db$score <= 1, 2, NA ))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 6, "> 99" , ifelse (
     
     
@@ -317,7 +329,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
           
           db$score >= 2, "2" , ifelse (
             
-            db$score <= 1, "<1" , NA )))))))
+            db$score <= 1, "<1" , NA ))))))) )
     
     
   }
@@ -328,6 +340,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 6, 18, ifelse (
         
         
@@ -344,11 +357,12 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
               db$score >= 2, 5, ifelse (
                 
                 
-                db$score <= 1, 2, NA )))))))
+                db$score <= 1, 2, NA ))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 6, "> 99" , ifelse (
     
     
@@ -365,7 +379,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
           db$score >= 2, "3-5" , ifelse (
             
             
-            db$score <= 1, "<1" , NA )))))))
+            db$score <= 1, "<1" , NA ))))))) )
     
     
   }
@@ -377,6 +391,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 6, 18, ifelse (
         
         db$score >= 5, 16, ifelse (
@@ -393,11 +408,12 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
               db$score >= 2, 5, ifelse (
                 
                 
-                db$score <= 1, 2, NA )))))))
+                db$score <= 1, 2, NA ))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 6, "> 99" , ifelse (
     
     db$score >= 5, "98" , ifelse (
@@ -414,7 +430,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
           db$score >= 2, "3-5" , ifelse (
             
             
-            db$score <= 1, "<1" , NA )))))))
+            db$score <= 1, "<1" , NA ))))))) )
     
     
     
@@ -426,6 +442,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 6, 18, ifelse (
         
         
@@ -442,11 +459,12 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
                 
                 
                 
-                db$score <= 1, 2, NA )))))))
+                db$score <= 1, 2, NA ))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 6, "> 99" , ifelse (
     
     
@@ -463,7 +481,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
             
             
             
-            db$score <= 1, "<1" , NA )))))))
+            db$score <= 1, "<1" , NA ))))))) )
     
     
   }
@@ -474,6 +492,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$CB_F_LI_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 6, 18, ifelse (
         
         
@@ -490,11 +509,12 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
                 
                 
                 
-                db$score <= 1, 2, NA )))))))
+                db$score <= 1, 2, NA ))))))) )
 
 # percentile score
 
 db$CB_F_LI_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 6, "> 99" , ifelse (
     
     
@@ -511,7 +531,7 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
             
             
             
-            db$score <= 1, "<1" , NA ))))))) 
+            db$score <= 1, "<1" , NA ))))))) )
     
     
   }
@@ -519,15 +539,18 @@ db$CB_F_LI_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$CB_F_LI_education_years_adj <- with(db, ifelse(
+    is.na(db$CB_F_LI_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years <= 3, db$CB_F_LI_scale_score + 1, ifelse(
       db$education_years >= 4  & db$education_years <= 12, db$CB_F_LI_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 20, db$CB_F_LI_scale_score - 1, ifelse(
           
-            )))))
+            ))))))
   
   
   # NSSae
-  db$CB_F_LI_NSSae <- db$CB_F_LI_scale_score - (0.11357*(db$CB_F_LI_education_years_adj-12)) 
+  db$CB_F_LI_NSSae <- with(db, ifelse(
+    is.na(db$CB_F_LI_education_years_adj), NA, ifelse (
+      !is.na(db$CB_F_LI_education_years_adj), db$CB_F_LI_scale_score - (0.11357*(db$CB_F_LI_education_years_adj-12)) )))
   
   return(db)
 }

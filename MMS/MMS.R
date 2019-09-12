@@ -27,30 +27,37 @@ scale_score_MMS <- function(score, age, education_years) {
   
   if(db$age <= 50) {
     db$MMS <- with(db, ifelse(
+      is.na(db$score), NA, ifelse (
       db$education_years <= 8, 0, ifelse(
         db$education_years < 18, -1, ifelse(
           db$education_years > 17, -2, NA
-            ))))
+            )))))
   }
         
   
   if(db$age >50 | db$age < 76) {
     db$MMS <- with(db, ifelse(
+      is.na(db$score), NA, ifelse (
       db$education_years <= 8, 1, ifelse(
         db$education_years < 18, 0, ifelse(
           db$education_years > 17, -1, NA
-        ))))
+        )))))
   }
   
   if(db$age > 75) {
     db$MMS <- with(db, ifelse(
+      is.na(db$score), NA, ifelse (
       db$education_years <= 8, 2, ifelse(
         db$education_years < 18, 1, ifelse(
           db$education_years > 17, 0, NA
-        ))))
+        )))))
   }
   
-  db$corrected_MMS <- db$score + db$MMS
+  
+  db$corrected_MMS <- with(db, ifelse(
+    is.na(db$MMS), NA, ifelse(
+      !is.na(db$MMS), db$score + db$MMS) ))
+  
   
   return(db)
         

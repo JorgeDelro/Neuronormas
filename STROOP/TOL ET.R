@@ -36,6 +36,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
     # Scale_Score
     
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 92, 18, ifelse (
         db$score <= 99, 17, ifelse (
           db$score <= 114, 16, ifelse (
@@ -52,11 +53,12 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 508, 5, ifelse (
                                   db$score <= 621, 4, ifelse (
                                     db$score <= 679, 3, ifelse (
-                                      db$score >= 680, 2, NA ))))))))))))))))))
+                                      db$score >= 680, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$TOL_ET_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 92, "> 99" , ifelse (
         db$score <= 99, "99" , ifelse (
           db$score <= 114, "98" , ifelse (
@@ -73,7 +75,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 508, "3-5" , ifelse (
                                   db$score <= 621, "2" , ifelse (
                                     db$score <= 679, "1" , ifelse (
-                                      db$score >= 680, "<1" , NA ))))))))))))))))))
+                                      db$score >= 680, "<1" , NA )))))))))))))))))) )
     
     
     
@@ -88,6 +90,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
     # Scale_Score
     
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 114, 18, ifelse (
         db$score <= 124, 17, ifelse (
           db$score <= 127, 16, ifelse (
@@ -104,11 +107,12 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 523, 5, ifelse (
                                   db$score <= 621, 4, ifelse (
                                     db$score <= 679, 3, ifelse (
-                                      db$score >= 680, 2, NA ))))))))))))))))))
+                                      db$score >= 680, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$TOL_ET_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 114, "> 99" , ifelse (
         db$score <= 124, "99" , ifelse (
           db$score <= 127, "98" , ifelse (
@@ -125,7 +129,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 523, "3-5" , ifelse (
                                   db$score <= 621, "2" , ifelse (
                                     db$score <= 679, "1" , ifelse (
-                                      db$score >= 680, "<1" , NA ))))))))))))))))))
+                                      db$score >= 680, "<1" , NA )))))))))))))))))) )
     
     
     
@@ -139,6 +143,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
     # Scale_Score
     
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 124, 18, ifelse (
         db$score <= 126, 17, ifelse (
           db$score <= 127, 16, ifelse (
@@ -155,11 +160,12 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 621, 5, ifelse (
                                   db$score <= 679, 4, ifelse (
                                     db$score <= 739, 3, ifelse (
-                                      db$score >= 740, 2, NA ))))))))))))))))))
+                                      db$score >= 740, 2, NA )))))))))))))))))))
     
     # percentile score
     
     db$TOL_ET_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 124, "> 99" , ifelse (
         db$score <= 126, "99" , ifelse (
           db$score <= 127, "98" , ifelse (
@@ -176,7 +182,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 621, "3-5" , ifelse (
                                   db$score <= 679, "2" , ifelse (
                                     db$score <= 739, "1" , ifelse (
-                                      db$score >= 740, "<1" , NA ))))))))))))))))))
+                                      db$score >= 740, "<1" , NA )))))))))))))))))) )
     
     
   }
@@ -188,6 +194,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
     # Scale_Score
     
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 126, 18, ifelse (
         db$score <= 127, 17, ifelse (
           db$score <= 129, 16, ifelse (
@@ -204,11 +211,12 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 679, 5, ifelse (
                                   db$score <= 739, 4, ifelse (
                                     db$score <= 741, 3, ifelse (
-                                      db$score >= 742, 2, NA ))))))))))))))))))
+                                      db$score >= 742, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$TOL_ET_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 126, "> 99" , ifelse (
         db$score <= 127, "99" , ifelse (
           db$score <= 129, "98" , ifelse (
@@ -225,7 +233,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 679, "3-5" , ifelse (
                                   db$score <= 739, "2" , ifelse (
                                     db$score <= 741, "1" , ifelse (
-                                      db$score >= 742, "<1" , NA ))))))))))))))))))
+                                      db$score >= 742, "<1" , NA )))))))))))))))))) )
     
   }
   
@@ -235,6 +243,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
     ## 66-68
     # Scale_Score
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 126, 18, ifelse (
         db$score <= 129, 17, ifelse (
           db$score <= 134, 16, ifelse (
@@ -251,11 +260,12 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 670, 5, ifelse (
                                   db$score <= 739, 4, ifelse (
                                     db$score <= 741, 3, ifelse (
-                                      db$score >= 742, 2, NA ))))))))))))))))))
+                                      db$score >= 742, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$TOL_ET_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 126, "> 99" , ifelse (
         db$score <= 129, "99" , ifelse (
           db$score <= 134, "98" , ifelse (
@@ -272,7 +282,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 670, "3-5" , ifelse (
                                   db$score <= 739, "2" , ifelse (
                                     db$score <= 741, "1" , ifelse (
-                                      db$score >= 742, "<1" , NA ))))))))))))))))))
+                                      db$score >= 742, "<1" , NA )))))))))))))))))) )
     
   }
   
@@ -283,6 +293,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
     # Scale_Score
     
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 126, 18, ifelse (
         db$score <= 129, 17, ifelse (
           db$score <= 134, 16, ifelse (
@@ -299,11 +310,12 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 739, 5, ifelse (
                                   db$score <= 741, 4, ifelse (
                                     db$score <= 792, 3, ifelse (
-                                      db$score >= 793, 2, NA ))))))))))))))))))
+                                      db$score >= 793, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$TOL_ET_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 126, "> 99" , ifelse (
         db$score <= 129, "99" , ifelse (
           db$score <= 134, "98" , ifelse (
@@ -320,7 +332,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 739, "3-5" , ifelse (
                                   db$score <= 741, "2" , ifelse (
                                     db$score <= 792, "1" , ifelse (
-                                      db$score >= 793, "<1" , NA ))))))))))))))))))
+                                      db$score >= 793, "<1" , NA )))))))))))))))))) )
     
   }
   
@@ -330,6 +342,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
     ## 72-74
     # Scale_Score
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <=  151, 18, ifelse (
         db$score <= 157, 17, ifelse (
           db$score <= 159, 16, ifelse (
@@ -346,11 +359,12 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 724, 5, ifelse (
                                   db$score <= 741, 4, ifelse (
                                     db$score <= 792, 3, ifelse (
-                                      db$score >=  793, 2, NA ))))))))))))))))))
+                                      db$score >=  793, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$TOL_ET_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <=  151, "> 99" , ifelse (
         db$score <= 157, "99" , ifelse (
           db$score <= 159, "98" , ifelse (
@@ -367,7 +381,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 724, "3-5" , ifelse (
                                   db$score <= 741, "2" , ifelse (
                                     db$score <= 792, "1" , ifelse (
-                                      db$score >=  793, "<1" , NA ))))))))))))))))))
+                                      db$score >=  793, "<1" , NA )))))))))))))))))) )
     
     
   }
@@ -380,6 +394,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
     # Scale_Score
     
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 183, 18, ifelse (
         db$score <= 159, 17, ifelse (
           db$score <= 165, 16, ifelse (
@@ -396,11 +411,12 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 696, 5, ifelse (
                                   db$score <= 724, 4, ifelse (
                                     db$score <= 792, 3, ifelse (
-                                      db$score >= 793, 2, NA ))))))))))))))))))
+                                      db$score >= 793, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$TOL_ET_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 183, "> 99" , ifelse (
         db$score <= 159, "99" , ifelse (
           db$score <= 165, "98" , ifelse (
@@ -417,7 +433,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                                 db$score <= 696, "3-5" , ifelse (
                                   db$score <= 724, "2" , ifelse (
                                     db$score <= 792, "1" , ifelse (
-                                      db$score >= 793, "<1" , NA ))))))))))))))))))
+                                      db$score >= 793, "<1" , NA )))))))))))))))))) )
     
     
   }
@@ -429,6 +445,7 @@ TOL_ET_scale_score <- function(score, age, education_years) {
     # Scale_Score
     
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 143, 18, ifelse (
         
         db$score <= 171, 16, ifelse (
@@ -445,11 +462,12 @@ TOL_ET_scale_score <- function(score, age, education_years) {
                               db$score <= 792, 5, ifelse (
                                 
                                 db$score <= 793, 3, ifelse (
-                                  db$score >= 794, 2, NA ))))))))))))))))
+                                  db$score >= 794, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$TOL_ET_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 143, "> 99" , ifelse (
     
     db$score <= 171, "98" , ifelse (
@@ -466,7 +484,7 @@ db$TOL_ET_percentil_range <- with (db, ifelse (
                           db$score <= 792, "3-5" , ifelse (
                             
                             db$score <= 793, "1" , ifelse (
-                              db$score >= 794, "<1" , NA ))))))))))))))))
+                              db$score >= 794, "<1" , NA )))))))))))))))) )
     
   }
   
@@ -476,6 +494,7 @@ db$TOL_ET_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$TOL_ET_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score <= 188, 18, ifelse (
         
         db$score <= 202, 16, ifelse (
@@ -492,11 +511,12 @@ db$TOL_ET_percentil_range <- with (db, ifelse (
                               db$score <= 872, 5, ifelse (
                                 db$score <= 873, 4, ifelse (
                                   
-                                  db$score >= 874, 2, NA ))))))))))))))))
+                                  db$score >= 874, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$TOL_ET_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score <= 188, "> 99" , ifelse (
     
     db$score <= 202, "98" , ifelse (
@@ -513,7 +533,7 @@ db$TOL_ET_percentil_range <- with (db, ifelse (
                           db$score <= 872, "3-5" , ifelse (
                             db$score <= 873, "2" , ifelse (
                               
-                              db$score >= 874, "<1" , NA ))))))))))))))))
+                              db$score >= 874, "<1" , NA )))))))))))))))) )
     
     
   }
@@ -521,16 +541,19 @@ db$TOL_ET_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$TOL_ET_education_years_adj <- with(db, ifelse(
+    is.na(db$TOL_ET_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years <= 5, db$TOL_ET_scale_score + 1, ifelse(
       db$education_years >= 6  & db$education_years <= 12, db$TOL_ET_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 18, db$TOL_ET_scale_score - 1, ifelse(
           db$education_years >= 19  & db$education_years <= 20, db$TOL_ET_scale_score - 2, ifelse(
             
-            ))))))
+            )))))) )
   
   
   # NSSae
-  db$TOL_ET_NSSae <- db$TOL_ET_scale_score - (0.15080*(db$TOL_ET_education_years_adj-12)) 
+  db$TOL_ET_NSSae <- with(db, ifelse(
+    is.na(db$TOL_ET_education_years_adj), NA, ifelse (
+      !is.na(db$TOL_ET_education_years_adj), db$TOL_ET_scale_score - (0.15080*(db$TOL_ET_education_years_adj-12))  )))
   
   return(db)
 }

@@ -32,6 +32,7 @@ COWAT_animal_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  34, 18, ifelse (
         db$score >= 33, 17, ifelse (
           
@@ -48,11 +49,12 @@ COWAT_animal_scale_score <- function(score, age, education_years) {
                               db$score >= 13, 5, ifelse (
                                 db$score >= 11 , 4, ifelse (
                                   
-                                  db$score <= 10, 2, NA ))))))))))))))))
+                                  db$score <= 10, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_animal_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  34, "> 99" , ifelse (
     db$score >= 33, "99" , ifelse (
       
@@ -69,7 +71,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                           db$score >= 13, "3-5" , ifelse (
                             db$score >= 11 , "2" , ifelse (
                               
-                              db$score <= 10, "<1" , NA ))))))))))))))))
+                              db$score <= 10, "<1" , NA )))))))))))))))) )
     
     
     
@@ -83,6 +85,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
     ## 57-59
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  35, 18, ifelse (
         db$score >= 34, 17, ifelse (
           db$score >= 33, 16, ifelse (
@@ -99,11 +102,12 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                               db$score >= 11 , 5, ifelse (
                                 db$score >= 8, 4, ifelse (
                                   
-                                  db$score <= 7, 2, NA ))))))))))))))))
+                                  db$score <= 7, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_animal_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  35, "> 99" , ifelse (
     db$score >= 34, "99" , ifelse (
       db$score >= 33, "98" , ifelse (
@@ -120,7 +124,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                           db$score >= 11 , "3-5" , ifelse (
                             db$score >= 8, "2" , ifelse (
                               
-                              db$score <= 7, "<1" , NA ))))))))))))))))
+                              db$score <= 7, "<1" , NA )))))))))))))))) )
     
     
     
@@ -134,6 +138,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 35, 18, ifelse (
         db$score >= 34, 17, ifelse (
           db$score >= 33, 16, ifelse (
@@ -150,11 +155,12 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                               db$score >= 11, 5, ifelse (
                                 db$score >= 8, 4, ifelse (
                                   
-                                  db$score <= 7, 2, NA ))))))))))))))))
+                                  db$score <= 7, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_animal_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 35, "> 99" , ifelse (
     db$score >= 34, "99" , ifelse (
       db$score >= 33, "98" , ifelse (
@@ -171,7 +177,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                           db$score >= 11, "3-5" , ifelse (
                             db$score >= 8, "2" , ifelse (
                               
-                              db$score <= 7, "<1" , NA ))))))))))))))))
+                              db$score <= 7, "<1" , NA )))))))))))))))) )
     
     
     
@@ -183,6 +189,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  35, 18, ifelse (
         db$score >= 34, 17, ifelse (
           db$score >= 31 , 16, ifelse (
@@ -199,11 +206,12 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                               db$score >= 11, 5, ifelse (
                                 
                                 db$score >= 8, 3, ifelse (
-                                  db$score <= 7, 2, NA ))))))))))))))))
+                                  db$score <= 7, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_animal_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  35, "> 99" , ifelse (
     db$score >= 34, "99" , ifelse (
       db$score >= 31 , "98" , ifelse (
@@ -220,7 +228,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                           db$score >= 11, "3-5" , ifelse (
                             
                             db$score >= 8, "1" , ifelse (
-                              db$score <= 7, "<1" , NA ))))))))))))))))
+                              db$score <= 7, "<1" , NA )))))))))))))))) )
     
     
   }
@@ -231,6 +239,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  34, 18, ifelse (
         db$score >= 30 , 17, ifelse (
           
@@ -247,11 +256,12 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                               db$score >= 9, 5, ifelse (
                                 
                                 db$score >= 8, 3, ifelse (
-                                  db$score <= 7, 2, NA ))))))))))))))))
+                                  db$score <= 7, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_animal_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  34, "> 99" , ifelse (
     db$score >= 30 , "99" , ifelse (
       
@@ -268,7 +278,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                           db$score >= 9, "3-5" , ifelse (
                             
                             db$score >= 8, "1" , ifelse (
-                              db$score <= 7, "<1" , NA ))))))))))))))))
+                              db$score <= 7, "<1" , NA )))))))))))))))) )
     
   }
   
@@ -278,6 +288,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  34, 18, ifelse (
         db$score >= 31 , 17, ifelse (
           db$score >= 30, 16, ifelse (
@@ -294,11 +305,12 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                                 db$score >= 9, 5, ifelse (
                                   
                                   db$score >= 8, 3, ifelse (
-                                    db$score <= 7, 2, NA )))))))))))))))))
+                                    db$score <= 7, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$COWAT_animal_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  34, "> 99" , ifelse (
     db$score >= 31 , "99" , ifelse (
       db$score >= 30, "98" , ifelse (
@@ -315,7 +327,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                             db$score >= 9, "3-5" , ifelse (
                               
                               db$score >= 8, "1" , ifelse (
-                                db$score <= 7, "<1" , NA ))))))))))))))))) 
+                                db$score <= 7, "<1" , NA )))))))))))))))))  )
     
     
   }
@@ -326,6 +338,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 31, 18, ifelse (
         db$score >= 30, 17, ifelse (
           db$score >= 29, 16, ifelse (
@@ -342,11 +355,12 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                                 db$score >= 9, 5, ifelse (
                                   db$score >= 8, 4, ifelse (
                                     db$score >= 7, 3, ifelse (
-                                      db$score <= 6, 2, NA ))))))))))))))))))
+                                      db$score <= 6, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$COWAT_animal_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 31, "> 99" , ifelse (
         db$score >= 30, "99" , ifelse (
           db$score >= 29, "98" , ifelse (
@@ -363,7 +377,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                                 db$score >= 9, "3-5" , ifelse (
                                   db$score >= 8, "2" , ifelse (
                                     db$score >= 7, "1" , ifelse (
-                                      db$score <= 6, "<1" , NA )))))))))))))))))) 
+                                      db$score <= 6, "<1" , NA ))))))))))))))))))  )
     
     
   }
@@ -375,6 +389,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  30, 18, ifelse (
         db$score >= 29, 17, ifelse (
           db$score >= 28, 16, ifelse (
@@ -391,11 +406,12 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                                 db$score >= 8, 5, ifelse (
                                   db$score >= 7, 4, ifelse (
                                     
-                                    db$score <= 6, 2, NA )))))))))))))))))
+                                    db$score <= 6, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$COWAT_animal_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  30, "> 99" , ifelse (
     db$score >= 29, "99" , ifelse (
       db$score >= 28, "98" , ifelse (
@@ -412,7 +428,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                             db$score >= 8, "3-5" , ifelse (
                               db$score >= 7, "2" , ifelse (
                                 
-                                db$score <= 6, "<1" , NA )))))))))))))))))
+                                db$score <= 6, "<1" , NA ))))))))))))))))) )
     
     
     
@@ -424,6 +440,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  28, 18, ifelse (
         
         
@@ -440,11 +457,12 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                           db$score >= 7, 5, ifelse (
                             
                             
-                            db$score <= 6, 2, NA )))))))))))))
+                            db$score <= 6, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$COWAT_animal_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  28, "> 99" , ifelse (
     
     
@@ -461,7 +479,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                       db$score >= 7, "3-5" , ifelse (
                         
                         
-                        db$score <= 6, "<1" , NA )))))))))))))
+                        db$score <= 6, "<1" , NA ))))))))))))) )
     
     
   }
@@ -472,6 +490,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$COWAT_animal_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 23, 18, ifelse (
         
         db$score >= 21 , 16, ifelse (
@@ -488,11 +507,12 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                         db$score >= 9, 5, ifelse (
                           db$score >= 8, 4, ifelse (
                             
-                            db$score <= 7, 2, NA )))))))))))))
+                            db$score <= 7, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$COWAT_animal_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 23, "> 99" , ifelse (
     
     db$score >= 21 , "98" , ifelse (
@@ -509,7 +529,7 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
                     db$score >= 9, "3-5" , ifelse (
                       db$score >= 8, "2" , ifelse (
                         
-                        db$score <= 7, "<1" , NA )))))))))))))
+                        db$score <= 7, "<1" , NA ))))))))))))) )
     
     
   }
@@ -517,17 +537,20 @@ db$COWAT_animal_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$COWAT_animal_education_years_adj <- with(db, ifelse(
+    is.na(db$COWAT_animal_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years <= 2, db$COWAT_animal_scale_score + 2, ifelse(
     db$education_years >= 3  & db$education_years <= 7, db$COWAT_animal_scale_score + 1, ifelse(
       db$education_years >= 8  & db$education_years <= 12, db$COWAT_animal_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 16, db$COWAT_animal_scale_score - 1, ifelse(
           db$education_years >= 17  & db$education_years <= 20, db$COWAT_animal_scale_score - 2, ifelse(
             
-            )))))))
+            ))))))) )
   
   
   # NSSae
-  db$COWAT_animal_NSSae <- db$COWAT_animal_scale_score - (0.20588*(db$COWAT_animal_education_years_adj-12)) 
+  db$COWAT_animal_NSSae <- with(db, ifelse(
+    is.na(db$COWAT_animal_education_years_adj), NA, ifelse (
+      !is.na(db$COWAT_animal_education_years_adj), db$COWAT_animal_scale_score - (0.20588*(db$COWAT_animal_education_years_adj-12)) )))
   
   return(db)
 }

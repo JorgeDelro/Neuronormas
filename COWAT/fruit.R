@@ -32,6 +32,7 @@ COWAT_fruit_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  30, 18, ifelse (
         
         db$score >= 29, 16, ifelse (
@@ -48,11 +49,12 @@ COWAT_fruit_scale_score <- function(score, age, education_years) {
                               
                               db$score >= 10, 4, ifelse (
                                 
-                                db$score <= 9, 2, NA )))))))))))))))
+                                db$score <= 9, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  30, "> 99" , ifelse (
     
     db$score >= 29, "98" , ifelse (
@@ -69,7 +71,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                           
                           db$score >= 10, "2" , ifelse (
                             
-                            db$score <= 9, "<1" , NA )))))))))))))))
+                            db$score <= 9, "<1" , NA ))))))))))))))) )
     
     
     
@@ -83,6 +85,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
     ## 57-59
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  31, 18, ifelse (
         db$score >= 30, 17, ifelse (
           db$score >= 29, 16, ifelse (
@@ -99,11 +102,12 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                                 
                                 db$score >= 10 , 4, ifelse (
                                   
-                                  db$score <= 9, 2, NA ))))))))))))))))
+                                  db$score <= 9, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  31, "> 99" , ifelse (
     db$score >= 30, "99" , ifelse (
       db$score >= 29, "98" , ifelse (
@@ -120,7 +124,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                             
                             db$score >= 10 , "2" , ifelse (
                               
-                              db$score <= 9, "<1" , NA )))))))))))))))) 
+                              db$score <= 9, "<1" , NA ))))))))))))))))  )
     
     
     
@@ -134,6 +138,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  31, 18, ifelse (
         db$score >= 30, 17, ifelse (
           db$score >= 29, 16, ifelse (
@@ -150,11 +155,12 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                                 db$score >= 9, 5, ifelse (
                                   
                                   db$score >= 8, 3, ifelse (
-                                    db$score <= 7, 2, NA )))))))))))))))))
+                                    db$score <= 7, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  31, "> 99" , ifelse (
     db$score >= 30, "99" , ifelse (
       db$score >= 29, "98" , ifelse (
@@ -171,7 +177,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                             db$score >= 9, "3-5" , ifelse (
                               
                               db$score >= 8, "1" , ifelse (
-                                db$score <= 7, "<1" , NA )))))))))))))))))
+                                db$score <= 7, "<1" , NA ))))))))))))))))) )
     
     
     
@@ -183,6 +189,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  31, 18, ifelse (
         db$score >= 30, 17, ifelse (
           db$score >= 28, 16, ifelse (
@@ -199,11 +206,12 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                                 db$score >= 9, 5, ifelse (
                                   
                                   db$score >= 8, 3, ifelse (
-                                    db$score <= 7, 2, NA )))))))))))))))))
+                                    db$score <= 7, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  31, "> 99" , ifelse (
     db$score >= 30, "99" , ifelse (
       db$score >= 28, "98" , ifelse (
@@ -220,7 +228,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                             db$score >= 9, "3-5" , ifelse (
                               
                               db$score >= 8, "1" , ifelse (
-                                db$score <= 7, "<1" , NA )))))))))))))))))
+                                db$score <= 7, "<1" , NA ))))))))))))))))) )
     
     
   }
@@ -231,6 +239,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  28, 18, ifelse (
         db$score >= 27, 17, ifelse (
           db$score >= 26, 16, ifelse (
@@ -247,11 +256,12 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                                 db$score >= 8, 5, ifelse (
                                   
                                   db$score >= 7, 3, ifelse (
-                                    db$score <= 6, 2, NA )))))))))))))))))
+                                    db$score <= 6, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  28, "> 99" , ifelse (
     db$score >= 27, "99" , ifelse (
       db$score >= 26, "98" , ifelse (
@@ -268,7 +278,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                             db$score >= 8, "3-5" , ifelse (
                               
                               db$score >= 7, "1" , ifelse (
-                                db$score <= 6, "<1" , NA )))))))))))))))))
+                                db$score <= 6, "<1" , NA ))))))))))))))))) )
     
   }
   
@@ -278,6 +288,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  28, 18, ifelse (
         db$score >= 27, 17, ifelse (
           db$score >= 26, 16, ifelse (
@@ -294,11 +305,12 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                                 db$score >= 9, 5, ifelse (
                                   db$score >= 7, 4, ifelse (
                                     
-                                    db$score <= 6, 2, NA )))))))))))))))))
+                                    db$score <= 6, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  28, "> 99" , ifelse (
     db$score >= 27, "99" , ifelse (
       db$score >= 26, "98" , ifelse (
@@ -315,7 +327,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                             db$score >= 9, "3-5" , ifelse (
                               db$score >= 7, "2" , ifelse (
                                 
-                                db$score <= 6, "<1" , NA ))))))))))))))))) 
+                                db$score <= 6, "<1" , NA )))))))))))))))))  )
     
     
   }
@@ -326,6 +338,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  27, 18, ifelse (
         db$score >= 26, 17, ifelse (
           
@@ -342,11 +355,12 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                               db$score >= 8, 5, ifelse (
                                 db$score >= 7, 4, ifelse (
                                   db$score >= 6, 3, ifelse (
-                                    db$score <= 5, 2, NA )))))))))))))))))
+                                    db$score <= 5, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  27, "> 99" , ifelse (
     db$score >= 26, "99" , ifelse (
       
@@ -363,7 +377,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                           db$score >= 8, "3-5" , ifelse (
                             db$score >= 7, "2" , ifelse (
                               db$score >= 6, "1" , ifelse (
-                                db$score <= 5, "<1" , NA )))))))))))))))))
+                                db$score <= 5, "<1" , NA ))))))))))))))))) )
     
     
   }
@@ -375,6 +389,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  26, 18, ifelse (
         db$score >= 24 , 17, ifelse (
           
@@ -391,11 +406,12 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                               db$score >= 7, 5, ifelse (
                                 db$score >= 6, 4, ifelse (
                                   
-                                  db$score <= 5, 2, NA ))))))))))))))))
+                                  db$score <= 5, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  26, "> 99" , ifelse (
     db$score >= 24 , "99" , ifelse (
       
@@ -412,7 +428,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                           db$score >= 7, "3-5" , ifelse (
                             db$score >= 6, "2" , ifelse (
                               
-                              db$score <= 5, "<1" , NA ))))))))))))))))
+                              db$score <= 5, "<1" , NA )))))))))))))))) )
     
     
     
@@ -424,6 +440,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  20, 18, ifelse (
         
         db$score >= 19, 16, ifelse (
@@ -440,11 +457,12 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                         db$score >= 7, 5, ifelse (
                           
                           db$score >= 6, 3, ifelse (
-                            db$score <= 5, 2, NA )))))))))))))
+                            db$score <= 5, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  20, "> 99" , ifelse (
     
     db$score >= 19, "98" , ifelse (
@@ -461,7 +479,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                     db$score >= 7, "3-5" , ifelse (
                       
                       db$score >= 6, "1" , ifelse (
-                        db$score <= 5, "<1" , NA )))))))))))))
+                        db$score <= 5, "<1" , NA ))))))))))))) )
     
     
   }
@@ -472,6 +490,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$COWAT_fruit_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  20, 18, ifelse (
         
         db$score >= 19, 16, ifelse (
@@ -488,11 +507,12 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                             db$score >= 7, 5, ifelse (
                               
                               
-                              db$score <= 6, 2, NA ))))))))))))))
+                              db$score <= 6, 2, NA )))))))))))))) )
 
 # percentile score
 
 db$COWAT_fruit_scale_score <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  20, "> 99" , ifelse (
     
     db$score >= 19, "98" , ifelse (
@@ -509,7 +529,7 @@ db$COWAT_fruit_scale_score <- with (db, ifelse (
                         db$score >= 7, "3-5" , ifelse (
                           
                           
-                          db$score <= 6, "<1" , NA ))))))))))))))
+                          db$score <= 6, "<1" , NA )))))))))))))) )
     
     
   }

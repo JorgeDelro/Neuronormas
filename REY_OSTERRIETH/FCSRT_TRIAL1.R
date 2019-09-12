@@ -35,6 +35,7 @@ FCSRT_TRIAL1_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 11, 18, ifelse (
         
         
@@ -51,12 +52,13 @@ FCSRT_TRIAL1_scale_score <- function(score, age, education_years) {
                       db$score >= 3, 5, ifelse (
                         db$score >= 2, 4, ifelse (
                           
-                          db$score <= 1 , 2, NA ))))))))))))
+                          db$score <= 1 , 2, NA )))))))))))) )
 
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 11, "> 99" , ifelse (
     
     
@@ -73,7 +75,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                   db$score >= 3, "3-5" , ifelse (
                     db$score >= 2, "2" , ifelse (
                       
-                      db$score <= 1 , "<1" , NA ))))))))))))
+                      db$score <= 1 , "<1" , NA )))))))))))) )
     
     
     
@@ -87,6 +89,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
     ## 57-59
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 12, 18, ifelse (
         db$score >= 11, 17, ifelse (
           
@@ -103,11 +106,12 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                           db$score >= 2, 5, ifelse (
                             
                             
-                            db$score <= 1 , 2, NA )))))))))))))
+                            db$score <= 1 , 2, NA ))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 12, "> 99" , ifelse (
     db$score >= 11, "99" , ifelse (
       
@@ -124,7 +128,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                       db$score >= 2, "3-5" , ifelse (
                         
                         
-                        db$score <= 1 , "<1" , NA ))))))))))))) 
+                        db$score <= 1 , "<1" , NA )))))))))))))  )
     
     
     
@@ -138,6 +142,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 12, 18, ifelse (
         db$score >= 11, 17, ifelse (
           
@@ -154,11 +159,12 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                           db$score >= 2, 5, ifelse (
                             
                             
-                            db$score <= 1 , 2, NA )))))))))))))
+                            db$score <= 1 , 2, NA ))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 12, "> 99" , ifelse (
     db$score >= 11, "99" , ifelse (
       
@@ -175,7 +181,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                       db$score >= 2, "3-5" , ifelse (
                         
                         
-                        db$score <= 1 , "<1" , NA )))))))))))))
+                        db$score <= 1 , "<1" , NA ))))))))))))) )
     
     
     
@@ -187,6 +193,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 12, 18, ifelse (
         db$score >= 11, 17, ifelse (
           
@@ -203,11 +210,12 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                             
                             
                             
-                            db$score <= 1 , 2, NA )))))))))))))
+                            db$score <= 1 , 2, NA ))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 12, "> 99" , ifelse (
     db$score >= 11, "99" , ifelse (
       
@@ -224,7 +232,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                         
                         
                         
-                        db$score <= 1 , "<1" , NA )))))))))))))
+                        db$score <= 1 , "<1" , NA ))))))))))))) )
     
     
   }
@@ -235,6 +243,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 11, 18, ifelse (
         db$score >= 10, 17, ifelse (
           
@@ -251,11 +260,12 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                           
                           
                           
-                          db$score <= 1 , 2, NA ))))))))))))
+                          db$score <= 1 , 2, NA )))))))))))) )
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 11, "> 99" , ifelse (
     db$score >= 10, "99" , ifelse (
       
@@ -272,7 +282,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                       
                       
                       
-                      db$score <= 1 , "<1" , NA ))))))))))))
+                      db$score <= 1 , "<1" , NA )))))))))))) )
     
   }
   
@@ -282,6 +292,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 11, 18, ifelse (
         db$score >= 10, 17, ifelse (
           
@@ -298,11 +309,12 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                           
                           
                           db$score >= 1, 3, ifelse (
-                            db$score <= 0, 2, NA )))))))))))))
+                            db$score <= 0, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 11, "> 99" , ifelse (
     db$score >= 10, "99" , ifelse (
       
@@ -319,7 +331,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                       
                       
                       db$score >= 1, "1" , ifelse (
-                        db$score <= 0, "<1" , NA )))))))))))))
+                        db$score <= 0, "<1" , NA ))))))))))))) )
     
     
   }
@@ -330,6 +342,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 11, 18, ifelse (
         
         db$score >= 10, 16, ifelse (
@@ -346,11 +359,12 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                           
                           
                           db$score >= 1, 3, ifelse (
-                            db$score <= 0, 2, NA )))))))))))))
+                            db$score <= 0, 2, NA ))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 11, "> 99" , ifelse (
     
     db$score >= 10, "98" , ifelse (
@@ -367,7 +381,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                       
                       
                       db$score >= 1, "1" , ifelse (
-                        db$score <= 0, "<1" , NA )))))))))))))
+                        db$score <= 0, "<1" , NA ))))))))))))) )
     
     
   }
@@ -379,6 +393,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 11, 18, ifelse (
         
         db$score >= 10, 16, ifelse (
@@ -395,11 +410,12 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                         db$score >= 1, 5, ifelse (
                           
                           
-                          db$score <= 0, 2, NA ))))))))))))
+                          db$score <= 0, 2, NA )))))))))))) )
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 11, "> 99" , ifelse (
     
     db$score >= 10, "98" , ifelse (
@@ -416,7 +432,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                     db$score >= 1, "3-5" , ifelse (
                       
                       
-                      db$score <= 0, "<1" , NA ))))))))))))
+                      db$score <= 0, "<1" , NA )))))))))))) )
     
     
     
@@ -428,6 +444,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 11, 18, ifelse (
         
         db$score >= 9, 16, ifelse (
@@ -444,11 +461,12 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                         db$score >= 1, 5, ifelse (
                           
                           
-                          db$score <= 0, 2, NA ))))))))))))
+                          db$score <= 0, 2, NA )))))))))))) )
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 11, "> 99" , ifelse (
     
     db$score >= 9, "98" , ifelse (
@@ -465,7 +483,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                     db$score >= 1, "3-5" , ifelse (
                       
                       
-                      db$score <= 0, "<1" , NA ))))))))))))
+                      db$score <= 0, "<1" , NA )))))))))))) )
     
     
   }
@@ -476,6 +494,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$FCSRT_TRIAL1_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         
         
@@ -492,11 +511,12 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                       db$score >= 1, 5, ifelse (
                         
                         
-                        db$score <= 0, 2, NA )))))))))))
+                        db$score <= 0, 2, NA ))))))))))) )
 
 # percentile score
 
 db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 9, "> 99" , ifelse (
     
     
@@ -513,7 +533,7 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
                   db$score >= 1, "3-5" , ifelse (
                     
                     
-                    db$score <= 0, "<1" , NA )))))))))))
+                    db$score <= 0, "<1" , NA ))))))))))) )
     
     
   }
@@ -521,16 +541,19 @@ db$FCSRT_TRIAL1_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$FCSRT_TRIAL1_education_years_adj <- with(db, ifelse(
+    is.na(db$FCSRT_TRIAL1_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years <= 5, db$FCSRT_TRIAL1_scale_score + 1, ifelse(
       db$education_years >= 6  & db$education_years <= 12, db$FCSRT_TRIAL1_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 18, db$FCSRT_TRIAL1_scale_score - 1, ifelse(
           db$education_years >= 19  & db$education_years <= 20, db$FCSRT_TRIAL1_scale_score - 2, ifelse(
             
-            ))))))
+            )))))) )
   
   
   # NSSae
-  db$FCSRT_TRIAL1_NSSae <- db$FCSRT_TRIAL1_scale_score - (0.15266*(db$FCSRT_TRIAL1_education_years_adj-12)) 
+  db$FCSRT_TRIAL1_NSSae <- with(db, ifelse(
+    is.na(db$FCSRT_TRIAL1_education_years_adj), NA, ifelse (
+      !is.na(db$FCSRT_TRIAL1_education_years_adj), db$FCSRT_TRIAL1_scale_score - (0.15266*(db$FCSRT_TRIAL1_education_years_adj-12))  )))
   
   return(db)
 }

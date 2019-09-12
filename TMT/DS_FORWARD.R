@@ -34,6 +34,7 @@ ds_foward_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         
         
@@ -50,11 +51,12 @@ ds_foward_scale_score <- function(score, age, education_years) {
                 db$score >= 4, 5, ifelse (
                   
                   
-                  db$score <= 3, 2, NA ))))))))
+                  db$score <= 3, 2, NA )))))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 9, "> 99" , ifelse (
     
     
@@ -71,7 +73,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
             db$score >= 4, "3-5" , ifelse (
               
               
-              db$score <= 3, "<1" , NA ))))))))
+              db$score <= 3, "<1" , NA )))))))))
     
     
     
@@ -85,6 +87,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
     ## 57-59
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         
         db$score >= 8, 16, ifelse (
@@ -101,11 +104,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
                   
                   
                   
-                  db$score <= 3, 2, NA ))))))))
+                  db$score <= 3, 2, NA )))))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 9, "> 99" , ifelse (
     
     db$score >= 8, "98" , ifelse (
@@ -122,7 +126,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
               
               
               
-              db$score <= 3, "<1" , NA ))))))))
+              db$score <= 3, "<1" , NA )))))))))
     
     
     
@@ -136,6 +140,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         
         db$score >= 8, 16, ifelse (
@@ -152,11 +157,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
                   
                   
                   
-                  db$score <= 3, 2, NA ))))))))
+                  db$score <= 3, 2, NA )))))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 9, "> 99" , ifelse (
     
     db$score >= 8, "98" , ifelse (
@@ -173,7 +179,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
               
               
               
-              db$score <= 3, "<1" , NA ))))))))
+              db$score <= 3, "<1" , NA )))))))))
     
     
     
@@ -185,6 +191,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         
         db$score >= 8, 16, ifelse (
@@ -201,11 +208,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
                   
                   
                   
-                  db$score <= 3, 2, NA ))))))))
+                  db$score <= 3, 2, NA )))))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 9, "> 99" , ifelse (
     
     db$score >= 8, "98" , ifelse (
@@ -222,7 +230,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
               
               
               
-              db$score <= 3, "<1" , NA ))))))))
+              db$score <= 3, "<1" , NA )))))))))
     
     
   }
@@ -233,6 +241,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         db$score >= 8, 17, ifelse (
           
@@ -249,11 +258,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
                   
                   db$score >= 3, 4, ifelse (
                     
-                    db$score <= 2, 2, NA )))))))))
+                    db$score <= 2, 2, NA ))))))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 9, "> 99" , ifelse (
     db$score >= 8, "99" , ifelse (
       
@@ -270,7 +280,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
               
               db$score >= 3, "2" , ifelse (
                 
-                db$score <= 2, "<1" , NA )))))))))
+                db$score <= 2, "<1" , NA ))))))))))
     
   }
   
@@ -280,6 +290,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         db$score >= 8, 17, ifelse (
           
@@ -296,11 +307,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
                   
                   db$score >= 3, 4, ifelse (
                     
-                    db$score <= 2, 2, NA )))))))))
+                    db$score <= 2, 2, NA ))))))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 9, "> 99" , ifelse (
     db$score >= 8, "99" , ifelse (
       
@@ -317,7 +329,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
               
               db$score >= 3, "2" , ifelse (
                 
-                db$score <= 2, "<1" , NA )))))))))
+                db$score <= 2, "<1" , NA ))))))))))
     
     
   }
@@ -328,6 +340,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         db$score >= 8, 17, ifelse (
           
@@ -344,11 +357,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
                   
                   db$score >= 3, 4, ifelse (
                     
-                    db$score <= 2, 2, NA )))))))))
+                    db$score <= 2, 2, NA ))))))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 9, "> 99" , ifelse (
     db$score >= 8, "99" , ifelse (
       
@@ -365,7 +379,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
               
               db$score >= 3, "2" , ifelse (
                 
-                db$score <= 2, "<1" , NA ))))))))) 
+                db$score <= 2, "<1" , NA ))))))))) )
     
     
   }
@@ -377,6 +391,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 9, 18, ifelse (
         db$score >= 8, 17, ifelse (
           db$score >= 7, 16, ifelse (
@@ -393,11 +408,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
                   
                   
                   db$score >= 3, 3, ifelse (
-                    db$score <= 2, 2, NA )))))))))
+                    db$score <= 2, 2, NA ))))))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 9, "> 99" , ifelse (
     db$score >= 8, "99" , ifelse (
       db$score >= 7, "98" , ifelse (
@@ -414,7 +430,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
               
               
               db$score >= 3, "1" , ifelse (
-                db$score <= 2, "<1" , NA )))))))))
+                db$score <= 2, "<1" , NA ))))))))))
     
     
     
@@ -426,6 +442,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 8, 18, ifelse (
         db$score >= 7, 17, ifelse (
           
@@ -442,11 +459,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
                 
                 
                 db$score >= 3, 3, ifelse (
-                  db$score <= 2, 2, NA ))))))))
+                  db$score <= 2, 2, NA )))))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 8, "> 99" , ifelse (
     db$score >= 7, "99" , ifelse (
       
@@ -463,7 +481,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
             
             
             db$score >= 3, "1" , ifelse (
-              db$score <= 2, "<1" , NA ))))))))
+              db$score <= 2, "<1" , NA )))))))))
     
     
   }
@@ -474,6 +492,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$ds_foward_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 7, 18, ifelse (
         
         
@@ -490,11 +509,12 @@ db$ds_forward_percentil_range <- with (db, ifelse (
               
               
               
-              db$score <= 3, 2, NA ))))))
+              db$score <= 3, 2, NA )))))))
 
 # percentile score
 
 db$ds_forward_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 7, "> 99" , ifelse (
     
     
@@ -511,7 +531,7 @@ db$ds_forward_percentil_range <- with (db, ifelse (
           
           
           
-          db$score <= 3, "<1" , NA ))))))
+          db$score <= 3, "<1" , NA )))))))
     
     
   }
@@ -519,17 +539,20 @@ db$ds_forward_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$ds_forward_education_years_adj <- with(db, ifelse(
+    is.na(db$ds_foward_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years <= 2, db$ds_foward_scale_score + 2, ifelse(
     db$education_years >= 3  & db$education_years <= 7, db$ds_foward_scale_score + 1, ifelse(
       db$education_years >= 8  & db$education_years <= 12, db$ds_foward_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 16, db$ds_foward_scale_score - 1, ifelse(
           db$education_years >= 17  & db$education_years <= 20, db$ds_foward_scale_score - 2, ifelse(
             
-            )))))))
+            ))))))))
   
   
   # NSSae
-  db$ds_forward_NSSae <- db$ds_foward_scale_score - (0.21327*(db$ds_forward_education_years_adj-12)) 
+  db$ds_forward_NSSae <- with(db, ifelse(
+    is.na(db$ds_forward_education_years_adj), NA, ifelse (
+      !is.na(db$ds_forward_education_years_adj), db$ds_foward_scale_score - (0.21327*(db$ds_forward_education_years_adj-12))  )))
   
   return(db)
 }

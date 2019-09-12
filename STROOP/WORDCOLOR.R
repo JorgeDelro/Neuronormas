@@ -34,6 +34,7 @@ wordcolor_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 73, 18, ifelse (
         db$score >= 67, 17, ifelse (
           db$score >= 57, 16, ifelse (
@@ -50,11 +51,12 @@ wordcolor_scale_score <- function(score, age, education_years) {
                                 db$score >= 12, 5, ifelse (
                                   db$score >= 8, 4, ifelse (
                                     db$score >= 7, 3, ifelse (
-                                      db$score <= 6, 2, NA ))))))))))))))))))
+                                      db$score <= 6, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$wordcolor_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 73, "> 99" , ifelse (
         db$score >= 67, "99" , ifelse (
           db$score >= 57, "98" , ifelse (
@@ -71,7 +73,7 @@ wordcolor_scale_score <- function(score, age, education_years) {
                                 db$score >= 12, "3-5" , ifelse (
                                   db$score >= 8, "2" , ifelse (
                                     db$score >= 7, "1" , ifelse (
-                                      db$score <= 6, "<1" , NA ))))))))))))))))))
+                                      db$score <= 6, "<1" , NA )))))))))))))))))) )
     
     
     
@@ -86,6 +88,7 @@ wordcolor_scale_score <- function(score, age, education_years) {
     # Scale_Score
     
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 73, 18, ifelse (
         db$score >= 67, 17, ifelse (
           db$score >= 57, 16, ifelse (
@@ -102,11 +105,12 @@ wordcolor_scale_score <- function(score, age, education_years) {
                                 db$score >= 12, 5, ifelse (
                                   db$score >= 8, 4, ifelse (
                                     db$score >= 7, 3, ifelse (
-                                      db$score <= 6, 2, NA ))))))))))))))))))
+                                      db$score <= 6, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$wordcolor_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 73, "> 99" , ifelse (
         db$score >= 67, "99" , ifelse (
           db$score >= 57, "98" , ifelse (
@@ -123,7 +127,7 @@ wordcolor_scale_score <- function(score, age, education_years) {
                                 db$score >= 12, "3-5" , ifelse (
                                   db$score >= 8, "2" , ifelse (
                                     db$score >= 7, "1" , ifelse (
-                                      db$score <= 6, "<1" , NA ))))))))))))))))))
+                                      db$score <= 6, "<1" , NA )))))))))))))))))) )
     
     
     
@@ -137,6 +141,7 @@ wordcolor_scale_score <- function(score, age, education_years) {
     ## 60-62
     # Scale_Score
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 57, 18, ifelse (
         db$score >= 56, 17, ifelse (
           
@@ -153,11 +158,12 @@ wordcolor_scale_score <- function(score, age, education_years) {
                               db$score >= 10, 5, ifelse (
                                 db$score >= 8, 4, ifelse (
                                   db$score >= 7, 3, ifelse (
-                                    db$score <= 6, 2, NA )))))))))))))))))
+                                    db$score <= 6, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$wordcolor_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 57, "> 99" , ifelse (
     db$score >= 56, "99" , ifelse (
       
@@ -174,7 +180,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                           db$score >= 10, "3-5" , ifelse (
                             db$score >= 8, "2" , ifelse (
                               db$score >= 7, "1" , ifelse (
-                                db$score <= 6, "<1" , NA )))))))))))))))))
+                                db$score <= 6, "<1" , NA ))))))))))))))))) )
     
     
     
@@ -187,6 +193,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
     # Scale_Score
     
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 56, 18, ifelse (
         db$score >= 55, 17, ifelse (
           db$score >= 54, 16, ifelse (
@@ -203,11 +210,12 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                                 db$score >= 10, 5, ifelse (
                                   db$score >= 8, 4, ifelse (
                                     db$score >= 7, 3, ifelse (
-                                      db$score <= 6, 2, NA ))))))))))))))))))
+                                      db$score <= 6, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$wordcolor_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 56, "> 99" , ifelse (
         db$score >= 55, "99" , ifelse (
           db$score >= 54, "98" , ifelse (
@@ -224,7 +232,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                                 db$score >= 10, "3-5" , ifelse (
                                   db$score >= 8, "2" , ifelse (
                                     db$score >= 7, "1" , ifelse (
-                                      db$score <= 6, "<1" , NA ))))))))))))))))))
+                                      db$score <= 6, "<1" , NA )))))))))))))))))) )
     
   }
   
@@ -234,6 +242,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 55, 18, ifelse (
         db$score >= 52, 17, ifelse (
           db$score >= 51, 16, ifelse (
@@ -250,11 +259,12 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                                 db$score >= 10, 5, ifelse (
                                   db$score >= 6, 4, ifelse (
                                     
-                                    db$score <= 5, 2, NA )))))))))))))))))
+                                    db$score <= 5, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$wordcolor_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 55, "> 99" , ifelse (
     db$score >= 52, "99" , ifelse (
       db$score >= 51, "98" , ifelse (
@@ -271,7 +281,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                             db$score >= 10, "3-5" , ifelse (
                               db$score >= 6, "2" , ifelse (
                                 
-                                db$score <= 5, "<1" , NA )))))))))))))))))
+                                db$score <= 5, "<1" , NA ))))))))))))))))) )
     
   }
   
@@ -281,6 +291,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 52, 18, ifelse (
         db$score >= 51, 17, ifelse (
           db$score >= 47, 16, ifelse (
@@ -297,11 +308,12 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                                 db$score >= 10, 5, ifelse (
                                   db$score >= 6, 4, ifelse (
                                     
-                                    db$score <= 5, 2, NA )))))))))))))))))
+                                    db$score <= 5, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$wordcolor_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 52, "> 99" , ifelse (
     db$score >= 51, "99" , ifelse (
       db$score >= 47, "98" , ifelse (
@@ -318,7 +330,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                             db$score >= 10, "3-5" , ifelse (
                               db$score >= 6, "2" , ifelse (
                                 
-                                db$score <= 5, "<1" , NA )))))))))))))))))
+                                db$score <= 5, "<1" , NA ))))))))))))))))) )
     
     
   }
@@ -330,6 +342,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
     # Scale_Score
     
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >=  51, 18, ifelse (
         db$score >= 47 , 17, ifelse (
           
@@ -346,11 +359,12 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                               db$score >= 9 , 5, ifelse (
                                 
                                 db$score >= 6 , 3, ifelse (
-                                  db$score <=  5, 2, NA ))))))))))))))))
+                                  db$score <=  5, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$wordcolor_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >=  51, "> 99" , ifelse (
     db$score >= 47 , "99" , ifelse (
       
@@ -367,7 +381,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                           db$score >= 9 , "3-5" , ifelse (
                             
                             db$score >= 6 , "1" , ifelse (
-                              db$score <=  5, "<1" , NA ))))))))))))))))
+                              db$score <=  5, "<1" , NA )))))))))))))))) )
     
   }
   
@@ -379,6 +393,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
     # Scale_Score
     
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 46, 18, ifelse (
         
         db$score >= 45, 16, ifelse (
@@ -395,11 +410,12 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                               db$score >= 9, 5, ifelse (
                                 db$score >= 6, 4, ifelse (
                                   db$score >= 5, 3, ifelse (
-                                    db$score <= 4, 2, NA )))))))))))))))))
+                                    db$score <= 4, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$wordcolor_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 46, "> 99" , ifelse (
     
     db$score >= 45, "98" , ifelse (
@@ -416,7 +432,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                           db$score >= 9, "3-5" , ifelse (
                             db$score >= 6, "2" , ifelse (
                               db$score >= 5, "1" , ifelse (
-                                db$score <= 4, "<1" , NA )))))))))))))))))
+                                db$score <= 4, "<1" , NA ))))))))))))))))) )
     
     
   }
@@ -428,6 +444,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
     # Scale_Score
     
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 43, 18, ifelse (
         
         db$score >= 41, 16, ifelse (
@@ -444,11 +461,12 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                               db$score >= 9, 5, ifelse (
                                 
                                 db$score >= 8, 3, ifelse (
-                                  db$score <= 7, 2, NA ))))))))))))))))
+                                  db$score <= 7, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$wordcolor_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 43, "> 99" , ifelse (
     
     db$score >= 41, "98" , ifelse (
@@ -465,7 +483,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                           db$score >= 9, "3-5" , ifelse (
                             
                             db$score >= 8, "1" , ifelse (
-                              db$score <= 7, "<1" , NA ))))))))))))))))
+                              db$score <= 7, "<1" , NA )))))))))))))))) )
     
   }
   
@@ -475,6 +493,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$wordcolor_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 41, 18, ifelse (
         
         db$score >= 38, 16, ifelse (
@@ -491,11 +510,12 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                               db$score >= 9, 5, ifelse (
                                 db$score >= 8, 4, ifelse (
                                   
-                                  db$score <= 7, 2, NA ))))))))))))))))
+                                  db$score <= 7, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$wordcolor_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 41, "> 99" , ifelse (
     
     db$score >= 38, "98" , ifelse (
@@ -512,7 +532,7 @@ db$wordcolor_percentil_range <- with (db, ifelse (
                           db$score >= 9, "3-5" , ifelse (
                             db$score >= 8, "2" , ifelse (
                               
-                              db$score <= 7, "<1" , NA ))))))))))))))))
+                              db$score <= 7, "<1" , NA )))))))))))))))) )
     
     
   }
@@ -521,17 +541,20 @@ db$wordcolor_percentil_range <- with (db, ifelse (
   # Educational level adjust 
   
   db$wordcolor_education_years_adj <- with(db, ifelse(
+    is.na(db$wordcolor_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years < 1, db$wordcolor_scale_score + 2, ifelse(
       db$education_years >= 1  & db$education_years <= 6, db$wordcolor_scale_score + 1, ifelse(
         db$education_years >= 7  & db$education_years <= 12, db$wordcolor_scale_score, ifelse(
           db$education_years >= 13  & db$education_years <= 17, db$wordcolor_scale_score - 1, ifelse(
             db$education_years >= 18  & db$education_years <= 20, db$wordcolor_scale_score - 2, ifelse(
               
-                )))))))
+                ))))))) )
   
   
   # NSSae
-  db$wordcolor_NSSae <- db$wordcolor_scale_score - (0.17826*(db$wordcolor_education_years_adj-12)) 
+  db$wordcolor_NSSae <- with(db, ifelse(
+    is.na(db$wordcolor_education_years_adj), NA, ifelse (
+      !is.na(db$wordcolor_education_years_adj), db$wordcolor_scale_score - (0.17826*(db$wordcolor_education_years_adj-12)) )))
   
   return(db)
 }

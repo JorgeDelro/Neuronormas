@@ -37,6 +37,7 @@ FCSRT_TFR_scale_score <- function(score, age, education_years) {
     ## 50-56
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 39 , 18, ifelse (
         
         db$score >= 37 , 16, ifelse (
@@ -53,11 +54,12 @@ FCSRT_TFR_scale_score <- function(score, age, education_years) {
                             db$score >= 14 , 5, ifelse (
                               
                               db$score >= 12 , 3, ifelse (
-                                db$score <=  11, 2, NA )))))))))))))))
+                                db$score <=  11, 2, NA ))))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 39 , "> 99" , ifelse (
     
     db$score >= 37 , "98" , ifelse (
@@ -74,7 +76,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                         db$score >= 14 , "3-5" , ifelse (
                           
                           db$score >= 12 , "1" , ifelse (
-                            db$score <=  11, "<1" , NA )))))))))))))))
+                            db$score <=  11, "<1" , NA ))))))))))))))) )
     
     
     
@@ -88,6 +90,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
     ## 57-59
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 40 , 18, ifelse (
         db$score >= 39, 17, ifelse (
           db$score >= 38, 16, ifelse (
@@ -104,11 +107,12 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                                 db$score >= 13 , 5, ifelse (
                                   
                                   db$score >= 12, 3, ifelse (
-                                    db$score <=  11, 2, NA )))))))))))))))))
+                                    db$score <=  11, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 40 , "> 99" , ifelse (
     db$score >= 39, "99" , ifelse (
       db$score >= 38, "98" , ifelse (
@@ -125,7 +129,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                             db$score >= 13 , "3-5" , ifelse (
                               
                               db$score >= 12, "1" , ifelse (
-                                db$score <=  11, "<1" , NA )))))))))))))))))
+                                db$score <=  11, "<1" , NA ))))))))))))))))) )
     
     
     
@@ -139,6 +143,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
     ## 60-62
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 40 , 18, ifelse (
         db$score >= 39, 17, ifelse (
           db$score >= 38, 16, ifelse (
@@ -155,11 +160,12 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                                 db$score >= 14 , 5, ifelse (
                                   db$score >= 13, 4, ifelse (
                                     db$score >= 12, 3, ifelse (
-                                      db$score <=  11, 2, NA ))))))))))))))))))
+                                      db$score <=  11, 2, NA )))))))))))))))))) )
     
     # percentile score
     
     db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 40 , "> 99" , ifelse (
         db$score >= 39, "99" , ifelse (
           db$score >= 38, "98" , ifelse (
@@ -176,7 +182,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                                 db$score >= 14 , "3-5" , ifelse (
                                   db$score >= 13, "2" , ifelse (
                                     db$score >= 12, "1" , ifelse (
-                                      db$score <=  11, "<1" , NA ))))))))))))))))))
+                                      db$score <=  11, "<1" , NA )))))))))))))))))) )
     
     
     
@@ -188,6 +194,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
     ## 63-65
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 39 , 18, ifelse (
         db$score >= 38, 17, ifelse (
           db$score >= 37, 16, ifelse (
@@ -204,11 +211,12 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                                 db$score >= 13 , 5, ifelse (
                                   
                                   
-                                  db$score <=  12, 2, NA ))))))))))))))))
+                                  db$score <=  12, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 39 , "> 99" , ifelse (
     db$score >= 38, "99" , ifelse (
       db$score >= 37, "98" , ifelse (
@@ -225,7 +233,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                             db$score >= 13 , "3-5" , ifelse (
                               
                               
-                              db$score <=  12, "<1" , NA )))))))))))))))) 
+                              db$score <=  12, "<1" , NA ))))))))))))))))  )
     
     
   }
@@ -236,6 +244,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
     ## 66-68
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 35 , 18, ifelse (
         
         db$score >= 34, 16, ifelse (
@@ -252,11 +261,12 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                               db$score >= 9, 5, ifelse (
                                 db$score >= 8, 4, ifelse (
                                   db$score >= 3, 3, ifelse (
-                                    db$score <= 2, 2, NA )))))))))))))))))
+                                    db$score <= 2, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 35 , "> 99" , ifelse (
     
     db$score >= 34, "98" , ifelse (
@@ -273,7 +283,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                           db$score >= 9, "3-5" , ifelse (
                             db$score >= 8, "2" , ifelse (
                               db$score >= 3, "1" , ifelse (
-                                db$score <= 2, "<1" , NA )))))))))))))))))
+                                db$score <= 2, "<1" , NA ))))))))))))))))) )
     
   }
   
@@ -283,6 +293,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
     ## 69-71
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 34 , 18, ifelse (
         
         db$score >= 33, 16, ifelse (
@@ -299,11 +310,12 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                               db$score >= 8, 5, ifelse (
                                 db$score >= 5, 4, ifelse (
                                   db$score >= 3, 3, ifelse (
-                                    db$score <= 2, 2, NA )))))))))))))))))
+                                    db$score <= 2, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 34 , "> 99" , ifelse (
     
     db$score >= 33, "98" , ifelse (
@@ -320,7 +332,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                           db$score >= 8, "3-5" , ifelse (
                             db$score >= 5, "2" , ifelse (
                               db$score >= 3, "1" , ifelse (
-                                db$score <= 2, "<1" , NA )))))))))))))))))
+                                db$score <= 2, "<1" , NA ))))))))))))))))) )
     
     
   }
@@ -331,6 +343,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
     ## 72-74
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 34 , 18, ifelse (
         
         db$score >= 33, 16, ifelse (
@@ -347,11 +360,12 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                               db$score >= 5, 5, ifelse (
                                 
                                 db$score >= 3, 3, ifelse (
-                                  db$score <= 2, 2, NA ))))))))))))))))
+                                  db$score <= 2, 2, NA )))))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 34 , "> 99" , ifelse (
     
     db$score >= 33, "98" , ifelse (
@@ -368,7 +382,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                           db$score >= 5, "3-5" , ifelse (
                             
                             db$score >= 3, "1" , ifelse (
-                              db$score <= 2, "<1" , NA ))))))))))))))))
+                              db$score <= 2, "<1" , NA )))))))))))))))) )
     
   }
   
@@ -379,6 +393,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
     ## 75-77
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 33 , 18, ifelse (
         
         db$score >= 32, 16, ifelse (
@@ -395,11 +410,12 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                               db$score >= 5, 5, ifelse (
                                 db$score >= 3, 4, ifelse (
                                   db$score >= 2, 3, ifelse (
-                                    db$score <= 1, 2, NA )))))))))))))))))
+                                    db$score <= 1, 2, NA ))))))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 33 , "> 99" , ifelse (
     
     db$score >= 32, "98" , ifelse (
@@ -416,7 +432,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                           db$score >= 5, "3-5" , ifelse (
                             db$score >= 3, "2" , ifelse (
                               db$score >= 2, "1" , ifelse (
-                                db$score <= 1, "<1" , NA ))))))))))))))))) 
+                                db$score <= 1, "<1" , NA )))))))))))))))))  )
     
     
     
@@ -428,6 +444,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
     ## 78-80
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 32 , 18, ifelse (
         
         db$score >= 31, 16, ifelse (
@@ -444,11 +461,12 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                             db$score >= 5, 5, ifelse (
                               
                               
-                              db$score <= 4, 2, NA ))))))))))))))
+                              db$score <= 4, 2, NA )))))))))))))) )
 
 # percentile score
 
 db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 32 , "> 99" , ifelse (
     
     db$score >= 31, "98" , ifelse (
@@ -465,7 +483,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                         db$score >= 5, "3-5" , ifelse (
                           
                           
-                          db$score <= 4, "<1" , NA ))))))))))))))
+                          db$score <= 4, "<1" , NA )))))))))))))) )
     
     
   }
@@ -476,6 +494,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
     ## 81-90
     # Scale_Score
     db$FCSRT_TFR_scale_score <- with ( db, ifelse (
+      is.na(db$score), NA, ifelse (
       db$score >= 31, 18, ifelse (
         
         
@@ -492,11 +511,12 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                           
                           
                           
-                          db$score <= 4, 2, NA ))))))))))))
+                          db$score <= 4, 2, NA )))))))))))) )
 
 # percentile score
 
 db$FCSRT_TFR_percentil_range <- with (db, ifelse (
+  is.na(db$score), NA, ifelse (
   db$score >= 31, "> 99" , ifelse (
     
     
@@ -513,7 +533,7 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
                       
                       
                       
-                      db$score <= 4, "<1" , NA ))))))))))))
+                      db$score <= 4, "<1" , NA )))))))))))) )
     
     
   }
@@ -521,17 +541,20 @@ db$FCSRT_TFR_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$FCSRT_TFR_education_years_adj <- with(db, ifelse(
+    is.na(db$FCSRT_TFR_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years < 1, db$FCSRT_TFR_scale_score + 2, ifelse( 
     db$education_years >= 1  & db$education_years <= 6, db$FCSRT_TFR_scale_score + 1, ifelse(
       db$education_years >= 7  & db$education_years <= 12, db$FCSRT_TFR_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 17, db$FCSRT_TFR_scale_score - 1, ifelse(
           db$education_years >= 18  & db$education_years <= 20, db$FCSRT_TFR_scale_score - 2, ifelse(
             
-            )))))))
+            ))))))) )
   
   
   # NSSae
-  db$FCSRT_TFR_NSSae <- db$FCSRT_TFR_scale_score - (0.17127*(db$FCSRT_TFR_education_years_adj-12)) 
+  db$FCSRT_TFR_NSSae <- with(db, ifelse(
+    is.na(db$FCSRT_TFR_education_years_adj), NA, ifelse (
+      !is.na(db$FCSRT_TFR_education_years_adj), db$FCSRT_TFR_scale_score - (0.17127*(db$FCSRT_TFR_education_years_adj-12)) )))
   
   return(db)
 }
