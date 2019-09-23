@@ -535,19 +535,19 @@ db$COWAT_fruit_percentil_range <- with (db, ifelse (
   }
   
   
-  # Educational level adjust ## NO SE PUEDE AJUSTAR PORQUE NO ESTÁ EN ARTÍCULO NEURONORMAS
-  #db$COWAT_fruit_education_years_adj <- with(db, ifelse(
-   # db$education_years >= 0  & db$education_years <= 20, db$COWAT_fruit_scale_score + 2, ifelse(
-   # db$education_years >= 0  & db$education_years <= 3, db$COWAT_fruit_scale_score + 1, ifelse(
-      #db$education_years >= 4  & db$education_years <= 8, db$COWAT_fruit_scale_score, ifelse(
-       # db$education_years >= 9  & db$education_years <= 12, db$COWAT_fruit_scale_score - 1, ifelse(
-         # db$education_years >= 13  & db$education_years <= 17, db$COWAT_fruit_scale_score - 2, ifelse(
+  # 
+  db$COWAT_fruit_sex_adj <- with(db, ifelse(
+    db$education_years >= 0  & db$education_years <= 20, db$COWAT_fruit_scale_score + 2, ifelse(
+    db$education_years >= 0  & db$education_years <= 3, db$COWAT_fruit_scale_score + 1, ifelse(
+      db$education_years >= 4  & db$education_years <= 8, db$COWAT_fruit_scale_score, ifelse(
+        db$education_years >= 9  & db$education_years <= 12, db$COWAT_fruit_scale_score - 1, ifelse(
+          db$education_years >= 13  & db$education_years <= 17, db$COWAT_fruit_scale_score - 2, ifelse(
             
-          #  )))))))
+            )))))))
   
   
   # NSSae
- # db$COWAT_fruit_NSSae <- db$COWAT_fruit_scale_score - (-0.21832*(db$COWAT_fruit_education_years_adj-12)) ####CAMBIAR
+ db$COWAT_fruit_NSSas <- db$COWAT_fruit_scale_score - (-0.21832*(db$COWAT_fruit_education_years_adj-12)) ####CAMBIAR
   
   return(db)
 }
