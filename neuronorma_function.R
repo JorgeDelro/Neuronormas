@@ -13,7 +13,7 @@ score_test = list(Q_COG_TMT_A_PRE = "Trail making test a",
 
 sex <- NULL
 
-neuronorma <- function(score_test, age, education_years, sex, db){
+neuronorma <- function(score_test, age, education_years, db){
   
   # Dataframe with data
   # db <- data.frame(score = score, age = age, education_years = education_years)
@@ -34,10 +34,10 @@ neuronorma <- function(score_test, age, education_years, sex, db){
   
   # If fruit or kitchen test are selected
   # the var sex must be included
-  for (i in 1:length(score_test)) {
-    if(score_test[[i]] == "COWAT_fruit" && is.null(sex)) 
-      {print("Must include the variable sex")}
-  }
+  #for (i in 1:length(score_test)) {
+  #  if(score_test[[i]] == "COWAT_fruit" && is.null(sex)) 
+  #    {print("Must include the variable sex")}
+  #}
   
   
   

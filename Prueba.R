@@ -494,4 +494,27 @@ bd_new$Q_COG_WAIS_FORWARD_PRE[9] <- NA
 
 
 
+###### 24 septiembre
+
+prueba <- neuronorma(score_test = list(#Q_COG_TMT_A_PRE = "Trail making test a", 
+                                       #Q_COG_TMT_B_PRE = "Trail making test b",
+                                       #Q_COG_WAIS_FORWARD_PRE = "Digit span forward",
+                                       #Q_COG_WAIS_BACKWARD_PRE = "Digit span backward",
+                                       #Q_COG_STROOP_W_TP_PRE = "Stroop color-word interference test (word)",
+                                       #Q_COG_STROOP_C_TP_PRE = "Stroop color-word interference test (color)",
+                                       #Q_COG_STROOP_WC_TP_PRE = "Stroop color-word interference test (interference)",
+                                       #Q_COG_COWAT_ANIMAL_PRE = "COWAT_animal",
+                                       #Q_COG_COWAT_FRUIT_PRE = "COWAT_fruit",
+                                       #Q_COG_COWAT_KITCHEN_PRE = "COWAT_kitchen",
+                                       Q_COG_COWAT_M_PRE = "COWAT_m"),
+                                       #Q_COG_COWAT_P_PRE = "COWAT_p",
+                                       #Q_COG_COWAT_R_PRE = "COWAT_r"),
+                                       #Q_COG_MMSE_OVERALL_PRE = "mini mental"),
+                     age = "AGE_PRE",
+                     education_years = "EDUCATIONAL_YEARS",
+                     db = bd)
+
+
+
+
 

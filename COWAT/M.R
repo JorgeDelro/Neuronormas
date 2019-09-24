@@ -70,10 +70,6 @@ db$COWAT_m_percentil_range <- with (db, ifelse (
                             db$score >= 2, "2" , ifelse (
                               db$score <= 1, "<1" , NA )))))))))))))))) )
     
-    
-    
-    
-    
   }
   
   

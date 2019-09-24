@@ -19,7 +19,7 @@ COWAT_r <- function(score, age, education_years){
     COWAT_r_new <- rbind(COWAT_r_new, res)
   }
   
-  return(COWAT_r_new)
+  return(COWAT_r_new[,c("COWAT_r_scale_score", "COWAT_r_percentil_range", "COWAT_r_NSSae")])
 }
 
 COWAT_r_scale_score <- function(score, age, education_years) {
