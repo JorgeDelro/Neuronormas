@@ -22,6 +22,8 @@ COWAT_m <- function(score, age, education_years){
   return(COWAT_m_new[,c("COWAT_m_scale_score", "COWAT_m_percentil_range", "COWAT_m_NSSae")])
 }
 
+
+
 COWAT_m_scale_score <- function(score, age, education_years) {
   
   db <- data.frame(score = score, age = age, education_years = education_years)
@@ -529,14 +531,14 @@ db$COWAT_m_percentil_range <- with (db, ifelse (
   
   # Educational level adjust 
   db$COWAT_m_education_years_adj <- with(db, ifelse(
-    is.na(db$COWAT_m_scale_score), NA, ifelse (
+   is.na(db$COWAT_m_scale_score), NA, ifelse (
     db$education_years >= 0  & db$education_years <= 2, db$COWAT_m_scale_score + 2, ifelse(
      db$education_years >= 3  & db$education_years <= 7, db$COWAT_m_scale_score + 1, ifelse(
       db$education_years >= 8  & db$education_years <= 12, db$COWAT_m_scale_score, ifelse(
         db$education_years >= 13  & db$education_years <= 12, db$COWAT_m_scale_score - 1, ifelse(
-          db$education_years >= 17  & db$education_years <= 20, db$COWAT_m_scale_score - 2, ifelse(
+          db$education_years >= 17  & db$education_years <= 20, db$COWAT_m_scale_score - 2, NA
             
-            ))))))))
+            )))))))
   
   
   # NSSae

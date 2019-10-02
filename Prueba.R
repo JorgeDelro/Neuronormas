@@ -414,6 +414,11 @@ prueba <- calculate_score(score = dplyr::pull(bd[, "Q_COG_TMT_A_PRE"]),
                           age = dplyr::pull(bd[age]) ,
                           education_years = dplyr::pull(bd[education_years]))
 
+prueba <- calculate_score(score = dplyr::pull(bd[, "Q_COG_COWAT_M_PRE"]),
+                          test = "COWAT_m",
+                          age = dplyr::pull(bd[age]) ,
+                          education_years = dplyr::pull(bd[education_years]))
+
 
 prueba <- neuronorma(score_test = list(Q_COG_TMT_A_PRE = "Trail making test a", 
                                        Q_COG_TMT_B_PRE = "Trail making test b",
@@ -425,18 +430,18 @@ prueba <- neuronorma(score_test = list(Q_COG_TMT_A_PRE = "Trail making test a",
                                        Q_COG_COWAT_ANIMAL_PRE = "COWAT_animal",
                                        Q_COG_COWAT_FRUIT_PRE = "COWAT_fruit",
                                        Q_COG_COWAT_KITCHEN_PRE = "COWAT_kitchen",
-                                       #Q_COG_COWAT_M_PRE = "COWAT_m"),
+                                       Q_COG_COWAT_M_PRE = "COWAT_m",
                                        Q_COG_COWAT_P_PRE = "COWAT_p",
                                        Q_COG_COWAT_R_PRE = "COWAT_r",
                                        Q_COG_MMSE_OVERALL_PRE = "mini mental"),
            age = "AGE_PRE",
            education_years = "EDUCATIONAL_YEARS",
-           db = bd)
+           db = bd_prueba)
 
 
 names(prueba)
 
-openxlsx::write.xlsx(prueba, file = "prueba.xlsx")
+openxlsx::write.xlsx(prueba, file = "prueba_10_13.xlsx")
 
 prueba <- calculate_score(score = dplyr::pull(bd[, "Q_COG_WAIS_FORWARD_PRE"]),
                           test = "Digit span forward",
@@ -507,14 +512,47 @@ prueba <- neuronorma(score_test = list(#Q_COG_TMT_A_PRE = "Trail making test a",
                                        #Q_COG_COWAT_FRUIT_PRE = "COWAT_fruit",
                                        #Q_COG_COWAT_KITCHEN_PRE = "COWAT_kitchen",
                                        Q_COG_COWAT_M_PRE = "COWAT_m"),
-                                       #Q_COG_COWAT_P_PRE = "COWAT_p",
+                                       #Q_COG_COWAT_P_PRE = "COWAT_p"),
                                        #Q_COG_COWAT_R_PRE = "COWAT_r"),
                                        #Q_COG_MMSE_OVERALL_PRE = "mini mental"),
                      age = "AGE_PRE",
                      education_years = "EDUCATIONAL_YEARS",
-                     db = bd)
+                     db = bd_prueba)
 
 
+
+prueba <- COWAT_m(score = bd$Q_COG_COWAT_M_PRE, age = bd$AGE_PRE, education_years = bd$EDUCATIONAL_YEARS)
+
+#
+bd_prueba <- bd[10:13,]
+bd_prueba$ID
+
+
+
+openxlsx::write.xlsx(prueba, file = "prueba.xlsx")
+
+
+prueba_word_1 <- neuronorma(score_test = list(
+  Q_COG_STROOP_W_TP_PRE = "Stroop color-word interference test (word)",
+  Q_COG_STROOP_C_TP_PRE = "Stroop color-word interference test (color)"),
+  age = "AGE_PRE",
+  education_years = "EDUCATIONAL_YEARS",
+  db = bd_prueba)
+
+prueba_word_1[, c("word_scale_score","word_percentil_range", "word_NSSae", 
+                  "color_scale_score","color_percentil_range","color_NSSae")]
+
+
+bd_prueba[,c("Q_COG_STROOP_W_TP_PRE", "AGE_PRE", "EDUCATIONAL_YEARS")]
+
+prueba_word_2 <- word(score = bd_prueba$Q_COG_STROOP_W_TP_PRE, 
+                      age = bd_prueba$AGE_PRE, 
+                      education_years = bd_prueba$EDUCATIONAL_YEARS)
+
+
+
+
+prueba_word_2[, c("word_scale_score","word_percentil_range", "word_NSSae")]
 
 
 
