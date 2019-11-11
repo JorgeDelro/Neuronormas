@@ -5,26 +5,26 @@
 # (proyecto NEURONORMA jóvenes): normas para los test de fluencia verbal. Neurología, 28 (1):33-40.
 
 # 
-COWAT_fruit <- function(score, age, education_years){
+COWAT_fruit <- function(score, age, education_years, sex){
   
-  COWAT_fruit_db <- data.frame(score = score, age = age, education_years = education_years)
+  COWAT_fruit_db <- data.frame(score = score, age = age, education_years = education_years, sex = sex)
   COWAT_fruit_new <- data.frame()
   
   # NSSa
   for (i in 1:nrow(COWAT_fruit_db)) {
     res <- COWAT_fruit_scale_score(score = COWAT_fruit_db[i, "score"], 
                               age = COWAT_fruit_db[i, "age"],
-                              education_years = COWAT_fruit_db[i, "education_years"])
+                              education_years = COWAT_fruit_db[i, "education_years"],
+                              sex = COWAT_fruit_db[i, "sex"])
     COWAT_fruit_new <- rbind(COWAT_fruit_new, res)
   }
   
-  return(COWAT_fruit_new[,c("COWAT_fruit_scale_score", "COWAT_fruit_percentil_range")])
+  return(COWAT_fruit_new[,c("COWAT_fruit_scale_score", "COWAT_fruit_percentil_range", "NSSas_fruit")])
 }
 
-COWAT_fruit_scale_score <- function(score, age, education_years) {
+COWAT_fruit_scale_score <- function(score, age, education_years, sex) {
   
-  db <- data.frame(score = score, age = age, education_years = education_years)
-  
+  db <- data.frame(score = score, age = age, education_years = education_years, sex = sex)
   
   
   ##################################  TABLE 3  ##############################
@@ -534,20 +534,29 @@ db$COWAT_fruit_percentil_range <- with (db, ifelse (
     
   }
   
+  # Sex adjust 
+  if(sex == "Men") {
+    
+    db$NSSas_fruit <- db$COWAT_fruit_scale_score
+    
+  } else if(sex == "Women") {
+    
+    db$NSSas_fruit <- db$COWAT_fruit_scale_score - 2
+  }
   
   # 
-  db$COWAT_fruit_sex_adj <- with(db, ifelse(
-    db$education_years >= 0  & db$education_years <= 20, db$COWAT_fruit_scale_score + 2, ifelse(
-    db$education_years >= 0  & db$education_years <= 3, db$COWAT_fruit_scale_score + 1, ifelse(
-      db$education_years >= 4  & db$education_years <= 8, db$COWAT_fruit_scale_score, ifelse(
-        db$education_years >= 9  & db$education_years <= 12, db$COWAT_fruit_scale_score - 1, ifelse(
-          db$education_years >= 13  & db$education_years <= 17, db$COWAT_fruit_scale_score - 2, ifelse(
+  #db$COWAT_fruit_sex_adj <- with(db, ifelse(
+  #  db$education_years >= 0  & db$education_years <= 20, db$COWAT_fruit_scale_score + 2, ifelse(
+  #  db$education_years >= 0  & db$education_years <= 3, db$COWAT_fruit_scale_score + 1, ifelse(
+  #    db$education_years >= 4  & db$education_years <= 8, db$COWAT_fruit_scale_score, ifelse(
+  #      db$education_years >= 9  & db$education_years <= 12, db$COWAT_fruit_scale_score - 1, ifelse(
+  #        db$education_years >= 13  & db$education_years <= 17, db$COWAT_fruit_scale_score - 2, ifelse(
             
-            )))))))
+  #          )))))))
   
   
   # NSSae
- db$COWAT_fruit_NSSas <- db$COWAT_fruit_scale_score - (-0.21832*(db$COWAT_fruit_education_years_adj-12)) ####CAMBIAR
+  # db$COWAT_fruit_NSSas <- db$COWAT_fruit_scale_score - (-0.21832*(db$COWAT_fruit_education_years_adj-12)) ####CAMBIAR
   
   return(db)
 }
