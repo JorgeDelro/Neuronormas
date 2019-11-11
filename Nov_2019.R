@@ -27,7 +27,7 @@ prueba <- neuronorma(score_test = list(Q_COG_TMT_A_PRE = "Trail making test a",
 
 
 ## WORD y COLOR
-db_prueba <- bd_nov_2019[1:10, c("Q_COG_STROOP_W_DP_PRE", "Q_COG_STROOP_C_DP_PRE")]
+db_prueba <- bd_nov_2019[1:10, c("SEX", "AGE_PRE", "EDUCATIONAL_YEARS", "Q_COG_STROOP_W_DP_PRE", "Q_COG_STROOP_C_DP_PRE")]
 
 prueba_neuronorma <- neuronorma(score_test = list(
                                        Q_COG_STROOP_W_DP_PRE = "Stroop color-word interference test (word)",
@@ -35,5 +35,10 @@ prueba_neuronorma <- neuronorma(score_test = list(
                                        age = "AGE_PRE",
                                        education_years = "EDUCATIONAL_YEARS",
                                        db = db_prueba)
+
+# 1 - hombre / 2 - mujer
+bd_nov_2019$SEX
+
+
 
 
